@@ -39,7 +39,7 @@ Attempts to resolve the given playlist id
 
 # Install
 
-    npm install ytpl
+    npm install --save ytpl
 
 
 
