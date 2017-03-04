@@ -31,10 +31,16 @@ Attempts to resolve the given playlist id
     * limit[integer] -> limits the pulled items
 * `callback(err, result)`
     * function
-    * getting fired after the request is done 
+    * getting fired after the request is done
     * contains an error or a result
 
 * [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output)
+
+
+# Related / Works well with
+
+* [node-ytdl-core](https://github.com/fent/node-ytdl-core)
+* [node-ytsr](https://github.com/TimeForANinja/node-ytsr)
 
 
 # Install
