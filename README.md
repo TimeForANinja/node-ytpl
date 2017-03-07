@@ -16,7 +16,7 @@ ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', function(err, playlist) {
 
 
 # API
-### ytpl(id, [options,] callback)
+### ytpl(id, [options, callback])
 
 Attempts to resolve the given playlist id
 
@@ -34,6 +34,7 @@ Attempts to resolve the given playlist id
     * getting fired after the request is done
     * contains an error or a result
 
+* returns a Promise when no callback is defined
 * [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output)
 
 
