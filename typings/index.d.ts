@@ -10,6 +10,7 @@ declare module 'ytpl' {
 			title:string
 			visibility:string
 			description:string
+			total_items:number
 			views:string
 			last_updated:string
 			author:{
