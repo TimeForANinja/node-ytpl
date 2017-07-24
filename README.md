@@ -1,3 +1,14 @@
+<div align="center">
+  <p>
+    <a href="https://www.npmjs.com/package/ytpl"><img src="https://img.shields.io/npm/v/ytpl.svg?maxAge=3600" alt="NPM version" /></a>
+    <a href="https://www.npmjs.com/package/ytpl"><img src="https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600" alt="NPM downloads" /></a>
+    <a href="https://david-dm.org/timeforaninja/ytpl.svg"><img src="https://img.shields.io/david/timeforaninja/ytpl.svg?maxAge=3600" alt="Dependencies" /></a>
+  </p>
+  <p>
+    <a href="https://nodei.co/npm/ytpl/"><img src="https://nodei.co/npm/ytpl.png?downloads=true&stars=true" alt="NPM info" /></a>
+  </p>
+</div>
+
 # node-ytpl
 
 Simple js only module to resolve YouTube playlist ids
