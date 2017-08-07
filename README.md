@@ -39,7 +39,7 @@ Attempts to resolve the given playlist id
 * `options`
     * object with options
     * possible settings:
-    * limit[integer] -> limits the pulled items
+    * limit[Number] -> limits the pulled items, defaults to 100
 * `callback(err, result)`
     * function
     * getting fired after the request is done
