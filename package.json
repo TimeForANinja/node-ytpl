@@ -17,6 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "append-query": "^2.0.1",
     "html-entities": "^1.1.3"
   },
   "engines": {
