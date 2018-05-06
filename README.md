@@ -11,6 +11,8 @@
 
 # node-ytpl
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TimeForANinja/node-ytpl.svg)](https://greenkeeper.io/)
+
 Simple js only module to resolve YouTube playlist ids
 Doesn't need any login or GoogleAPI key
 
