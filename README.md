@@ -20,14 +20,14 @@ Doesn't need any login or GoogleAPI key
 var ytpl = require('ytpl');
 
 ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', function(err, playlist) {
-	if(err) throw err;
-	dosth(playlist);
+  if(err) throw err;
+  dosth(playlist);
 });
 ```
 
 
 # API
-### ytpl(id, [options, callback])
+### ytpl(id, [options], [callback])
 
 Attempts to resolve the given playlist id
 

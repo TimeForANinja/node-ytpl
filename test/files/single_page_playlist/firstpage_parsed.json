@@ -1,0 +1,69 @@
+{
+  "id": "someID",
+  "url": "https://www.youtube.com/playlist?list=someID",
+  "title": "⚡️ NCS: Electronic",
+  "visibility": "everyone",
+  "description": null,
+  "total_items": 52,
+  "views": 11868132,
+  "last_updated": "Last updated on Apr 17, 2018",
+  "author": {
+    "id": "UC_aEa8K-EOJ3D6gOs7HcyNg",
+    "name": "NoCopyrightSounds",
+    "avatar": "https://yt3.ggpht.com/-p-S-magPRTs/AAAAAAAAAAI/AAAAAAAAAAA/VkK9BqrRyuU/s100-mo-c-c0xffffffff-rj-k-no/photo.jpg",
+    "user": "NoCopyrightSounds",
+    "channel_url": "https://www.youtube.com/channel/UC_aEa8K-EOJ3D6gOs7HcyNg",
+    "user_url": "https://www.youtube.com/user/NoCopyrightSounds"
+  },
+  "nextpage": null,
+  "items": [
+    {
+      "id": "BXuiGkthhxY",
+      "url": "https://www.youtube.com/watch?v=BXuiGkthhxY&list=PLRBp0Fe2GpgnZOm5rCopMAOYhZCPoUyO5&index=40&t=0s",
+      "url_simple": "https://www.youtube.com/watch?v=BXuiGkthhxY",
+      "title": "Defqwop - Say The Word (feat. The Ruins) [NCS Release]",
+      "thumbnail": "https://i.ytimg.com/vi/BXuiGkthhxY/hqdefault.jpg",
+      "duration": "3:06",
+      "author": {
+        "name": "NoCopyrightSounds",
+        "ref": "https://www.youtube.com/user/NoCopyrightSounds"
+      }
+    },
+    {
+      "id": "YG-9u6_J05w",
+      "url": "https://www.youtube.com/watch?v=YG-9u6_J05w&list=PLRBp0Fe2GpgnZOm5rCopMAOYhZCPoUyO5&index=41",
+      "url_simple": "https://www.youtube.com/watch?v=YG-9u6_J05w",
+      "title": "[Private video]",
+      "thumbnail": "https://s.ytimg.com/yts/img/no_thumbnail-vfl4t3-4R.jpg",
+      "duration": null,
+      "author": {
+        "name": null,
+        "ref": null
+      }
+    },
+    {
+      "id": "z0Hzy9Nnqcc",
+      "url": "https://www.youtube.com/watch?v=z0Hzy9Nnqcc&list=PLRBp0Fe2GpgnZOm5rCopMAOYhZCPoUyO5&index=42&t=0s",
+      "url_simple": "https://www.youtube.com/watch?v=z0Hzy9Nnqcc",
+      "title": "Aero Chord & Anuka - Incomplete (Lyric Video) [NCS Release]",
+      "thumbnail": "https://i.ytimg.com/vi/z0Hzy9Nnqcc/hqdefault.jpg",
+      "duration": "4:18",
+      "author": {
+        "name": "NoCopyrightSounds",
+        "ref": "https://www.youtube.com/user/NoCopyrightSounds"
+      }
+    },
+    {
+      "id": "yHU6g3-35IU",
+      "url": "https://www.youtube.com/watch?v=yHU6g3-35IU&list=PLRBp0Fe2GpgnZOm5rCopMAOYhZCPoUyO5&index=43&t=0s",
+      "url_simple": "https://www.youtube.com/watch?v=yHU6g3-35IU",
+      "title": "NIVIRO - The Guardian Of Angels [NCS Release]",
+      "thumbnail": "https://i.ytimg.com/vi/yHU6g3-35IU/hqdefault.jpg",
+      "duration": "3:36",
+      "author": {
+        "name": "NoCopyrightSounds",
+        "ref": "https://www.youtube.com/user/NoCopyrightSounds"
+      }
+    }
+  ]
+}
