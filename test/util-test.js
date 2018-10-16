@@ -164,6 +164,14 @@ describe('util.getPlaylistId()', () => {
     });
   });
 
+  it('parses valid album', done => {
+    UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY', (err, id) => {
+      ASSERT.ifError(err);
+      ASSERT.equal(id, 'UU1234567890abcdefghijkl');
+      done();
+    });
+  });
+
   it('errors for invalid lists in query', done => {
     UTIL.getPlaylistId('https://www.youtube.com/watch?v=DLzxrzFCyOs&list=', err => {
       ASSERT.equal(err.message, 'invalid list query in url');
