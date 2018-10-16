@@ -167,7 +167,7 @@ describe('util.getPlaylistId()', () => {
   it('parses valid album', done => {
     UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY', (err, id) => {
       ASSERT.ifError(err);
-      ASSERT.equal(id, 'UU1234567890abcdefghijkl');
+      ASSERT.equal(id, 'OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
       done();
     });
   });
