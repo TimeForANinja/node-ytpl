@@ -70,4 +70,20 @@ describe('main()', () => {
       ASSERT.ifError(err);
     });
   });
+
+  it('handles infinity limits', done => {
+    let plistID = 'UU_someChannelIdentifier';
+    let scope = nock(plistID, {
+      page_type: 'multiple_page',
+      pages: [1, 2, 3],
+    });
+    YTPL(plistID, { limit: 0 }).then(resp => {
+      ASSERT.equal(resp.items.length, 275);
+      scope.done();
+      done();
+    }).catch(err => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
+    });
+  });
 });
