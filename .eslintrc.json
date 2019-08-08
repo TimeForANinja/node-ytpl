@@ -36,6 +36,7 @@
       }
     }],
 
+	"no-prototype-builtins" : "off",
     "accessor-pairs": "warn",
     "array-callback-return": "error",
     "complexity": "warn",
