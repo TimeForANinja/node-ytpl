@@ -78,7 +78,7 @@ describe('main()', () => {
       pages: [1, 2, 3],
     });
     YTPL(plistID, { limit: 0 }).then(resp => {
-      ASSERT.equal(resp.items.length, 275);
+      ASSERT.equal(resp.items.length, 255);
       scope.done();
       done();
     }).catch(err => {
