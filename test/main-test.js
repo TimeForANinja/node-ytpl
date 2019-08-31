@@ -95,7 +95,7 @@ describe('validateURL()', () => {
   });
 
   it('recognises channels', done => {
-    ASSERT.equal(YTPL.validateURL('youtube.com/channel/UC01234567890ASDFGHJKL'), true);
+    ASSERT.equal(YTPL.validateURL('youtube.com/channel/UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
     done();
   });
 
