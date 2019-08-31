@@ -87,3 +87,31 @@ describe('main()', () => {
     });
   });
 });
+
+describe('validateURL()', () => {
+  it('recognises users', done => {
+    ASSERT.equal(YTPL.validateURL('www.youtube.com/user/someUser'), true);
+  })
+
+  it('recognises channels', done => {
+    ASSERT.equal(YTPL.validateURL('youtube.com/channel/UC01234567890ASDFGHJKL'), true);
+  })
+
+  it('recognises playlist links', done => {
+    ASSERT.equal(YTPL.validateURL('http://www.youtube.com/playlist?list=PL0123456789ASDFGHJK'), true);
+
+  })
+
+  it('recognises id\'s', done => {
+    ASSERT.equal(YTPL.validateURL('PL0123456789ASDFGHJK'), true);
+
+  })
+
+  it('fails for videos', done => {
+    ASSERT.equal(YTPL.validateURL('youtube.com/watch?v=asdf1234'), false);
+  })
+
+  it('fails for random strings', done => {
+    ASSERT.equal(YTPL.validateURL('asdfagasdas'), false);
+  })
+});
