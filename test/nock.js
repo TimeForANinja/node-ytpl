@@ -22,28 +22,28 @@ exports = module.exports = (id, opts) => {
     scopes.push(
       NOCK(YT_HOST)
         .get(PLAYLIST_PATH + id + PLAYLIST_TRACE)
-        .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/single_page_playlist/page1.html'))
+        .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/single_page_playlist/page1.html')),
     );
   } else if (opts.page_type === 'multiple_page') {
     if (opts.pages.includes(1)) {
       scopes.push(
         NOCK(YT_HOST)
           .get(PLAYLIST_PATH + id + PLAYLIST_TRACE)
-          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/multiple_page_playlist/page1.html'))
+          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/multiple_page_playlist/page1.html')),
       );
     }
     if (opts.pages.includes(2)) {
       scopes.push(
         NOCK(YT_HOST)
           .get(`${ADDITIONAL_REQ}1${PLAYLIST_TRACE}`)
-          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/multiple_page_playlist/page2.html'))
+          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/multiple_page_playlist/page2.html')),
       );
     }
     if (opts.pages.includes(3)) {
       scopes.push(
         NOCK(YT_HOST)
           .get(`${ADDITIONAL_REQ}2${PLAYLIST_TRACE}`)
-          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/multiple_page_playlist/page3.html'))
+          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/multiple_page_playlist/page3.html')),
       );
     }
   }
@@ -52,7 +52,7 @@ exports = module.exports = (id, opts) => {
     scopes.push(
       NOCK(YT_HOST)
         .get(PLAYLIST_PATH + id + PLAYLIST_TRACE)
-        .reply(400)
+        .reply(400),
     );
   }
 
@@ -62,8 +62,8 @@ exports = module.exports = (id, opts) => {
         .get(USER_PATH + opts.user_to_channel)
         .reply(
           opts.statusCode || 200,
-          opts.target_channel ? `channel_id=UC${opts.target_channel}"` : 'no channel id in here'
-        )
+          opts.target_channel ? `channel_id=UC${opts.target_channel}"` : 'no channel id in here',
+        ),
     );
   }
 
