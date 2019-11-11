@@ -23,7 +23,7 @@ exports = module.exports = (id, opts) => {
       NOCK(YT_HOST)
         .get(PLAYLIST_PATH + id + PLAYLIST_TRACE)
         .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/single_page_playlist/page1.html')),
-      );
+    );
   } else if (opts.page_type === 'multiple_page') {
     if (opts.pages.includes(1)) {
       scopes.push(
