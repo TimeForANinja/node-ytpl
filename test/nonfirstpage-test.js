@@ -29,7 +29,7 @@ describe('nonfirstpage()', () => {
         });
         scope.done();
         done();
-      }
+      },
     );
   });
 
@@ -58,7 +58,7 @@ describe('nonfirstpage()', () => {
         });
         scope.done();
         done();
-      }
+      },
     );
   });
 
@@ -76,7 +76,7 @@ describe('nonfirstpage()', () => {
         ASSERT.equal(dataIn.length, 10);
         scope.done();
         done();
-      }
+      },
     );
   });
 
@@ -94,7 +94,7 @@ describe('nonfirstpage()', () => {
         ASSERT.equal(dataIn.length, 110);
         scope.done();
         done();
-      }
+      },
     );
   });
 });
