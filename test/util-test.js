@@ -141,57 +141,47 @@ describe('util.buildVideoObject()', () => {
 
 describe('util.getPlaylistId()', () => {
   it('errors when no string provided', done => {
-    UTIL.getPlaylistId(undefined, err => {
-      ASSERT.equal(err.message, 'The link has to be a string');
-      done();
-    });
+    const err = UTIL.getPlaylistId(undefined);
+    ASSERT.equal(err.message, 'The link has to be a string');  
+    done();
   });
 
   it('instantly returns valid links', done => {
     const rawID = 'PL1234567890abcdefghijkl';
-    UTIL.getPlaylistId(rawID, (err, id) => {
-      ASSERT.ifError(err);
-      ASSERT.equal(id, rawID);
-      done();
-    });
+    const id = UTIL.getPlaylistId(rawID);
+    ASSERT.ifError(id);
+    ASSERT.equal(id, rawID);
+    done();
   });
 
   it('parses valid lists from query', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl', (err, id) => {
-      ASSERT.ifError(err);
-      ASSERT.equal(id, 'PL1234567890abcdefghijkl');
-      done();
-    });
+    const id = UTIL.getPlaylistId('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl');
+    ASSERT.equal(id, 'PL1234567890abcdefghijkl');
+    done();
   });
 
   it('parses valid album', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY', (err, id) => {
-      ASSERT.ifError(err);
-      ASSERT.equal(id, 'OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
-      done();
-    });
+    const id = UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
+    ASSERT.equal(id, 'OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
+    done();
   });
 
   it('errors for invalid lists in query', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/watch?v=DLzxrzFCyOs&list=', err => {
-      ASSERT.equal(err.message, 'invalid list query in url');
-      done();
-    });
+    const err = UTIL.getPlaylistId('https://www.youtube.com/watch?v=DLzxrzFCyOs&list=');
+    ASSERT.equal(err.message, 'invalid list query in url');
+    done();
   });
 
   it('parses valid channels', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/channel/UC1234567890abcdefghijkl', (err, id) => {
-      ASSERT.ifError(err);
-      ASSERT.equal(id, 'UU1234567890abcdefghijkl');
-      done();
-    });
+    const id = UTIL.getPlaylistId('https://www.youtube.com/channel/UC1234567890abcdefghijkl');
+    ASSERT.equal(id, 'UU1234567890abcdefghijkl');
+    done();
   });
 
   it('errors for invalid channels', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/channel/invalidID', err => {
-      ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/channel/invalidID');
-      done();
-    });
+    const err = UTIL.getPlaylistId('https://www.youtube.com/channel/invalidID');
+    ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/channel/invalidID');
+    done();
   });
 
   it('parses a valid user', done => {
@@ -199,13 +189,11 @@ describe('util.getPlaylistId()', () => {
       user_to_channel: 'someUser',
       target_channel: 'someChannelUniqueIdentifier',
     });
-    UTIL.getPlaylistId('https://www.youtube.com/user/someUser', (err, id) => {
-      scope.ifError(err);
-      ASSERT.ifError(err);
-      ASSERT.equal(id, 'UUsomeChannelUniqueIdentifier');
-      scope.done();
-      done();
-    });
+    const id = UTIL.getPlaylistId('https://www.youtube.com/user/someUser');
+    scope.ifError(id instanceof Error);
+    ASSERT.equal(id, 'UUsomeChannelUniqueIdentifier');
+    scope.done();
+    done();
   });
 
   it('parses a invalid user', done => {
@@ -213,19 +201,17 @@ describe('util.getPlaylistId()', () => {
       user_to_channel: 'a',
       target_channel: null,
     });
-    UTIL.getPlaylistId('https://www.youtube.com/user/a', err => {
-      scope.ifError(err);
-      ASSERT.equal(err.message, 'unable to resolve the user: a');
-      scope.done();
-      done();
-    });
+    const err = UTIL.getPlaylistId('https://www.youtube.com/user/a');
+    scope.ifError(err);
+    ASSERT.equal(err.message, 'unable to resolve the user: a');
+    scope.done();
+    done();
   });
 
   it('errors for links nether including channel nor user', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/invalidType', err => {
-      ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/invalidType');
-      done();
-    });
+    const err = UTIL.getPlaylistId('https://www.youtube.com/invalidType');
+    ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/invalidType');
+    done();
   });
 });
 
