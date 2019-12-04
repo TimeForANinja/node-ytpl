@@ -142,7 +142,7 @@ describe('util.buildVideoObject()', () => {
 describe('util.getPlaylistId()', () => {
   it('errors when no string provided', done => {
     const err = UTIL.getPlaylistId(undefined);
-    ASSERT.equal(err.message, 'The link has to be a string');  
+    ASSERT.equal(err.message, 'The link has to be a string');
     done();
   });
 
