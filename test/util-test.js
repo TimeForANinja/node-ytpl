@@ -141,7 +141,7 @@ describe('util.buildVideoObject()', () => {
 
 describe('util.getPlaylistId()', () => {
   it('errors when no string provided', done => {
-    UTIL.getPlaylistId(undefined, err => {
+    UTIL.getPlaylistId(undefined).catch(err => {
       ASSERT.equal(err.message, 'The link has to be a string');
       done();
     });
@@ -149,46 +149,50 @@ describe('util.getPlaylistId()', () => {
 
   it('instantly returns valid links', done => {
     const rawID = 'PL1234567890abcdefghijkl';
-    UTIL.getPlaylistId(rawID, (err, id) => {
-      ASSERT.ifError(err);
+    UTIL.getPlaylistId(rawID).then(id => {
       ASSERT.equal(id, rawID);
       done();
+    }).catch(err => {
+      ASSERT.ifError(err);
     });
   });
 
   it('parses valid lists from query', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl', (err, id) => {
-      ASSERT.ifError(err);
+    UTIL.getPlaylistId('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl').then(id => {
       ASSERT.equal(id, 'PL1234567890abcdefghijkl');
       done();
+    }).catch(err => {
+      ASSERT.ifError(err);
     });
   });
 
   it('parses valid album', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY', (err, id) => {
-      ASSERT.ifError(err);
+    UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY').then(id => {
       ASSERT.equal(id, 'OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
       done();
+    }).catch(err => {
+      ASSERT.ifError(err);
     });
   });
 
   it('errors for invalid lists in query', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/watch?v=DLzxrzFCyOs&list=', err => {
+    UTIL.getPlaylistId('https://www.youtube.com/watch?v=DLzxrzFCyOs&list=').catch(err => {
       ASSERT.equal(err.message, 'invalid list query in url');
       done();
     });
   });
 
   it('parses valid channels', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/channel/UC1234567890abcdefghijkl', (err, id) => {
-      ASSERT.ifError(err);
+    UTIL.getPlaylistId('https://www.youtube.com/channel/UC1234567890abcdefghijkl').then(id => {
       ASSERT.equal(id, 'UU1234567890abcdefghijkl');
       done();
+    }).catch(err => {
+      ASSERT.ifError(err);
     });
   });
 
   it('errors for invalid channels', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/channel/invalidID', err => {
+    UTIL.getPlaylistId('https://www.youtube.com/channel/invalidID').catch(err => {
       ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/channel/invalidID');
       done();
     });
@@ -199,12 +203,13 @@ describe('util.getPlaylistId()', () => {
       user_to_channel: 'someUser',
       target_channel: 'someChannelUniqueIdentifier',
     });
-    UTIL.getPlaylistId('https://www.youtube.com/user/someUser', (err, id) => {
-      scope.ifError(err);
-      ASSERT.ifError(err);
+    UTIL.getPlaylistId('https://www.youtube.com/user/someUser').then(id => {
       ASSERT.equal(id, 'UUsomeChannelUniqueIdentifier');
       scope.done();
       done();
+    }).catch(err => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
     });
   });
 
@@ -213,7 +218,7 @@ describe('util.getPlaylistId()', () => {
       user_to_channel: 'a',
       target_channel: null,
     });
-    UTIL.getPlaylistId('https://www.youtube.com/user/a', err => {
+    UTIL.getPlaylistId('https://www.youtube.com/user/a').catch(err => {
       scope.ifError(err);
       ASSERT.equal(err.message, 'unable to resolve the user: a');
       scope.done();
@@ -222,7 +227,7 @@ describe('util.getPlaylistId()', () => {
   });
 
   it('errors for links nether including channel nor user', done => {
-    UTIL.getPlaylistId('https://www.youtube.com/invalidType', err => {
+    UTIL.getPlaylistId('https://www.youtube.com/invalidType').catch(err => {
       ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/invalidType');
       done();
     });
@@ -235,12 +240,13 @@ describe('util.userToChannelUploadList()', () => {
       user_to_channel: 'someUser',
       target_channel: 'someChannelUniqueIdentifier',
     });
-    UTIL.userToChannelUploadList('someUser', (err, channelID) => {
-      scope.ifError(err);
-      ASSERT.ifError(err);
+    UTIL.userToChannelUploadList('someUser').then(channelID => {
       ASSERT.equal('UUsomeChannelUniqueIdentifier', channelID);
       scope.done();
       done();
+    }).catch(err => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
     });
   });
 
@@ -249,7 +255,7 @@ describe('util.userToChannelUploadList()', () => {
       user_to_channel: 'a',
       target_channel: null,
     });
-    UTIL.userToChannelUploadList('a', err => {
+    UTIL.userToChannelUploadList('a').catch(err => {
       scope.ifError(err);
       ASSERT.equal(err.message, 'unable to resolve the user: a');
       scope.done();
