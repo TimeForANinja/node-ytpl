@@ -52,6 +52,10 @@ Attempts to resolve the given playlist id
 
 Returns true if able to parse out a (formally) valid playlist ID.
 
+### ytpl.getPlaylistID(string, [callback])
+
+Returns a playlist ID from a YouTube URL. Can be called with the playlist ID directly, in which case it returns it. If `callback` isn't given, returns a promise.
+
 
 # Related / Works well with
 
