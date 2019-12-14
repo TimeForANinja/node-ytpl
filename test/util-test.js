@@ -227,6 +227,19 @@ describe('util.getPlaylistId()', () => {
       done();
     });
   });
+
+  it('returns promise without callback', done => {
+    const scope = NOCK({
+      user_to_channel: 'abc',
+      target_channel: null,
+    });
+    let resp = UTIL.getPlaylistId('https://www.youtube.com/user/abc').catch(err => {
+      scope.ifError(err);
+      ASSERT.ok(resp instanceof Promise);
+      ASSERT.equal(err.message, 'unable to resolve the user: abc');
+      done();
+    });
+  });
 });
 
 describe('util.userToChannelUploadList()', () => {
