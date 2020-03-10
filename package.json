@@ -5,7 +5,7 @@
     "youtube",
     "playlist"
   ],
-  "version": "0.1.19",
+  "version": "0.1.20",
   "repository": {
     "type": "git",
     "url": "git://github.com/TimeForANinja/node-ytpl.git"
@@ -28,10 +28,10 @@
   },
   "devDependencies": {
     "eslint": "^6.0.0",
-    "assert-diff": "^2.0.0",
+    "assert-diff": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^7.0.1",
-    "nock": "^11.1.0"
+    "nock": "^12.0.0"
   },
   "engines": {
     "node": ">=8"
