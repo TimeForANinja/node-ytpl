@@ -17,7 +17,7 @@ describe('util.getGeneralInfo()', () => {
         title: '⚡️ NCS: Electronic',
         visibility: 'everyone',
         description: null,
-        total_items: 52,
+        total_items: 1048,
         views: 11868132,
         last_updated: 'Last updated on Apr 17, 2018',
         author: {
