@@ -38,7 +38,7 @@ declare module 'ytpl' {
       }[]
     }
     function validateURL(string: string): boolean
-    function getPlayListID(string: string, callback:((err: Error, id: string) => any)): void
+    function getPlaylistID(string: string, callback:((err: Error, id: string) => any)): void
     function getPlaylistID(string: string): Promise<string|never>
   }
   function ytpl(id:string,callback:((err:Error,result:ytpl.result)=>any)):void
