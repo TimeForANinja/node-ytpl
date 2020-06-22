@@ -1,5 +1,3 @@
-import { validateURL, getPlaylistID } from "../lib/main";
-
 declare module 'ytpl' {
   namespace ytpl {
     type options = {
