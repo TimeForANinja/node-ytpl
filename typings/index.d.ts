@@ -3,6 +3,7 @@ declare module 'ytpl' {
     type options = {
       /** Limits the pulled items. */
       limit?: number
+      headers?: object
     }
     type result = {
       id: string
