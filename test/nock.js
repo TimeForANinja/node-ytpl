@@ -46,6 +46,20 @@ exports = module.exports = (id, opts) => {
           .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/multiple_page_playlist/page3.html')),
       );
     }
+  } else if (opts.page_type === 'error_page') {
+    if (opts.invalid_json) {
+      scopes.push(
+        NOCK(YT_HOST)
+          .get(`${ADDITIONAL_REQ}1${PLAYLIST_TRACE}`)
+          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/error_page/invalid_json.json')),
+      );
+    } else {
+      scopes.push(
+        NOCK(YT_HOST)
+          .get(PLAYLIST_PATH + id + PLAYLIST_TRACE)
+          .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/error_page/page1_err.html')),
+      );
+    }
   }
 
   if (opts.error) {

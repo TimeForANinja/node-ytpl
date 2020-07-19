@@ -164,6 +164,17 @@ describe('util.getPlaylistId()', () => {
     });
   });
 
+  it('parses valid lists from query using Promise', done => {
+    UTIL.getPlaylistId('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl')
+      .then(id => {
+        ASSERT.equal(id, 'PL1234567890abcdefghijkl');
+        done();
+      })
+      .catch(err => {
+        ASSERT.ifError(err);
+      });
+  });
+
   it('parses valid album', done => {
     UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY', (err, id) => {
       ASSERT.ifError(err);
@@ -269,6 +280,15 @@ describe('util.userToChannelUploadList()', () => {
       done();
     });
   });
+
+  it('errors when user is invalid', done => {
+    UTIL.userToChannelUploadList('&&', err => {
+      ASSERT.equal(
+        err.message,
+        'request failed with err: Nock: Disallowed net connect for "www.youtube.com:443/user/&&"');
+      done();
+    });
+  });
 });
 
 describe('util.between()', () => {
@@ -312,5 +332,45 @@ describe('util.removeHtml()', () => {
 
   it('keeps newlines', () => {
     ASSERT.equal(UTIL.removeHtml('Artist1 &amp; Artist2 <br> Nova (Official)'), 'Artist1 & Artist2\nNova (Official)');
+  });
+});
+
+describe('util.getClientVersion()', () => {
+  it('returns the correct client version', () => {
+    ASSERT.equal(
+      UTIL.getClientVersion('yt.setConfig({INNERTUBE_CONTEXT_CLIENT_VERSION: "1.20200716.00.00",GAPI_HINT_PARAMS:'),
+      '1.20200716.00.00',
+    );
+  });
+
+  it('returns an empty string if `CLIENT_VERSION` is not capital', () => {
+    ASSERT.equal(
+      UTIL.getClientVersion('yt.setConfig({INNERTUBE_CONTEXT_client_version: "1.20200716.00.00",GAPI_HINT_PARAMS:'),
+      '',
+    );
+  });
+
+  it('returns an empty string if not found', () => {
+    ASSERT.equal(UTIL.getClientVersion('should not find anything'), '');
+  });
+});
+
+describe('util.getClientName()', () => {
+  it('returns the correct client name', () => {
+    ASSERT.equal(
+      UTIL.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_CLIENT_NAME: 1,'VISITOR_DATA': "Cg`),
+      '1',
+    );
+  });
+
+  it('returns an empty string if `CLIENT_NAME` is not capital', () => {
+    ASSERT.equal(
+      UTIL.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_client_name: 1,'VISITOR_DATA': "Cg`),
+      '',
+    );
+  });
+
+  it('returns an empty string if not found', () => {
+    ASSERT.equal(UTIL.getClientName('should not find anything'), '');
   });
 });
