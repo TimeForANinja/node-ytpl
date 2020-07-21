@@ -12,7 +12,7 @@ before(() => { NOCK.disableNetConnect(); });
 after(() => { NOCK.enableNetConnect(); });
 
 exports = module.exports = (id, opts) => {
-  if(typeof id === 'object') {
+  if (typeof id === 'object') {
     opts = id;
     id = undefined;
   }
