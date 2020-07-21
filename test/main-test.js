@@ -111,7 +111,7 @@ describe('main()', () => {
     });
     const target = JSON.parse(FS.readFileSync(__dirname + '/files/album_page/album_parsed.json'));
     YTPL(plistID, { limit: 1 }).then(resp => {
-      ASSERT.deepEqual(, resp);
+      ASSERT.deepEqual(target, resp);
       scope.done();
       done();
     }).catch(err => {
