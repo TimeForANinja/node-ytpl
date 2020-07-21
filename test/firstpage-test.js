@@ -56,4 +56,49 @@ describe('firstpage()', () => {
       done();
     });
   });
+
+  it('parses correct `x-youtube-client-version` and `x-youtube-client-name` headers', done => {
+    let plistID = 'someID';
+    let scope = NOCK(plistID, {
+      page_type: 'multiple_page',
+      pages: [1],
+    });
+    FIRSTPAGE(plistID, {}, (err, dataIn) => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
+      ASSERT.deepEqual(dataIn.headers, {
+        'x-youtube-client-name': '1',
+        'x-youtube-client-version': '1.20180503',
+      });
+      scope.done();
+      done();
+    });
+  });
+
+  it('does not parse headers if nextpage is unavailable', done => {
+    let plistID = 'someID';
+    let scope = NOCK(plistID, {
+      page_type: 'single_page',
+    });
+    FIRSTPAGE(plistID, {}, (err, dataIn) => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
+      ASSERT.equal(dataIn.headers, undefined);
+      scope.done();
+      done();
+    });
+  });
+
+  it('errors when youtube returns an error', done => {
+    let plistID = 'someID';
+    let scope = NOCK(plistID, {
+      page_type: 'error_page',
+    });
+    FIRSTPAGE(plistID, {}, err => {
+      scope.ifError(err);
+      ASSERT.equal(err.message, 'The playlist does not exist.');
+      scope.done();
+      done();
+    });
+  });
 });

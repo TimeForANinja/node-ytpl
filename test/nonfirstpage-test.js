@@ -97,4 +97,39 @@ describe('nonfirstpage()', () => {
       },
     );
   });
+
+  it('errors if `statusCode` is not 200', done => {
+    let scope = NOCK({
+      page_type: 'multiple_page',
+      pages: [2],
+      statusCode: 403,
+    });
+    NONFIRSTPAGE(
+      '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1',
+      {},
+      err => {
+        scope.ifError(err);
+        ASSERT.equal(err.message, 'Status code: 403');
+        scope.done();
+        done();
+      },
+    );
+  });
+
+  it('errors if json was invalid', done => {
+    let scope = NOCK({
+      page_type: 'error_page',
+      invalid_json: true,
+    });
+    NONFIRSTPAGE(
+      '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1',
+      {},
+      err => {
+        scope.ifError(err);
+        ASSERT.equal(err.message, 'Unexpected token i in JSON at position 0');
+        scope.done();
+        done();
+      },
+    );
+  });
 });

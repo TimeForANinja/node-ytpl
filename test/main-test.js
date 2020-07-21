@@ -86,6 +86,22 @@ describe('main()', () => {
       ASSERT.ifError(err);
     });
   });
+
+  it('handles invalid limit format', done => {
+    let plistID = 'UU_someChannelIdentifier';
+    let scope = nock(plistID, {
+      page_type: 'multiple_page',
+      pages: [1],
+    });
+    YTPL(plistID, { limit: 'invalid type' }).then(resp => {
+      ASSERT.equal(resp.items.length, 100);
+      scope.done();
+      done();
+    }).catch(err => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
+    });
+  });
 });
 
 describe('validateURL()', () => {
