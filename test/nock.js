@@ -60,6 +60,12 @@ exports = module.exports = (id, opts) => {
           .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/error_page/page1_err.html')),
       );
     }
+  } else if (opts.page_type === 'album') {
+    scopes.push(
+      NOCK(YT_HOST)
+        .get(PLAYLIST_PATH + id + PLAYLIST_TRACE)
+        .replyWithFile(opts.statusCode || 200, PATH.resolve(__dirname, 'files/album_page/album_raw.html')),
+    );
   }
 
   if (opts.error) {

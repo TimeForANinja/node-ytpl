@@ -1,4 +1,6 @@
 /* global describe, it */
+const FS = require('fs');
+const PATH = require('path');
 const YTPL = require('..');
 const nock = require('./nock');
 const ASSERT = require('assert-diff');
@@ -95,6 +97,23 @@ describe('main()', () => {
     });
     YTPL(plistID, { limit: 'invalid type' }).then(resp => {
       ASSERT.equal(resp.items.length, 100);
+      scope.done();
+      done();
+    }).catch(err => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('handles albums without author', done => {
+    let plistID = 'OLAK5uy_SomeRandomAlbumWithoutKnownAuthor';
+    let scope = nock(plistID, {
+      page_type: 'album',
+    });
+    const targetPath = PATH.resolve(__dirname, './files/album_page/album_parsed.json');
+    const target = JSON.parse(FS.readFileSync(targetPath));
+    YTPL(plistID, { limit: 1 }).then(resp => {
+      ASSERT.deepEqual(target, resp);
       scope.done();
       done();
     }).catch(err => {

@@ -14,7 +14,7 @@ declare module 'ytpl' {
       total_items: number;
       views: string;
       last_updated: string;
-      author: {
+      author: null | {
         id: string;
         name: string;
         avatar: string;
