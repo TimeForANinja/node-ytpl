@@ -2,41 +2,42 @@ declare module 'ytpl' {
   namespace ytpl {
     type options = {
       /** Limits the pulled items. */
-      limit?: number
-    }
+      limit?: number;
+      headers?: { [key: string]: string; };
+    };
     type result = {
-      id: string
-      url: string
-      title:string
-      visibility: string
-      description: string
-      total_items: number
-      views: string
-      last_updated: string
+      id: string;
+      url: string;
+      title:string;
+      visibility: string;
+      description: string;
+      total_items: number;
+      views: string;
+      last_updated: string;
       author: {
-        id: string
-        name: string
-        avatar: string
-        user: string
-        channel_url: string
-        user_url: string
-      }
+        id: string;
+        name: string;
+        avatar: string;
+        user: string;
+        channel_url: string;
+        user_url: string;
+      };
       items: {
-        id: string
-        url: string
-        url_simple: string
-        title: string
-        thumbnail: string
-        duration: string
+        id: string;
+        url: string;
+        url_simple: string;
+        title: string;
+        thumbnail: string;
+        duration: string;
         author: {
-          id: string
-          name: string
-          user: string
-          channel_url: string
-          user_url: string
-        }
-      }[]
-    }
+          id: string;
+          name: string;
+          user: string;
+          channel_url: string;
+          user_url: string;
+        };
+      }[];
+    };
     /**
      * @param link Link to validate
      * @description Returns true if able to parse out a (formally) valid playlist ID.
