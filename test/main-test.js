@@ -105,12 +105,12 @@ describe('main()', () => {
 });
 
 describe('validateURL()', () => {
-  it('recognises users', done => {
+  it('recognises user link', done => {
     ASSERT.equal(YTPL.validateURL('www.youtube.com/user/someUser'), true);
     done();
   });
 
-  it('recognises channels', done => {
+  it('recognises channel link', done => {
     ASSERT.equal(YTPL.validateURL('youtube.com/channel/UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
     done();
   });
@@ -120,8 +120,18 @@ describe('validateURL()', () => {
     done();
   });
 
-  it('recognises id\'s', done => {
+  it('recognises playlist id\'s', done => {
     ASSERT.equal(YTPL.validateURL('PL0123456789ASDFGHJK'), true);
+    done();
+  });
+
+  it('recognises album id\'s', done => {
+    ASSERT.equal(YTPL.validateURL('OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW'), true);
+    done();
+  });
+
+  it('recognises channel id\'s', done => {
+    ASSERT.equal(YTPL.validateURL('UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
     done();
   });
 

@@ -147,11 +147,30 @@ describe('util.getPlaylistId()', () => {
     });
   });
 
-  it('instantly returns valid links', done => {
+  it('instantly returns valid (raw) playlist id', done => {
     const rawID = 'PL1234567890abcdefghijkl';
     UTIL.getPlaylistId(rawID, (err, id) => {
       ASSERT.ifError(err);
       ASSERT.equal(id, rawID);
+      done();
+    });
+  });
+
+  it('instantly returns valid (raw) album id', done => {
+    const rawID = 'OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW';
+    UTIL.getPlaylistId(rawID, (err, id) => {
+      ASSERT.ifError(err);
+      ASSERT.equal(id, rawID);
+      done();
+    });
+  });
+
+  it('instantly returns valid (raw) user id', done => {
+    const rawID = 'UC0123456789ABCDEFGHIJKLMNOPQRS';
+    const playlistID = 'UU0123456789ABCDEFGHIJKLMNOPQRS';
+    UTIL.getPlaylistId(rawID, (err, id) => {
+      ASSERT.ifError(err);
+      ASSERT.equal(id, playlistID);
       done();
     });
   });
