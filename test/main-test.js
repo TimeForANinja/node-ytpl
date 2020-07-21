@@ -1,5 +1,6 @@
 /* global describe, it */
 const FS = require('fs');
+const PATH = require('path');
 const YTPL = require('..');
 const nock = require('./nock');
 const ASSERT = require('assert-diff');
@@ -109,7 +110,8 @@ describe('main()', () => {
     let scope = nock(plistID, {
       page_type: 'album',
     });
-    const target = JSON.parse(FS.readFileSync(__dirname + '/files/album_page/album_parsed.json'));
+    const targetPath = PATH.resolve(__dirname, '/files/album_page/album_parsed.json');
+    const target = JSON.parse(FS.readFileSync(targetPath));
     YTPL(plistID, { limit: 1 }).then(resp => {
       ASSERT.deepEqual(target, resp);
       scope.done();
