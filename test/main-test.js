@@ -110,7 +110,7 @@ describe('main()', () => {
     let scope = nock(plistID, {
       page_type: 'album',
     });
-    const targetPath = PATH.resolve(__dirname, '/files/album_page/album_parsed.json');
+    const targetPath = PATH.resolve(__dirname, './files/album_page/album_parsed.json');
     const target = JSON.parse(FS.readFileSync(targetPath));
     YTPL(plistID, { limit: 1 }).then(resp => {
       ASSERT.deepEqual(target, resp);
