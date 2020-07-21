@@ -13,10 +13,6 @@ after(() => { NOCK.enableNetConnect(); });
 
 exports = module.exports = (id, opts) => {
   const scopes = [];
-  if (typeof id === 'object') {
-    opts = id;
-    id = undefined;
-  }
 
   if (opts.page_type === 'single_page') {
     scopes.push(
