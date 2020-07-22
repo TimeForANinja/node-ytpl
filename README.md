@@ -4,6 +4,7 @@
     <a href="https://www.npmjs.com/package/ytpl"><img src="https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600" alt="NPM downloads" /></a>
     <a href="https://david-dm.org/"><img src="https://img.shields.io/david/timeforaninja/node-ytpl.svg?maxAge=3600" alt="Dependencies" /></a>
     <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/TimeForANinja/node-ytpl.svg" alt="Dependencies" /></a>
+    <a hreF="https://discord.gg/V3vSCs7"><img src="https://img.shields.io/discord/484464227067887645.svg" alt="Discord" /></a>
   </p>
   <p>
     <a href="https://nodei.co/npm/ytpl/"><img src="https://nodei.co/npm/ytpl.png?downloads=true&stars=true" alt="NPM info" /></a>
