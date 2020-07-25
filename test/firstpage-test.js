@@ -13,12 +13,13 @@ describe('firstpage()', () => {
       let scope = NOCK(plistID, {
         page_type: 'single_page',
       });
-      FIRSTPAGE(plistID, { limit: 4 }, (errIn, dataIn) => {
-        scope.ifError(errIn);
-        ASSERT.ifError(errIn);
+      FIRSTPAGE(plistID, { limit: 4, headers: {} }).then(dataIn => {
         ASSERT.deepEqual(dataIn, JSON.parse(dataOut));
         scope.done();
         done();
+      }).catch(errIn => {
+        scope.ifError(errIn);
+        ASSERT.ifError(errIn);
       });
     });
   });
@@ -30,14 +31,15 @@ describe('firstpage()', () => {
       let scope = NOCK(plistID, {
         page_type: 'single_page',
       });
-      FIRSTPAGE(plistID, { limit: 2 }, (errIn, dataIn) => {
-        scope.ifError(errIn);
-        ASSERT.ifError(errIn);
+      FIRSTPAGE(plistID, { limit: 2, headers: {} }).then(dataIn => {
         const parsedDataOut = JSON.parse(dataOut);
         parsedDataOut.items.splice(2, 2);
         ASSERT.deepEqual(dataIn, parsedDataOut);
         scope.done();
         done();
+      }).catch(errIn => {
+        scope.ifError(errIn);
+        ASSERT.ifError(errIn);
       });
     });
   });
@@ -48,12 +50,13 @@ describe('firstpage()', () => {
       page_type: 'multiple_page',
       pages: [1],
     });
-    FIRSTPAGE(plistID, {}, (err, dataIn) => {
-      scope.ifError(err);
-      ASSERT.ifError(err);
+    FIRSTPAGE(plistID, { limit: Infinity, headers: {} }).then(dataIn => {
       ASSERT.equal(dataIn.nextpage, '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1');
       scope.done();
       done();
+    }).catch(errIn => {
+      scope.ifError(errIn);
+      ASSERT.ifError(errIn);
     });
   });
 
@@ -63,15 +66,17 @@ describe('firstpage()', () => {
       page_type: 'multiple_page',
       pages: [1],
     });
-    FIRSTPAGE(plistID, {}, (err, dataIn) => {
-      scope.ifError(err);
-      ASSERT.ifError(err);
-      ASSERT.deepEqual(dataIn.headers, {
+    let opt = { limit: Infinity, headers: {} };
+    FIRSTPAGE(plistID, opt).then(() => {
+      ASSERT.deepEqual(opt.headers, {
         'x-youtube-client-name': '1',
         'x-youtube-client-version': '1.20180503',
       });
       scope.done();
       done();
+    }).catch(errIn => {
+      scope.ifError(errIn);
+      ASSERT.ifError(errIn);
     });
   });
 
@@ -80,12 +85,13 @@ describe('firstpage()', () => {
     let scope = NOCK(plistID, {
       page_type: 'single_page',
     });
-    FIRSTPAGE(plistID, {}, (err, dataIn) => {
-      scope.ifError(err);
-      ASSERT.ifError(err);
+    FIRSTPAGE(plistID, { limit: Infinity, headers: {} }).then(dataIn => {
       ASSERT.equal(dataIn.headers, undefined);
       scope.done();
       done();
+    }).catch(errIn => {
+      scope.ifError(errIn);
+      ASSERT.ifError(errIn);
     });
   });
 
@@ -94,11 +100,58 @@ describe('firstpage()', () => {
     let scope = NOCK(plistID, {
       page_type: 'error_page',
     });
-    FIRSTPAGE(plistID, {}, err => {
-      scope.ifError(err);
-      ASSERT.equal(err.message, 'The playlist does not exist.');
+    FIRSTPAGE(plistID, { limit: Infinity, headers: {} }).catch(errIn => {
+      scope.ifError(errIn);
+      ASSERT.equal(errIn.message, 'The playlist does not exist.');
       scope.done();
       done();
     });
+  });
+});
+
+describe('firstpage.getClientVersion()', () => {
+  it('returns the correct client version', () => {
+    ASSERT.equal(
+      FIRSTPAGE.getClientVersion(
+        'yt.setConfig({INNERTUBE_CONTEXT_CLIENT_VERSION: "1.20200716.00.00",GAPI_HINT_PARAMS:',
+      ),
+      '1.20200716.00.00',
+    );
+  });
+
+  it('returns an empty string if `CLIENT_VERSION` is not capital', () => {
+    ASSERT.equal(
+      FIRSTPAGE.getClientVersion(
+        'yt.setConfig({INNERTUBE_CONTEXT_client_version: "1.20200716.00.00",GAPI_HINT_PARAMS:',
+      ),
+      '',
+    );
+  });
+
+  it('returns an empty string if not found', () => {
+    ASSERT.equal(
+      FIRSTPAGE.getClientVersion('should not find anything'),
+      '',
+    );
+  });
+});
+
+describe('firstpage.getClientName()', () => {
+  it('returns the correct client name', () => {
+    ASSERT.equal(
+      FIRSTPAGE.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_CLIENT_NAME: 1,'VISITOR_DATA': "Cg`),
+      '1',
+    );
+  });
+
+  it('returns an empty string if `CLIENT_NAME` is not capital', () => {
+    ASSERT.equal(
+      FIRSTPAGE.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_client_name: 1,'VISITOR_DATA': "Cg`),
+      '',
+    );
+  });
+
+  it('returns an empty string if not found', () => {
+    ASSERT.equal(FIRSTPAGE.getClientName('should not find anything'), '');
   });
 });

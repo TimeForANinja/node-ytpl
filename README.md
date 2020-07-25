@@ -1,19 +1,17 @@
-<div align="center">
-  <p>
-    <a href="https://www.npmjs.com/package/ytpl"><img src="https://img.shields.io/npm/v/ytpl.svg?maxAge=3600" alt="NPM version" /></a>
-    <a href="https://www.npmjs.com/package/ytpl"><img src="https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600" alt="NPM downloads" /></a>
-    <a href="https://david-dm.org/"><img src="https://img.shields.io/david/timeforaninja/node-ytpl.svg?maxAge=3600" alt="Dependencies" /></a>
-    <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/TimeForANinja/node-ytpl.svg" alt="Dependencies" /></a>
-    <a hreF="https://discord.gg/V3vSCs7"><img src="https://img.shields.io/discord/484464227067887645.svg" alt="Discord" /></a>
-  </p>
-  <p>
-    <a href="https://nodei.co/npm/ytpl/"><img src="https://nodei.co/npm/ytpl.png?downloads=true&stars=true" alt="NPM info" /></a>
-  </p>
-</div>
-
 # node-ytpl
+[![NPM version](https://img.shields.io/npm/v/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
+[![NPM downloads](https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
+[![codecov](https://codecov.io/gh/timeforaninja/node-ytpl/branch/master/graph/badge.svg)](https://codecov.io/gh/timeforaninja/node-ytpl)
+[![Known Vulnerabilities](https://snyk.io/test/github/timeforaninja/node-ytpl/badge.svg)](https://snyk.io/test/github/timeforaninja/node-ytpl)
+[![Discord](https://img.shields.io/discord/484464227067887645.svg)](https://discord.gg/V3vSCs7)
+
+[![NPM info](https://nodei.co/npm/ytpl.png?downloads=true&stars=true)](https://nodei.co/npm/ytpl/)
+
 Simple js only module to resolve YouTube playlist ids
 Doesn't need any login or GoogleAPI key
+
+# Support
+You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
 
 # Usage
 
@@ -28,7 +26,7 @@ ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', function(err, playlist) {
 
 
 # API
-### ytpl(id, [options], [callback])
+### ytpl(id, [options])
 
 Attempts to resolve the given playlist id
 
@@ -40,22 +38,21 @@ Attempts to resolve the given playlist id
 * `options`
     * object with options
     * possible settings:
-    * limit[Number] -> limits the pulled items, defaults to 100, set to 0 or Infinity to get the whole playlist
-* `callback(err, result)`
-    * function
-    * getting fired after the request is done
-    * contains an error or a result
+    * limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
+    * All additional parameters will get passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
 
-* returns a Promise when no callback is defined
+* returns a Promise
 * [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output)
 
 ### ytpl.validateURL(string)
 
 Returns true if able to parse out a (formally) valid playlist ID.
 
-### ytpl.getPlaylistID(string, [callback])
+### ytpl.getPlaylistID(string)
 
-Returns a playlist ID from a YouTube URL. Can be called with the playlist ID directly, in which case it returns it. If `callback` isn't given, returns a promise.
+Returns a playlist ID from a YouTube URL. Can be called with the playlist ID directly, in which case it resolves.
+
+Returns a promise.
 
 
 # Related / Works well with

@@ -2,24 +2,24 @@
 const FS = require('fs');
 const PATH = require('path');
 const YTPL = require('..');
-const nock = require('./nock');
+const NOCK = require('./nock');
 const ASSERT = require('assert-diff');
 
 describe('main()', () => {
   it('try with invalid id', done => {
     let plistID = 'someID';
-    YTPL(plistID, err => {
-      ASSERT.equal(err.message, `Unable to find a id in ${plistID}`);
+    YTPL(plistID).catch(err => {
+      ASSERT.equal(err.message, `Unable to find a id in "${plistID}"`);
       done();
     });
   });
 
   it('redirects https error codes', done => {
     let plistID = 'UUsomeChannelIdentifierxxx';
-    let scope = nock(plistID, {
+    let scope = NOCK(plistID, {
       error: true,
     });
-    YTPL(plistID, { limit: Infinity }, err => {
+    YTPL(plistID).catch(err => {
       scope.ifError(err);
       ASSERT.equal(err.message, 'Status code: 400');
       scope.done();
@@ -29,7 +29,7 @@ describe('main()', () => {
 
   it('returns promise without callback', done => {
     let plistID = 'UU_someChannelIdentifier';
-    let scope = nock(plistID, {
+    let scope = NOCK(plistID, {
       error: true,
     });
     let resp = YTPL(plistID).catch(err => {
@@ -43,7 +43,7 @@ describe('main()', () => {
 
   it('overwrites invalid options', done => {
     let plistID = 'UU_someChannelIdentifier';
-    let scope = nock(plistID, {
+    let scope = NOCK(plistID, {
       page_type: 'multiple_page',
       pages: [1],
     });
@@ -59,7 +59,7 @@ describe('main()', () => {
 
   it('handles limits', done => {
     let plistID = 'UU_someChannelIdentifier';
-    let scope = nock(plistID, {
+    let scope = NOCK(plistID, {
       page_type: 'multiple_page',
       pages: [1, 2],
     });
@@ -75,11 +75,11 @@ describe('main()', () => {
 
   it('handles infinity limits', done => {
     let plistID = 'UU_someChannelIdentifier';
-    let scope = nock(plistID, {
+    let scope = NOCK(plistID, {
       page_type: 'multiple_page',
       pages: [1, 2, 3],
     });
-    YTPL(plistID, { limit: 0 }).then(resp => {
+    YTPL(plistID, { limit: Infinity }).then(resp => {
       ASSERT.equal(resp.items.length, 255);
       scope.done();
       done();
@@ -91,7 +91,7 @@ describe('main()', () => {
 
   it('handles invalid limit format', done => {
     let plistID = 'UU_someChannelIdentifier';
-    let scope = nock(plistID, {
+    let scope = NOCK(plistID, {
       page_type: 'multiple_page',
       pages: [1],
     });
@@ -107,7 +107,7 @@ describe('main()', () => {
 
   it('handles albums without author', done => {
     let plistID = 'OLAK5uy_SomeRandomAlbumWithoutKnownAuthor';
-    let scope = nock(plistID, {
+    let scope = NOCK(plistID, {
       page_type: 'album',
     });
     const targetPath = PATH.resolve(__dirname, './files/album_page/album_parsed.json');
@@ -123,7 +123,7 @@ describe('main()', () => {
   });
 });
 
-describe('validateURL()', () => {
+describe('main.validateURL()', () => {
   it('recognises user link', done => {
     ASSERT.equal(YTPL.validateURL('www.youtube.com/user/someUser'), true);
     done();
@@ -162,5 +162,160 @@ describe('validateURL()', () => {
   it('fails for random strings', done => {
     ASSERT.equal(YTPL.validateURL('asdfagasdas'), false);
     done();
+  });
+});
+
+describe('main.getPlaylistID()', () => {
+  it('errors when no string provided', done => {
+    YTPL.getPlaylistID(undefined).catch(err => {
+      ASSERT.equal(err.message, 'The linkOrId has to be a string');
+      done();
+    });
+  });
+
+  it('instantly returns valid (raw) playlist id', done => {
+    const rawID = 'PL1234567890abcdefghijkl';
+    YTPL.getPlaylistID(rawID).then(id => {
+      ASSERT.equal(id, rawID);
+      done();
+    }).catch(err => {
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('instantly returns valid (raw) album id', done => {
+    const rawID = 'OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW';
+    YTPL.getPlaylistID(rawID).then(id => {
+      ASSERT.equal(id, rawID);
+      done();
+    }).catch(err => {
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('instantly returns valid (raw) user id', done => {
+    const rawID = 'UC0123456789ABCDEFGHIJKLMNOPQRS';
+    const playlistID = 'UU0123456789ABCDEFGHIJKLMNOPQRS';
+    YTPL.getPlaylistID(rawID).then(id => {
+      ASSERT.equal(id, playlistID);
+      done();
+    }).catch(err => {
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('parses valid lists from query', done => {
+    YTPL.getPlaylistID('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl').then(id => {
+      ASSERT.equal(id, 'PL1234567890abcdefghijkl');
+      done();
+    }).catch(err => {
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('parses valid album', done => {
+    YTPL.getPlaylistID('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY').then(id => {
+      ASSERT.equal(id, 'OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
+      done();
+    }).catch(err => {
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('errors for invalid lists in query', done => {
+    YTPL.getPlaylistID('https://www.youtube.com/watch?v=DLzxrzFCyOs&list=').catch(err => {
+      ASSERT.equal(err.message, 'invalid or unknown list query in url');
+      done();
+    });
+  });
+
+  it('parses valid channels', done => {
+    YTPL.getPlaylistID('https://www.youtube.com/channel/UC1234567890abcdefghijkl').then(id => {
+      ASSERT.equal(id, 'UU1234567890abcdefghijkl');
+      done();
+    }).catch(err => {
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('errors for invalid channels', done => {
+    YTPL.getPlaylistID('https://www.youtube.com/channel/invalidID').catch(err => {
+      ASSERT.equal(err.message, 'Unable to find a id in "https://www.youtube.com/channel/invalidID"');
+      done();
+    });
+  });
+
+  it('parses a valid user', done => {
+    const scope = NOCK({
+      user_to_channel: 'someUser',
+      target_channel: 'someChannelUniqueIdentifier',
+    });
+    YTPL.getPlaylistID('https://www.youtube.com/user/someUser').then(id => {
+      ASSERT.equal(id, 'UUsomeChannelUniqueIdentifier');
+      scope.done();
+      done();
+    }).catch(err => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('parses a invalid user', done => {
+    const scope = NOCK({
+      user_to_channel: 'a',
+      target_channel: null,
+    });
+    YTPL.getPlaylistID('https://www.youtube.com/user/a').catch(err => {
+      scope.ifError(err);
+      ASSERT.equal(err.message, 'unable to resolve the user: a');
+      scope.done();
+      done();
+    });
+  });
+
+  it('errors for links nether including channel nor user', done => {
+    YTPL.getPlaylistID('https://www.youtube.com/invalidType').catch(err => {
+      ASSERT.equal(err.message, 'Unable to find a id in "https://www.youtube.com/invalidType"');
+      done();
+    });
+  });
+});
+
+describe('main.userToChannelUploadList()', () => {
+  it('resolves a user to his uploads list', done => {
+    const scope = NOCK({
+      user_to_channel: 'someUser',
+      target_channel: 'someChannelUniqueIdentifier',
+    });
+    YTPL.getPlaylistID('https://www.youtube.com/user/someUser').then(channelID => {
+      ASSERT.equal('UUsomeChannelUniqueIdentifier', channelID);
+      scope.done();
+      done();
+    }).catch(err => {
+      scope.ifError(err);
+      ASSERT.ifError(err);
+    });
+  });
+
+  it('errors when its not able to', done => {
+    const scope = NOCK({
+      user_to_channel: 'a',
+      target_channel: null,
+    });
+    YTPL.getPlaylistID('https://www.youtube.com/user/a').catch(err => {
+      scope.ifError(err);
+      ASSERT.equal(err.message, 'unable to resolve the user: a');
+      scope.done();
+      done();
+    });
+  });
+
+  it('errors when user is invalid', done => {
+    YTPL.getPlaylistID('https://www.youtube.com/user/&&').catch(err => {
+      ASSERT.equal(
+        err.message,
+        'Nock: Disallowed net connect for "www.youtube.com:443/user/&&"');
+      done();
+    });
   });
 });
