@@ -79,7 +79,7 @@ describe('util.getVideoContainers()', () => {
     FS.readFile(PATH.resolve(__dirname, 'files/multiple_page_playlist/page1.html'), (err, data) => {
       ASSERT.ifError(err);
       const containers = UTIL.getVideoContainers(data.toString());
-      ASSERT.equal(containers.length, 100);
+      ASSERT.strictEqual(containers.length, 100);
       done();
     });
   });
@@ -90,7 +90,7 @@ describe('util.getVideoContainers()', () => {
       FS.readFile(PATH.resolve(__dirname, 'files/single_page_playlist/video4.html'), (errOut, dataOut) => {
         ASSERT.ifError(errOut);
         const containers = UTIL.getVideoContainers(dataIn.toString());
-        ASSERT.equal(containers[3], dataOut.toString());
+        ASSERT.strictEqual(containers[3], dataOut.toString());
         done();
       });
     });
@@ -142,7 +142,7 @@ describe('util.buildVideoObject()', () => {
 describe('util.getPlaylistId()', () => {
   it('errors when no string provided', done => {
     UTIL.getPlaylistId(undefined, err => {
-      ASSERT.equal(err.message, 'The link has to be a string');
+      ASSERT.strictEqual(err.message, 'The link has to be a string');
       done();
     });
   });
@@ -151,7 +151,7 @@ describe('util.getPlaylistId()', () => {
     const rawID = 'PL1234567890abcdefghijkl';
     UTIL.getPlaylistId(rawID, (err, id) => {
       ASSERT.ifError(err);
-      ASSERT.equal(id, rawID);
+      ASSERT.strictEqual(id, rawID);
       done();
     });
   });
@@ -160,7 +160,7 @@ describe('util.getPlaylistId()', () => {
     const rawID = 'OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW';
     UTIL.getPlaylistId(rawID, (err, id) => {
       ASSERT.ifError(err);
-      ASSERT.equal(id, rawID);
+      ASSERT.strictEqual(id, rawID);
       done();
     });
   });
@@ -170,7 +170,7 @@ describe('util.getPlaylistId()', () => {
     const playlistID = 'UU0123456789ABCDEFGHIJKLMNOPQRS';
     UTIL.getPlaylistId(rawID, (err, id) => {
       ASSERT.ifError(err);
-      ASSERT.equal(id, playlistID);
+      ASSERT.strictEqual(id, playlistID);
       done();
     });
   });
@@ -178,7 +178,7 @@ describe('util.getPlaylistId()', () => {
   it('parses valid lists from query', done => {
     UTIL.getPlaylistId('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl', (err, id) => {
       ASSERT.ifError(err);
-      ASSERT.equal(id, 'PL1234567890abcdefghijkl');
+      ASSERT.strictEqual(id, 'PL1234567890abcdefghijkl');
       done();
     });
   });
@@ -186,7 +186,7 @@ describe('util.getPlaylistId()', () => {
   it('parses valid lists from query using Promise', done => {
     UTIL.getPlaylistId('https://www.youtube.com/watch?v=U9BwWKXjVaI&list=PL1234567890abcdefghijkl')
       .then(id => {
-        ASSERT.equal(id, 'PL1234567890abcdefghijkl');
+        ASSERT.strictEqual(id, 'PL1234567890abcdefghijkl');
         done();
       })
       .catch(err => {
@@ -197,14 +197,14 @@ describe('util.getPlaylistId()', () => {
   it('parses valid album', done => {
     UTIL.getPlaylistId('https://www.youtube.com/playlist?list=OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY', (err, id) => {
       ASSERT.ifError(err);
-      ASSERT.equal(id, 'OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
+      ASSERT.strictEqual(id, 'OLAK5uy_n7Ax9WNKAuQVwrnzKHsRZtHGzEcxEDVnY');
       done();
     });
   });
 
   it('errors for invalid lists in query', done => {
     UTIL.getPlaylistId('https://www.youtube.com/watch?v=DLzxrzFCyOs&list=', err => {
-      ASSERT.equal(err.message, 'invalid list query in url');
+      ASSERT.strictEqual(err.message, 'invalid list query in url');
       done();
     });
   });
@@ -212,14 +212,14 @@ describe('util.getPlaylistId()', () => {
   it('parses valid channels', done => {
     UTIL.getPlaylistId('https://www.youtube.com/channel/UC1234567890abcdefghijkl', (err, id) => {
       ASSERT.ifError(err);
-      ASSERT.equal(id, 'UU1234567890abcdefghijkl');
+      ASSERT.strictEqual(id, 'UU1234567890abcdefghijkl');
       done();
     });
   });
 
   it('errors for invalid channels', done => {
     UTIL.getPlaylistId('https://www.youtube.com/channel/invalidID', err => {
-      ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/channel/invalidID');
+      ASSERT.strictEqual(err.message, 'Unable to find a id in https://www.youtube.com/channel/invalidID');
       done();
     });
   });
@@ -232,7 +232,7 @@ describe('util.getPlaylistId()', () => {
     UTIL.getPlaylistId('https://www.youtube.com/user/someUser', (err, id) => {
       scope.ifError(err);
       ASSERT.ifError(err);
-      ASSERT.equal(id, 'UUsomeChannelUniqueIdentifier');
+      ASSERT.strictEqual(id, 'UUsomeChannelUniqueIdentifier');
       scope.done();
       done();
     });
@@ -245,7 +245,7 @@ describe('util.getPlaylistId()', () => {
     });
     UTIL.getPlaylistId('https://www.youtube.com/user/a', err => {
       scope.ifError(err);
-      ASSERT.equal(err.message, 'unable to resolve the user: a');
+      ASSERT.strictEqual(err.message, 'unable to resolve the user: a');
       scope.done();
       done();
     });
@@ -253,7 +253,7 @@ describe('util.getPlaylistId()', () => {
 
   it('errors for links nether including channel nor user', done => {
     UTIL.getPlaylistId('https://www.youtube.com/invalidType', err => {
-      ASSERT.equal(err.message, 'Unable to find a id in https://www.youtube.com/invalidType');
+      ASSERT.strictEqual(err.message, 'Unable to find a id in https://www.youtube.com/invalidType');
       done();
     });
   });
@@ -266,7 +266,7 @@ describe('util.getPlaylistId()', () => {
     let resp = UTIL.getPlaylistId('https://www.youtube.com/user/abc').catch(err => {
       scope.ifError(err);
       ASSERT.ok(resp instanceof Promise);
-      ASSERT.equal(err.message, 'unable to resolve the user: abc');
+      ASSERT.strictEqual(err.message, 'unable to resolve the user: abc');
       done();
     });
   });
@@ -281,7 +281,7 @@ describe('util.userToChannelUploadList()', () => {
     UTIL.userToChannelUploadList('someUser', (err, channelID) => {
       scope.ifError(err);
       ASSERT.ifError(err);
-      ASSERT.equal('UUsomeChannelUniqueIdentifier', channelID);
+      ASSERT.strictEqual('UUsomeChannelUniqueIdentifier', channelID);
       scope.done();
       done();
     });
@@ -294,7 +294,7 @@ describe('util.userToChannelUploadList()', () => {
     });
     UTIL.userToChannelUploadList('a', err => {
       scope.ifError(err);
-      ASSERT.equal(err.message, 'unable to resolve the user: a');
+      ASSERT.strictEqual(err.message, 'unable to resolve the user: a');
       scope.done();
       done();
     });
@@ -302,7 +302,7 @@ describe('util.userToChannelUploadList()', () => {
 
   it('errors when user is invalid', done => {
     UTIL.userToChannelUploadList('&&', err => {
-      ASSERT.equal(
+      ASSERT.strictEqual(
         err.message,
         'request failed with err: Nock: Disallowed net connect for "www.youtube.com:443/user/&&"');
       done();
@@ -313,83 +313,85 @@ describe('util.userToChannelUploadList()', () => {
 describe('util.between()', () => {
   it('`left` positioned at the start', () => {
     const rs = UTIL.between('<b>hello there friend</b>', '<b>', '</b>');
-    ASSERT.equal(rs, 'hello there friend');
+    ASSERT.strictEqual(rs, 'hello there friend');
   });
 
   it('somewhere in the middle', () => {
     const rs = UTIL.between('something everything nothing', ' ', ' ');
-    ASSERT.equal(rs, 'everything');
+    ASSERT.strictEqual(rs, 'everything');
   });
 
   it('not found', () => {
     const rs = UTIL.between('oh oh _where_ is it', '<b>', '</b>');
-    ASSERT.equal(rs, '');
+    ASSERT.strictEqual(rs, '');
   });
 
   it('`right` before `left`', () => {
     const rs = UTIL.between('>>> a <this> and that', '<', '>');
-    ASSERT.equal(rs, 'this');
+    ASSERT.strictEqual(rs, 'this');
   });
 
   it('`right` not found', () => {
     const rs = UTIL.between('something [around[ somewhere', '[', ']');
-    ASSERT.equal(rs, '');
+    ASSERT.strictEqual(rs, '');
   });
 });
 
 describe('util.removeHtml()', () => {
   it('remove html', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       UTIL.removeHtml('<a href="/someref">Artist1 - Nova (Official)</a><div class="pl-video-owner">'),
       'Artist1 - Nova (Official)',
     );
   });
 
   it('replace unknown characters', () => {
-    ASSERT.equal(UTIL.removeHtml('Artist1 &amp; Artist2 - Nova (Official)'), 'Artist1 & Artist2 - Nova (Official)');
+    // eslint-disable-next-line max-len
+    ASSERT.strictEqual(UTIL.removeHtml('Artist1 &amp; Artist2 - Nova (Official)'), 'Artist1 & Artist2 - Nova (Official)');
   });
 
   it('keeps newlines', () => {
-    ASSERT.equal(UTIL.removeHtml('Artist1 &amp; Artist2 <br> Nova (Official)'), 'Artist1 & Artist2\nNova (Official)');
+    // eslint-disable-next-line max-len
+    ASSERT.strictEqual(UTIL.removeHtml('Artist1 &amp; Artist2 <br> Nova (Official)'), 'Artist1 & Artist2\nNova (Official)');
   });
 });
 
 describe('util.getClientVersion()', () => {
   it('returns the correct client version', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       UTIL.getClientVersion('yt.setConfig({INNERTUBE_CONTEXT_CLIENT_VERSION: "1.20200716.00.00",GAPI_HINT_PARAMS:'),
       '1.20200716.00.00',
     );
   });
 
   it('returns an empty string if `CLIENT_VERSION` is not capital', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       UTIL.getClientVersion('yt.setConfig({INNERTUBE_CONTEXT_client_version: "1.20200716.00.00",GAPI_HINT_PARAMS:'),
       '',
     );
   });
 
   it('returns an empty string if not found', () => {
-    ASSERT.equal(UTIL.getClientVersion('should not find anything'), '');
+    ASSERT.strictEqual(UTIL.getClientVersion('should not find anything'), '');
   });
 });
 
 describe('util.getClientName()', () => {
   it('returns the correct client name', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       UTIL.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_CLIENT_NAME: 1,'VISITOR_DATA': "Cg`),
       '1',
     );
   });
 
   it('returns an empty string if `CLIENT_NAME` is not capital', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       UTIL.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_client_name: 1,'VISITOR_DATA': "Cg`),
       '',
     );
   });
 
   it('returns an empty string if not found', () => {
-    ASSERT.equal(UTIL.getClientName('should not find anything'), '');
+    ASSERT.strictEqual(UTIL.getClientName('should not find anything'), '');
   });
 });

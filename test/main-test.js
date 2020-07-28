@@ -9,7 +9,7 @@ describe('main()', () => {
   it('try with invalid id', done => {
     let plistID = 'someID';
     YTPL(plistID, err => {
-      ASSERT.equal(err.message, `Unable to find a id in ${plistID}`);
+      ASSERT.strictEqual(err.message, `Unable to find a id in ${plistID}`);
       done();
     });
   });
@@ -21,7 +21,7 @@ describe('main()', () => {
     });
     YTPL(plistID, { limit: Infinity }, err => {
       scope.ifError(err);
-      ASSERT.equal(err.message, 'Status code: 400');
+      ASSERT.strictEqual(err.message, 'Status code: 400');
       scope.done();
       done();
     });
@@ -35,7 +35,7 @@ describe('main()', () => {
     let resp = YTPL(plistID).catch(err => {
       scope.ifError(err);
       ASSERT.ok(resp instanceof Promise);
-      ASSERT.equal(err.message, 'Status code: 400');
+      ASSERT.strictEqual(err.message, 'Status code: 400');
       scope.done();
       done();
     });
@@ -48,7 +48,7 @@ describe('main()', () => {
       pages: [1],
     });
     YTPL(plistID, 'some bullshit').then(resp => {
-      ASSERT.equal(resp.items.length, 100);
+      ASSERT.strictEqual(resp.items.length, 100);
       scope.done();
       done();
     }).catch(err => {
@@ -64,7 +64,7 @@ describe('main()', () => {
       pages: [1, 2],
     });
     YTPL(plistID, { limit: 200 }).then(resp => {
-      ASSERT.equal(resp.items.length, 200);
+      ASSERT.strictEqual(resp.items.length, 200);
       scope.done();
       done();
     }).catch(err => {
@@ -80,7 +80,7 @@ describe('main()', () => {
       pages: [1, 2, 3],
     });
     YTPL(plistID, { limit: 0 }).then(resp => {
-      ASSERT.equal(resp.items.length, 255);
+      ASSERT.strictEqual(resp.items.length, 255);
       scope.done();
       done();
     }).catch(err => {
@@ -96,7 +96,7 @@ describe('main()', () => {
       pages: [1],
     });
     YTPL(plistID, { limit: 'invalid type' }).then(resp => {
-      ASSERT.equal(resp.items.length, 100);
+      ASSERT.strictEqual(resp.items.length, 100);
       scope.done();
       done();
     }).catch(err => {
@@ -125,42 +125,42 @@ describe('main()', () => {
 
 describe('validateURL()', () => {
   it('recognises user link', done => {
-    ASSERT.equal(YTPL.validateURL('www.youtube.com/user/someUser'), true);
+    ASSERT.strictEqual(YTPL.validateURL('www.youtube.com/user/someUser'), true);
     done();
   });
 
   it('recognises channel link', done => {
-    ASSERT.equal(YTPL.validateURL('youtube.com/channel/UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
+    ASSERT.strictEqual(YTPL.validateURL('youtube.com/channel/UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
     done();
   });
 
   it('recognises playlist links', done => {
-    ASSERT.equal(YTPL.validateURL('http://www.youtube.com/playlist?list=PL0123456789ASDFGHJK'), true);
+    ASSERT.strictEqual(YTPL.validateURL('http://www.youtube.com/playlist?list=PL0123456789ASDFGHJK'), true);
     done();
   });
 
   it('recognises playlist id\'s', done => {
-    ASSERT.equal(YTPL.validateURL('PL0123456789ASDFGHJK'), true);
+    ASSERT.strictEqual(YTPL.validateURL('PL0123456789ASDFGHJK'), true);
     done();
   });
 
   it('recognises album id\'s', done => {
-    ASSERT.equal(YTPL.validateURL('OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW'), true);
+    ASSERT.strictEqual(YTPL.validateURL('OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW'), true);
     done();
   });
 
   it('recognises channel id\'s', done => {
-    ASSERT.equal(YTPL.validateURL('UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
+    ASSERT.strictEqual(YTPL.validateURL('UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
     done();
   });
 
   it('fails for videos', done => {
-    ASSERT.equal(YTPL.validateURL('youtube.com/watch?v=asdf1234'), false);
+    ASSERT.strictEqual(YTPL.validateURL('youtube.com/watch?v=asdf1234'), false);
     done();
   });
 
   it('fails for random strings', done => {
-    ASSERT.equal(YTPL.validateURL('asdfagasdas'), false);
+    ASSERT.strictEqual(YTPL.validateURL('asdfagasdas'), false);
     done();
   });
 });

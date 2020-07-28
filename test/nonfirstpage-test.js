@@ -73,7 +73,7 @@ describe('nonfirstpage()', () => {
       (err, dataIn) => {
         scope.ifError(err);
         ASSERT.ifError(err);
-        ASSERT.equal(dataIn.length, 10);
+        ASSERT.strictEqual(dataIn.length, 10);
         scope.done();
         done();
       },
@@ -91,7 +91,7 @@ describe('nonfirstpage()', () => {
       (err, dataIn) => {
         scope.ifError(err);
         ASSERT.ifError(err);
-        ASSERT.equal(dataIn.length, 110);
+        ASSERT.strictEqual(dataIn.length, 110);
         scope.done();
         done();
       },
@@ -109,7 +109,7 @@ describe('nonfirstpage()', () => {
       {},
       err => {
         scope.ifError(err);
-        ASSERT.equal(err.message, 'Status code: 403');
+        ASSERT.strictEqual(err.message, 'Status code: 403');
         scope.done();
         done();
       },
@@ -126,7 +126,7 @@ describe('nonfirstpage()', () => {
       {},
       err => {
         scope.ifError(err);
-        ASSERT.equal(err.message, 'Unexpected token i in JSON at position 0');
+        ASSERT.strictEqual(err.message, 'Unexpected token i in JSON at position 0');
         scope.done();
         done();
       },
