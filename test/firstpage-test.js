@@ -51,7 +51,7 @@ describe('firstpage()', () => {
     FIRSTPAGE(plistID, {}, (err, dataIn) => {
       scope.ifError(err);
       ASSERT.ifError(err);
-      ASSERT.equal(dataIn.nextpage, '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1');
+      ASSERT.strictEqual(dataIn.nextpage, '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1');
       scope.done();
       done();
     });
@@ -83,7 +83,7 @@ describe('firstpage()', () => {
     FIRSTPAGE(plistID, {}, (err, dataIn) => {
       scope.ifError(err);
       ASSERT.ifError(err);
-      ASSERT.equal(dataIn.headers, undefined);
+      ASSERT.strictEqual(dataIn.headers, undefined);
       scope.done();
       done();
     });
@@ -96,7 +96,7 @@ describe('firstpage()', () => {
     });
     FIRSTPAGE(plistID, {}, err => {
       scope.ifError(err);
-      ASSERT.equal(err.message, 'The playlist does not exist.');
+      ASSERT.strictEqual(err.message, 'The playlist does not exist.');
       scope.done();
       done();
     });
