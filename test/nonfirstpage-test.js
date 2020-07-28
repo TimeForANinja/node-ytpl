@@ -71,7 +71,7 @@ describe('nonfirstpage()', () => {
       '/browse_ajax?action_continuation=1&continuation=whatup&getpage=2',
       { limit: 10 },
     ).then(dataIn => {
-      ASSERT.equal(dataIn.length, 10);
+      ASSERT.strictEqual(dataIn.length, 10);
       scope.done();
       done();
     }).catch(errIn => {
@@ -89,7 +89,7 @@ describe('nonfirstpage()', () => {
       '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1',
       { limit: 110 },
     ).then(dataIn => {
-      ASSERT.equal(dataIn.length, 110);
+      ASSERT.strictEqual(dataIn.length, 110);
       scope.done();
       done();
     }).catch(errIn => {
@@ -109,7 +109,7 @@ describe('nonfirstpage()', () => {
       { limit: Infinity },
     ).catch(errIn => {
       scope.ifError(errIn);
-      ASSERT.equal(errIn.message, 'Status code: 403');
+      ASSERT.strictEqual(errIn.message, 'Status code: 403');
       scope.done();
       done();
     });
@@ -125,7 +125,7 @@ describe('nonfirstpage()', () => {
       { limit: Infinity },
     ).catch(errIn => {
       scope.ifError(errIn);
-      ASSERT.equal(errIn.message, 'Unexpected token i in JSON at position 0');
+      ASSERT.strictEqual(errIn.message, 'Unexpected token i in JSON at position 0');
       scope.done();
       done();
     });

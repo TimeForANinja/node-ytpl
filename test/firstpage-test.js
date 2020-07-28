@@ -51,7 +51,7 @@ describe('firstpage()', () => {
       pages: [1],
     });
     FIRSTPAGE(plistID, { limit: Infinity, headers: {} }).then(dataIn => {
-      ASSERT.equal(dataIn.nextpage, '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1');
+      ASSERT.strictEqual(dataIn.nextpage, '/browse_ajax?action_continuation=1&continuation=whatup&getpage=1');
       scope.done();
       done();
     }).catch(errIn => {
@@ -86,7 +86,7 @@ describe('firstpage()', () => {
       page_type: 'single_page',
     });
     FIRSTPAGE(plistID, { limit: Infinity, headers: {} }).then(dataIn => {
-      ASSERT.equal(dataIn.headers, undefined);
+      ASSERT.strictEqual(dataIn.headers, undefined);
       scope.done();
       done();
     }).catch(errIn => {
@@ -102,7 +102,7 @@ describe('firstpage()', () => {
     });
     FIRSTPAGE(plistID, { limit: Infinity, headers: {} }).catch(errIn => {
       scope.ifError(errIn);
-      ASSERT.equal(errIn.message, 'The playlist does not exist.');
+      ASSERT.strictEqual(errIn.message, 'The playlist does not exist.');
       scope.done();
       done();
     });
@@ -111,7 +111,7 @@ describe('firstpage()', () => {
 
 describe('firstpage.getClientVersion()', () => {
   it('returns the correct client version', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       FIRSTPAGE.getClientVersion(
         'yt.setConfig({INNERTUBE_CONTEXT_CLIENT_VERSION: "1.20200716.00.00",GAPI_HINT_PARAMS:',
       ),
@@ -120,7 +120,7 @@ describe('firstpage.getClientVersion()', () => {
   });
 
   it('returns an empty string if `CLIENT_VERSION` is not capital', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       FIRSTPAGE.getClientVersion(
         'yt.setConfig({INNERTUBE_CONTEXT_client_version: "1.20200716.00.00",GAPI_HINT_PARAMS:',
       ),
@@ -129,7 +129,7 @@ describe('firstpage.getClientVersion()', () => {
   });
 
   it('returns an empty string if not found', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       FIRSTPAGE.getClientVersion('should not find anything'),
       '',
     );
@@ -138,20 +138,20 @@ describe('firstpage.getClientVersion()', () => {
 
 describe('firstpage.getClientName()', () => {
   it('returns the correct client name', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       FIRSTPAGE.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_CLIENT_NAME: 1,'VISITOR_DATA': "Cg`),
       '1',
     );
   });
 
   it('returns an empty string if `CLIENT_NAME` is not capital', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       FIRSTPAGE.getClientName(`Y9_11qcW8",INNERTUBE_CONTEXT_client_name: 1,'VISITOR_DATA': "Cg`),
       '',
     );
   });
 
   it('returns an empty string if not found', () => {
-    ASSERT.equal(FIRSTPAGE.getClientName('should not find anything'), '');
+    ASSERT.strictEqual(FIRSTPAGE.getClientName('should not find anything'), '');
   });
 });

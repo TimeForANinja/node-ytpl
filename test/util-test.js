@@ -78,7 +78,7 @@ describe('util.getVideoContainers()', () => {
     FS.readFile(PATH.resolve(__dirname, 'files/multiple_page_playlist/page1.html'), (err, data) => {
       ASSERT.ifError(err);
       const containers = UTIL.getVideoContainers(data.toString());
-      ASSERT.equal(containers.length, 100);
+      ASSERT.strictEqual(containers.length, 100);
       done();
     });
   });
@@ -89,7 +89,7 @@ describe('util.getVideoContainers()', () => {
       FS.readFile(PATH.resolve(__dirname, 'files/single_page_playlist/video4.html'), (errOut, dataOut) => {
         ASSERT.ifError(errOut);
         const containers = UTIL.getVideoContainers(dataIn.toString());
-        ASSERT.equal(containers[3], dataOut.toString());
+        ASSERT.strictEqual(containers[3], dataOut.toString());
         done();
       });
     });
@@ -138,43 +138,43 @@ describe('util.buildVideoObject()', () => {
 describe('util.between()', () => {
   it('`left` positioned at the start', () => {
     const rs = UTIL.between('<b>hello there friend</b>', '<b>', '</b>');
-    ASSERT.equal(rs, 'hello there friend');
+    ASSERT.strictEqual(rs, 'hello there friend');
   });
 
   it('somewhere in the middle', () => {
     const rs = UTIL.between('something everything nothing', ' ', ' ');
-    ASSERT.equal(rs, 'everything');
+    ASSERT.strictEqual(rs, 'everything');
   });
 
   it('not found', () => {
     const rs = UTIL.between('oh oh _where_ is it', '<b>', '</b>');
-    ASSERT.equal(rs, '');
+    ASSERT.strictEqual(rs, '');
   });
 
   it('`right` before `left`', () => {
     const rs = UTIL.between('>>> a <this> and that', '<', '>');
-    ASSERT.equal(rs, 'this');
+    ASSERT.strictEqual(rs, 'this');
   });
 
   it('`right` not found', () => {
     const rs = UTIL.between('something [around[ somewhere', '[', ']');
-    ASSERT.equal(rs, '');
+    ASSERT.strictEqual(rs, '');
   });
 });
 
 describe('util.removeHtml()', () => {
   it('remove html', () => {
-    ASSERT.equal(
+    ASSERT.strictEqual(
       UTIL.removeHtml('<a href="/someref">Artist1 - Nova (Official)</a><div class="pl-video-owner">'),
       'Artist1 - Nova (Official)',
     );
   });
 
   it('replace unknown characters', () => {
-    ASSERT.equal(UTIL.removeHtml('Artist1 &amp; Artist2 - Nova (Official)'), 'Artist1 & Artist2 - Nova (Official)');
+    ASSERT.strictEqual(UTIL.removeHtml('Artist1 &amp; Artist2 - Nova (Official)'), 'Artist1 & Artist2 - Nova (Official)');
   });
 
   it('keeps newlines', () => {
-    ASSERT.equal(UTIL.removeHtml('Artist1 &amp; Artist2 <br> Nova (Official)'), 'Artist1 & Artist2\nNova (Official)');
+    ASSERT.strictEqual(UTIL.removeHtml('Artist1 &amp; Artist2 <br> Nova (Official)'), 'Artist1 & Artist2\nNova (Official)');
   });
 });
