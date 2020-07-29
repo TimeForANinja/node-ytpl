@@ -1,11 +1,11 @@
 declare module 'ytpl' {
   namespace ytpl {
-    type options = {
+    interface options {
       /** Limits the pulled items. */
       limit?: number;
       headers?: { [key: string]: string; };
-    };
-    type result = {
+    }
+    interface result {
       id: string;
       url: string;
       title: string;
@@ -34,7 +34,7 @@ declare module 'ytpl' {
           ref: string;
         };
       }[];
-    };
+    }
 
     /**
      * @param link Link to validate
@@ -52,16 +52,10 @@ declare module 'ytpl' {
   /**
    * @description Attempts to resolve the given playlist id
    * @param id Can be the id of the YT playlist or playlist link or user link (resolves uploaded playlist) or channel link (resolves uploaded playlist)
+   * @param [options] Object with options. limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist
    * @returns Promise that resolves to playlist data;
    */
-  function ytpl(id: string): Promise<ytpl.result>;
-  /**
-   * @description Attempts to resolve the given playlist id
-   * @param id Can be the id of the YT playlist or playlist link or user link (resolves uploaded playlist) or channel link (resolves uploaded playlist)
-   * @param options Object with options. limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist
-   * @returns Promise that resolves to playlist data;
-   */
-  function ytpl(id: string, options: ytpl.options): Promise<ytpl.result>;
+  function ytpl(id: string, options?: ytpl.options): Promise<ytpl.result>;
 
   export = ytpl;
 }
