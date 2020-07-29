@@ -84,7 +84,7 @@ declare module 'ytpl' {
   function ytpl(id: string, options: ytpl.options): Promise<ytpl.result>;
 
   // Helper property to suppress deprecation warnings
-  ytpl.do_warn_deprecate: boolean;
+  let do_warn_deprecate: boolean;
 
   export = ytpl;
 }
