@@ -123,44 +123,49 @@ describe('main()', () => {
   });
 });
 
-describe('main.validateURL()', () => {
+describe('main.validateID()', () => {
   it('recognises user link', done => {
-    ASSERT.strictEqual(YTPL.validateURL('www.youtube.com/user/someUser'), true);
+    ASSERT.strictEqual(YTPL.validateID('www.youtube.com/user/someUser'), true);
     done();
   });
 
   it('recognises channel link', done => {
-    ASSERT.strictEqual(YTPL.validateURL('youtube.com/channel/UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
+    ASSERT.strictEqual(YTPL.validateID('youtube.com/channel/UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
     done();
   });
 
   it('recognises playlist links', done => {
-    ASSERT.strictEqual(YTPL.validateURL('http://www.youtube.com/playlist?list=PL0123456789ASDFGHJK'), true);
+    ASSERT.strictEqual(YTPL.validateID('http://www.youtube.com/playlist?list=PL0123456789ASDFGHJK'), true);
     done();
   });
 
   it('recognises playlist id\'s', done => {
-    ASSERT.strictEqual(YTPL.validateURL('PL0123456789ASDFGHJK'), true);
+    ASSERT.strictEqual(YTPL.validateID('PL0123456789ASDFGHJK'), true);
     done();
   });
 
   it('recognises album id\'s', done => {
-    ASSERT.strictEqual(YTPL.validateURL('OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW'), true);
+    ASSERT.strictEqual(YTPL.validateID('OLAK5uy_0123456789ABCDEFGHIJKLMNOPQRSTUVW'), true);
     done();
   });
 
   it('recognises channel id\'s', done => {
-    ASSERT.strictEqual(YTPL.validateURL('UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
+    ASSERT.strictEqual(YTPL.validateID('UC0123456789ABCDEFGHIJKLMNOPQRS'), true);
+    done();
+  });
+
+  it('recognises channel id\'s', done => {
+    ASSERT.strictEqual(YTPL.validateID('https://youtube.com/c/whatever'), true);
     done();
   });
 
   it('fails for videos', done => {
-    ASSERT.strictEqual(YTPL.validateURL('youtube.com/watch?v=asdf1234'), false);
+    ASSERT.strictEqual(YTPL.validateID('youtube.com/watch?v=asdf1234'), false);
     done();
   });
 
   it('fails for random strings', done => {
-    ASSERT.strictEqual(YTPL.validateURL('asdfagasdas'), false);
+    ASSERT.strictEqual(YTPL.validateID('asdfagasdas'), false);
     done();
   });
 });
@@ -267,7 +272,7 @@ describe('main.getPlaylistID()', () => {
     });
     YTPL.getPlaylistID('https://www.youtube.com/user/a').catch(err => {
       scope.ifError(err);
-      ASSERT.strictEqual(err.message, 'unable to resolve the user: a');
+      ASSERT.strictEqual(err.message, 'unable to resolve the ref: https://www.youtube.com/user/a');
       scope.done();
       done();
     });
@@ -304,7 +309,7 @@ describe('main.userToChannelUploadList()', () => {
     });
     YTPL.getPlaylistID('https://www.youtube.com/user/a').catch(err => {
       scope.ifError(err);
-      ASSERT.strictEqual(err.message, 'unable to resolve the user: a');
+      ASSERT.strictEqual(err.message, 'unable to resolve the ref: https://www.youtube.com/user/a');
       scope.done();
       done();
     });
