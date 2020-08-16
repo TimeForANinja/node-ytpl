@@ -49,9 +49,13 @@ Attempts to resolve the given playlist id
 * returns a Promise when no callback is defined
 * [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output)
 
-### ytpl.validateURL(string)
+### ytpl.validateID(string)
 
 Returns true if able to parse out a (formally) valid playlist ID.
+
+### ytpl.validateURL(string)
+
+Old, deprecated version of validateID
 
 ### ytpl.getPlaylistID(string, [callback])
 
