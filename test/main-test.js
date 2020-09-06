@@ -168,10 +168,27 @@ describe('main.validateID()', () => {
     ASSERT.strictEqual(YTPL.validateID('asdfagasdas'), false);
     done();
   });
+
+  it('fails for empty string', done => {
+    ASSERT.strictEqual(YTPL.validateID('asdfagasdas'), false);
+    done();
+  });
+
+  it('fails for non-string', done => {
+    ASSERT.strictEqual(YTPL.validateID('asdfagasdas'), false);
+    done();
+  });
 });
 
 describe('main.getPlaylistID()', () => {
   it('errors when no string provided', done => {
+    YTPL.getPlaylistID(undefined).catch(err => {
+      ASSERT.strictEqual(err.message, 'The linkOrId has to be a string');
+      done();
+    });
+  });
+
+  it('errors when an empty string provided', done => {
     YTPL.getPlaylistID(undefined).catch(err => {
       ASSERT.strictEqual(err.message, 'The linkOrId has to be a string');
       done();
