@@ -18,9 +18,10 @@ You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
 ```js
 var ytpl = require('ytpl');
 
-ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', function(err, playlist) {
-  if(err) throw err;
+ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg').then(playlist => {
   dosth(playlist);
+}).catch(err => {
+  console.error(err);
 });
 ```
 
