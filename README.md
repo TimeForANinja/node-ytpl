@@ -1,4 +1,5 @@
 # node-ytpl
+
 [![NPM version](https://img.shields.io/npm/v/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
 [![NPM downloads](https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
 [![codecov](https://codecov.io/gh/timeforaninja/node-ytpl/branch/master/graph/badge.svg)](https://codecov.io/gh/timeforaninja/node-ytpl)
@@ -9,6 +10,8 @@
 
 Simple js only module to resolve YouTube playlist ids
 Doesn't need any login or GoogleAPI key
+
+*Forked from [ytpl](https://www.npmjs.com/package/ytsr).*
 
 # Support
 You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
