@@ -34,7 +34,7 @@
     "test": "npm run-script nyc && codecov"
   },
   "dependencies": {
-    "miniget": "^2.1.0"
+    "miniget": "^3.1.0"
   },
   "devDependencies": {
     "assert-diff": "^3.0.1",
