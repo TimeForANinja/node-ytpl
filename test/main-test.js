@@ -42,3 +42,26 @@ describe('YTPL()', () => {
     scope.done();
   });
 });
+
+describe('YTPL.getPlaylistID()', () => {
+  it('errors without parameter', async() => {
+    await ASSERT.rejects(
+      YTPL.getPlaylistID(),
+      /The linkOrId has to be a string/,
+    );
+  });
+
+  it('errors when parameter is an empty string', async() => {
+    await ASSERT.rejects(
+      YTPL.getPlaylistID(''),
+      /The linkOrId has to be a string/,
+    );
+  });
+
+  it('errors when parameter is not a string', async() => {
+    await ASSERT.rejects(
+      YTPL.getPlaylistID(1337),
+      /The linkOrId has to be a string/,
+    );
+  });
+});
