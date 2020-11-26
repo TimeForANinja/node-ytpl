@@ -3,13 +3,20 @@ const ASSERT = require('assert-diff');
 ASSERT.options.strict = true;
 const UTILS = require('../lib/utils.js');
 const FS = require('fs');
+const PATH = require('path');
 
 describe('utils.parseBody()', () => {
-  const data = FS.readFileSync('test/pages/firstpage.html', 'utf8');
+  const data_dir = 'test/pages/';
+  const data = FS.readdirSync(data_dir)
+    .filter(a => a.startsWith('firstpage'))
+    .map(a => PATH.resolve(data_dir, a))
+    .map(x => FS.readFileSync(x, 'utf8'));
 
   it('json is the parsed data', () => {
-    const resp = UTILS.parseBody(data);
-    ASSERT.deepEqual(resp.json, { data: 'data' });
+    for (let i = 0; i < data.length; i++) {
+      const resp = UTILS.parseBody(data[i]);
+      ASSERT.deepEqual(resp.json, { data: 'data' }, `json unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+    }
   });
 
   it('json is null if unable to parse', () => {
@@ -18,34 +25,40 @@ describe('utils.parseBody()', () => {
   });
 
   it('provides a default context object', () => {
-    const resp = UTILS.parseBody(data);
-    ASSERT.deepEqual(resp.context, {
-      client: {
-        utcOffsetMinutes: 0,
-        gl: 'US',
-        hl: 'en',
-        clientName: 'WEB',
-        clientVersion: '<client_version>',
-      },
-      user: {},
-      request: {},
-    });
+    for (let i = 0; i < data.length; i++) {
+      const resp = UTILS.parseBody(data[i]);
+      ASSERT.deepEqual(resp.context, {
+        client: {
+          utcOffsetMinutes: 0,
+          gl: 'US',
+          hl: 'en',
+          clientName: 'WEB',
+          clientVersion: '<client_version>',
+        },
+        user: {},
+        request: {},
+      }, `default context object unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+    }
   });
 
   it('provides a valid apiKey', () => {
-    const resp = UTILS.parseBody(data);
-    ASSERT.equal(resp.apiKey, '<apikey>');
+    for (let i = 0; i < data.length; i++) {
+      const resp = UTILS.parseBody(data[i]);
+      ASSERT.equal(resp.apiKey, '<apikey>', `apiKey unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+    }
   });
 
   it('overwrites hl & gl in context', () => {
-    const resp = UTILS.parseBody(data, { hl: 'AA', gl: 'BB' });
-    ASSERT.deepEqual(resp.context.client, {
-      utcOffsetMinutes: 0,
-      gl: 'BB',
-      hl: 'AA',
-      clientName: 'WEB',
-      clientVersion: '<client_version>',
-    });
+    for (let i = 0; i < data.length; i++) {
+      const resp = UTILS.parseBody(data[i], { hl: 'AA', gl: 'BB' });
+      ASSERT.deepEqual(resp.context.client, {
+        utcOffsetMinutes: 0,
+        gl: 'BB',
+        hl: 'AA',
+        clientName: 'WEB',
+        clientVersion: '<client_version>',
+      }, `context#client unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+    }
   });
 });
 
