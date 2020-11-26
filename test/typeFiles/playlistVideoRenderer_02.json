@@ -1,0 +1,224 @@
+{
+  "specialities": "None",
+  "type": "playlistVideoRenderer",
+  "parsed": {
+    "title": "Live: NBC News NOW - November 26",
+    "index": 1,
+    "id": "69MMACN6omo",
+    "url": "https://www.youtube.com/watch?v=69MMACN6omo&list=playlist_id&index=1",
+    "shortUrl": "https://www.youtube.com/watch?v=69MMACN6omo",
+    "thumbnails": [
+    {
+      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
+      "width": 336,
+      "height": 188
+    },
+    {
+      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD97q91GRaRrLbCWsLK-MdZRbxVCQ",
+      "width": 246,
+      "height": 138
+    },
+    {
+      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLASyPa5JFSGZIi74x68Q3ZdXoQGbw",
+      "width": 196,
+      "height": 110
+    },
+    {
+      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB2v6EarpXWRp4mmKufRgu1UvVfAw",
+      "width": 168,
+      "height": 94
+    }],
+    "bestThumbnail": {
+      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
+      "width": 336,
+      "height": 188
+    },
+    "thumbnail": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
+    "isLive": true,
+    "duration": null,
+    "isPlayable": true
+  },
+  "raw": {
+    "playlistVideoRenderer": {
+      "videoId": "69MMACN6omo",
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB2v6EarpXWRp4mmKufRgu1UvVfAw",
+            "width": 168,
+            "height": 94
+          },
+          {
+            "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLASyPa5JFSGZIi74x68Q3ZdXoQGbw",
+            "width": 196,
+            "height": 110
+          },
+          {
+            "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD97q91GRaRrLbCWsLK-MdZRbxVCQ",
+            "width": 246,
+            "height": 138
+          },
+          {
+            "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
+            "width": 336,
+            "height": 188
+          }
+        ]
+      },
+      "title": {
+        "runs": [
+          {
+            "text": "Live: NBC News NOW - November 26"
+          }
+        ],
+        "accessibility": {
+          "accessibilityData": {
+            "label": "Live: NBC News NOW - November 26 by NBC News"
+          }
+        }
+      },
+      "index": {
+        "simpleText": "1"
+      },
+      "shortBylineText": {
+        "runs": [
+          {
+            "text": "NBC News",
+            "navigationEndpoint": {
+              "clickTrackingParams": "CNsBEMY0GAAiEwiWnLfk-J_tAhUEhHsKHY2rBTA=",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/c/NBCNews",
+                  "webPageType": "WEB_PAGE_TYPE_CHANNEL",
+                  "rootVe": 3611
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "UCeY0bbntWzzVIaj2z3QigXg",
+                "canonicalBaseUrl": "/c/NBCNews"
+              }
+            }
+          }
+        ]
+      },
+      "navigationEndpoint": {
+        "clickTrackingParams": "CNsBEMY0GAAiEwiWnLfk-J_tAhUEhHsKHY2rBTAyCnBscHBfdmlkZW9aJFZMUEwxSmVIVnZ6alhXVlZaZGMzMDBrNmJmelJwUEl1RVY3U5oBAxD6LA==",
+        "commandMetadata": {
+          "webCommandMetadata": {
+            "url": "/watch?v=69MMACN6omo&list=playlist_id&index=1",
+            "webPageType": "WEB_PAGE_TYPE_WATCH",
+            "rootVe": 3832
+          }
+        },
+        "watchEndpoint": {
+          "videoId": "69MMACN6omo",
+          "playlistId": "playlist_id",
+          "index": 0,
+          "params": "OAI%3D"
+        }
+      },
+      "trackingParams": "CNsBEMY0GAAiEwiWnLfk-J_tAhUEhHsKHY2rBTA=",
+      "isPlayable": true,
+      "menu": {
+        "menuRenderer": {
+          "items": [
+            {
+              "menuServiceItemRenderer": {
+                "text": {
+                  "runs": [
+                    {
+                      "text": "Add to queue"
+                    }
+                  ]
+                },
+                "icon": {
+                  "iconType": "ADD_TO_QUEUE_TAIL"
+                },
+                "serviceEndpoint": {
+                  "clickTrackingParams": "CNwBEP6YBBgCIhMIlpy35Pif7QIVBIR7Ch2NqwUw",
+                  "commandMetadata": {
+                    "webCommandMetadata": {
+                      "url": "/service_ajax",
+                      "sendPost": true
+                    }
+                  },
+                  "signalServiceEndpoint": {
+                    "signal": "CLIENT_SIGNAL",
+                    "actions": [
+                      {
+                        "addToPlaylistCommand": {
+                          "openMiniplayer": true,
+                          "videoId": "69MMACN6omo",
+                          "listType": "PLAYLIST_EDIT_LIST_TYPE_QUEUE",
+                          "onCreateListCommand": {
+                            "clickTrackingParams": "CNwBEP6YBBgCIhMIlpy35Pif7QIVBIR7Ch2NqwUw",
+                            "commandMetadata": {
+                              "webCommandMetadata": {
+                                "url": "/service_ajax",
+                                "sendPost": true,
+                                "apiUrl": "/youtubei/v1/playlist/create"
+                              }
+                            },
+                            "createPlaylistServiceEndpoint": {
+                              "videoIds": [
+                                "69MMACN6omo"
+                              ],
+                              "params": "CAQ%3D"
+                            }
+                          },
+                          "videoIds": [
+                            "69MMACN6omo"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "trackingParams": "CNwBEP6YBBgCIhMIlpy35Pif7QIVBIR7Ch2NqwUw"
+              }
+            }
+          ],
+          "trackingParams": "CNsBEMY0GAAiEwiWnLfk-J_tAhUEhHsKHY2rBTA=",
+          "accessibility": {
+            "accessibilityData": {
+              "label": "Action menu"
+            }
+          }
+        }
+      },
+      "thumbnailOverlays": [
+        {
+          "thumbnailOverlayTimeStatusRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "LIVE"
+                }
+              ],
+              "accessibility": {
+                "accessibilityData": {
+                  "label": "LIVE"
+                }
+              }
+            },
+            "style": "LIVE",
+            "icon": {
+              "iconType": "LIVE"
+            }
+          }
+        },
+        {
+          "thumbnailOverlayNowPlayingRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Now playing"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

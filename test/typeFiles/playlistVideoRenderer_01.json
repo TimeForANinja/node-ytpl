@@ -1,0 +1,227 @@
+{
+  "specialities": "None",
+  "type": "playlistVideoRenderer",
+  "parsed": {
+    "title": "32Stitches - Olympus [NCS Release]",
+    "index": 200,
+    "id": "2HhAz5rWzsI",
+    "url": "https://www.youtube.com/watch?v=2HhAz5rWzsI&list=UU_aEa8K-EOJ3D6gOs7HcyNg&index=200",
+    "shortUrl": "https://www.youtube.com/watch?v=2HhAz5rWzsI",
+    "thumbnails": [
+      {
+        "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgtwCx7EHxyvqXtNPKRdyTA_jJ_g",
+        "width": 336,
+        "height": 188
+      },
+      {
+        "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAui6_rpyvg6gJ7yF1U8VPa5nRkJg",
+        "width": 246,
+        "height": 138
+      },
+      {
+        "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCMXybJNyvCYG5QDL6ero1zAmV_UA",
+        "width": 196,
+        "height": 110
+      },
+      {
+        "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCZpsWioQ1NiiQfGT02VfqylI5M-g",
+        "width": 168,
+        "height": 94
+      }
+    ],
+    "bestThumbnail": {
+      "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgtwCx7EHxyvqXtNPKRdyTA_jJ_g",
+      "width": 336,
+      "height": 188
+    },
+    "thumbnail": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgtwCx7EHxyvqXtNPKRdyTA_jJ_g",
+    "isLive": false,
+    "duration": "2:32",
+    "isPlayable": true
+  },
+  "raw": {
+    "playlistVideoRenderer": {
+      "videoId": "2HhAz5rWzsI",
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCZpsWioQ1NiiQfGT02VfqylI5M-g",
+            "width": 168,
+            "height": 94
+          },
+          {
+            "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCMXybJNyvCYG5QDL6ero1zAmV_UA",
+            "width": 196,
+            "height": 110
+          },
+          {
+            "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAui6_rpyvg6gJ7yF1U8VPa5nRkJg",
+            "width": 246,
+            "height": 138
+          },
+          {
+            "url": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgtwCx7EHxyvqXtNPKRdyTA_jJ_g",
+            "width": 336,
+            "height": 188
+          }
+        ]
+      },
+      "title": {
+        "runs": [
+          {
+            "text": "32Stitches - Olympus [NCS Release]"
+          }
+        ],
+        "accessibility": {
+          "accessibilityData": {
+            "label": "32Stitches - Olympus [NCS Release] by NoCopyrightSounds 1 year ago 2 minutes, 32 seconds"
+          }
+        }
+      },
+      "index": {
+        "simpleText": "200"
+      },
+      "shortBylineText": {
+        "runs": [
+          {
+            "text": "NoCopyrightSounds",
+            "navigationEndpoint": {
+              "clickTrackingParams": "CAsQxjQYYyITCNmtlI_3n-0CFYzUEQgdub8N4Q==",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/c/NoCopyrightSounds",
+                  "webPageType": "WEB_PAGE_TYPE_CHANNEL",
+                  "rootVe": 3611
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "UC_aEa8K-EOJ3D6gOs7HcyNg",
+                "canonicalBaseUrl": "/c/NoCopyrightSounds"
+              }
+            }
+          }
+        ]
+      },
+      "lengthText": {
+        "accessibility": {
+          "accessibilityData": {
+            "label": "2 minutes, 32 seconds"
+          }
+        },
+        "simpleText": "2:32"
+      },
+      "navigationEndpoint": {
+        "clickTrackingParams": "CAsQxjQYYyITCNmtlI_3n-0CFYzUEQgdub8N4TIKcGxwcF92aWRlb1oaVkxVVV9hRWE4Sy1FT0ozRDZnT3M3SGN5TmeaAQMQ-iw=",
+        "commandMetadata": {
+          "webCommandMetadata": {
+            "url": "/watch?v=2HhAz5rWzsI&list=UU_aEa8K-EOJ3D6gOs7HcyNg&index=200",
+            "webPageType": "WEB_PAGE_TYPE_WATCH",
+            "rootVe": 3832
+          }
+        },
+        "watchEndpoint": {
+          "videoId": "2HhAz5rWzsI",
+          "playlistId": "UU_aEa8K-EOJ3D6gOs7HcyNg",
+          "index": 199,
+          "params": "OAI%3D"
+        }
+      },
+      "lengthSeconds": "152",
+      "trackingParams": "CAsQxjQYYyITCNmtlI_3n-0CFYzUEQgdub8N4Q==",
+      "isPlayable": true,
+      "menu": {
+        "menuRenderer": {
+          "items": [
+            {
+              "menuServiceItemRenderer": {
+                "text": {
+                  "runs": [
+                    {
+                      "text": "Add to queue"
+                    }
+                  ]
+                },
+                "icon": {
+                  "iconType": "ADD_TO_QUEUE_TAIL"
+                },
+                "serviceEndpoint": {
+                  "clickTrackingParams": "CAwQ_pgEGAIiEwjZrZSP95_tAhWM1BEIHbm_DeE=",
+                  "commandMetadata": {
+                    "webCommandMetadata": {
+                      "url": "/service_ajax",
+                      "sendPost": true
+                    }
+                  },
+                  "signalServiceEndpoint": {
+                    "signal": "CLIENT_SIGNAL",
+                    "actions": [
+                      {
+                        "addToPlaylistCommand": {
+                          "openMiniplayer": true,
+                          "videoId": "2HhAz5rWzsI",
+                          "listType": "PLAYLIST_EDIT_LIST_TYPE_QUEUE",
+                          "onCreateListCommand": {
+                            "clickTrackingParams": "CAwQ_pgEGAIiEwjZrZSP95_tAhWM1BEIHbm_DeE=",
+                            "commandMetadata": {
+                              "webCommandMetadata": {
+                                "url": "/service_ajax",
+                                "sendPost": true,
+                                "apiUrl": "/youtubei/v1/playlist/create"
+                              }
+                            },
+                            "createPlaylistServiceEndpoint": {
+                              "videoIds": [
+                                "2HhAz5rWzsI"
+                              ],
+                              "params": "CAQ%3D"
+                            }
+                          },
+                          "videoIds": [
+                            "2HhAz5rWzsI"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "trackingParams": "CAwQ_pgEGAIiEwjZrZSP95_tAhWM1BEIHbm_DeE="
+              }
+            }
+          ],
+          "trackingParams": "CAsQxjQYYyITCNmtlI_3n-0CFYzUEQgdub8N4Q==",
+          "accessibility": {
+            "accessibilityData": {
+              "label": "Action menu"
+            }
+          }
+        }
+      },
+      "thumbnailOverlays": [
+        {
+          "thumbnailOverlayTimeStatusRenderer": {
+            "text": {
+              "accessibility": {
+                "accessibilityData": {
+                  "label": "2 minutes, 32 seconds"
+                }
+              },
+              "simpleText": "2:32"
+            },
+            "style": "DEFAULT"
+          }
+        },
+        {
+          "thumbnailOverlayNowPlayingRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Now playing"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

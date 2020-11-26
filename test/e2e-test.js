@@ -1,6 +1,7 @@
 /* global describe, it, before, after */
 const YTPL = require('../');
-const ASSERT = require('assert').strict;
+const ASSERT = require('assert-diff');
+ASSERT.options.strict = true;
 const NOCK = require('nock');
 
 describe('e2e', function e2e() {
@@ -14,9 +15,10 @@ describe('e2e', function e2e() {
     NOCK.disableNetConnect();
   });
 
-  it('gets Uploads from NoCopyrightSounds playlist', async() => {
-    const playlist = await YTPL('UU_aEa8K-EOJ3D6gOs7HcyNg');
-    ASSERT.strictEqual(playlist.title, 'Uploads from NoCopyrightSounds');
-    ASSERT.ok(playlist.items.length > 0);
+  it('search for NoCopyrightSounds Uploads', async() => {
+    const search = await YTPL('https://www.youtube.com/user/NoCopyrightSounds', { limit: 125 });
+    ASSERT.equal(search.id, 'UU_aEa8K-EOJ3D6gOs7HcyNg');
+    // Check if limit worked
+    ASSERT.equal(search.items.length, 125);
   });
 });
