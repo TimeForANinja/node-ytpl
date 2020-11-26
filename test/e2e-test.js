@@ -16,9 +16,9 @@ describe('e2e', function e2e() {
   });
 
   it('search for NoCopyrightSounds Uploads', async() => {
-    const search = await YTPL('https://www.youtube.com/user/NoCopyrightSounds', { limit: 125 });
+    const search = await YTPL('https://www.youtube.com/user/NoCopyrightSounds', { limit: 225 });
     ASSERT.equal(search.id, 'UU_aEa8K-EOJ3D6gOs7HcyNg');
     // Check if limit worked
-    ASSERT.equal(search.items.length, 125);
+    ASSERT.equal(search.items.length, 225);
   });
 });
