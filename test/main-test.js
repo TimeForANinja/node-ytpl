@@ -16,7 +16,7 @@ describe('YTPL()', () => {
     NOCK.enableNetConnect();
   });
 
-  it('Errors for unknown Playlists', async () => {
+  it('Errors for unknown Playlists', async() => {
     const scope = NOCK(YT_HOST)
       .get(PLAYLIST_PATH)
       .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
@@ -29,7 +29,7 @@ describe('YTPL()', () => {
     scope.done();
   });
 
-  it('Errors for private Playlists', async () => {
+  it('Errors for private Playlists', async() => {
     const scope = NOCK(YT_HOST)
       .get(PLAYLIST_PATH)
       .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
