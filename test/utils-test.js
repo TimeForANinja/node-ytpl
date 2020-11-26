@@ -15,7 +15,11 @@ describe('utils.parseBody()', () => {
   it('json is the parsed data', () => {
     for (let i = 0; i < data.length; i++) {
       const resp = UTILS.parseBody(data[i]);
-      ASSERT.deepEqual(resp.json, { data: 'data' }, `json unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+      ASSERT.deepEqual(
+        resp.json,
+        { data: 'data' },
+        `json unequal for variation ${(i + 1).toString().padStart(2, '0')}`,
+      );
     }
   });
 
@@ -37,14 +41,14 @@ describe('utils.parseBody()', () => {
         },
         user: {},
         request: {},
-      }, `default context object unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+      }, `default context object unequal for variation ${(i + 1).toString().padStart(2, '0')}`);
     }
   });
 
   it('provides a valid apiKey', () => {
     for (let i = 0; i < data.length; i++) {
       const resp = UTILS.parseBody(data[i]);
-      ASSERT.equal(resp.apiKey, '<apikey>', `apiKey unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+      ASSERT.equal(resp.apiKey, '<apikey>', `apiKey unequal for variation ${(i + 1).toString().padStart(2, '0')}`);
     }
   });
 
@@ -57,7 +61,7 @@ describe('utils.parseBody()', () => {
         hl: 'AA',
         clientName: 'WEB',
         clientVersion: '<client_version>',
-      }, `context#client unequal for variation ${(i+1).toString().padStart(2, '0')}`);
+      }, `context#client unequal for variation ${(i + 1).toString().padStart(2, '0')}`);
     }
   });
 });
