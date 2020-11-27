@@ -36,7 +36,12 @@
     "thumbnail": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
     "isLive": true,
     "duration": null,
-    "isPlayable": true
+    "isPlayable": true,
+    "author": {
+      "ref": "https://www.youtube.com/c/NBCNews",
+      "channelID": "UCeY0bbntWzzVIaj2z3QigXg",
+      "name": "NBC News"
+    }
   },
   "raw": {
     "playlistVideoRenderer": {

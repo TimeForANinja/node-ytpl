@@ -37,7 +37,12 @@
     "thumbnail": "https://i.ytimg.com/vi/2HhAz5rWzsI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgtwCx7EHxyvqXtNPKRdyTA_jJ_g",
     "isLive": false,
     "duration": "2:32",
-    "isPlayable": true
+    "isPlayable": true,
+    "author": {
+      "ref": "https://www.youtube.com/c/NoCopyrightSounds",
+      "channelID": "UC_aEa8K-EOJ3D6gOs7HcyNg",
+      "name": "NoCopyrightSounds"
+    }
   },
   "raw": {
     "playlistVideoRenderer": {
