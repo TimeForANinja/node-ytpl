@@ -3,12 +3,18 @@
   url: 'https://www.youtube.com/playlist?PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
   title: '💥 NCS: Indie Dance',
   estimated_items: 23,
-  views: 3689056,
+  views: 3690241,
   items: [
     {
       title: 'Itro & Kontinuum - Alive [NCS Release]',
+      index: 1,
       id: '-xKKo7t72Tg',
       shortUrl: 'https://www.youtube.com/watch?v=-xKKo7t72Tg',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=-xKKo7t72Tg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=1',
       thumbnails: [
         {
@@ -44,8 +50,14 @@
     },
     {
       title: 'Siren - Run Away [NCS Release]',
+      index: 2,
       id: 'mO79Ll9NIZY',
       shortUrl: 'https://www.youtube.com/watch?v=mO79Ll9NIZY',
+      author: {
+        ref: 'https://www.youtube.com/user/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=mO79Ll9NIZY&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=2',
       thumbnails: [
         {
@@ -81,8 +93,14 @@
     },
     {
       title: 'Kontinuum - First Rain [NCS Release]',
+      index: 3,
       id: 'SKI1P2gEK54',
       shortUrl: 'https://www.youtube.com/watch?v=SKI1P2gEK54',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=SKI1P2gEK54&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=3',
       thumbnails: [
         {
@@ -118,8 +136,14 @@
     },
     {
       title: 'Kontinuum - Aware [NCS Release]',
+      index: 4,
       id: 'BWdZjZV6bEk',
       shortUrl: 'https://www.youtube.com/watch?v=BWdZjZV6bEk',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=BWdZjZV6bEk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=4',
       thumbnails: [
         {
@@ -155,8 +179,14 @@
     },
     {
       title: 'Glude - Breathe [NCS Release]',
+      index: 5,
       id: 'ulPvZFgoGYk',
       shortUrl: 'https://www.youtube.com/watch?v=ulPvZFgoGYk',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=ulPvZFgoGYk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=5',
       thumbnails: [
         {
@@ -192,8 +222,14 @@
     },
     {
       title: 'Konac - Home [NCS Release]',
+      index: 6,
       id: '6TFfIgMeYQ0',
       shortUrl: 'https://www.youtube.com/watch?v=6TFfIgMeYQ0',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=6TFfIgMeYQ0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=6',
       thumbnails: [
         {
@@ -229,8 +265,14 @@
     },
     {
       title: 'JJD - Adventure [NCS Release]',
+      index: 7,
       id: 'f2xGxd9xPYA',
       shortUrl: 'https://www.youtube.com/watch?v=f2xGxd9xPYA',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=f2xGxd9xPYA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=7',
       thumbnails: [
         {
@@ -266,8 +308,14 @@
     },
     {
       title: 'Kontinuum - Lost (feat. Savoi) [JJD Remix] | NCS Release',
+      index: 8,
       id: 'r9OWmGwbRG0',
       shortUrl: 'https://www.youtube.com/watch?v=r9OWmGwbRG0',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=r9OWmGwbRG0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=8',
       thumbnails: [
         {
@@ -303,8 +351,14 @@
     },
     {
       title: 'Oneeva - Platform 9 [NCS Release]',
+      index: 9,
       id: 'exV_Sf_Afso',
       shortUrl: 'https://www.youtube.com/watch?v=exV_Sf_Afso',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=exV_Sf_Afso&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=9',
       thumbnails: [
         {
@@ -340,8 +394,14 @@
     },
     {
       title: 'Icehunt - Hover (feat. Helen Tess) [NCS Release]',
+      index: 10,
       id: 'j51Bixo4ZBE',
       shortUrl: 'https://www.youtube.com/watch?v=j51Bixo4ZBE',
+      author: {
+        ref: 'https://www.youtube.com/user/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=j51Bixo4ZBE&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=10',
       thumbnails: [
         {
@@ -377,8 +437,14 @@
     },
     {
       title: 'Jim Yosef - Link [NCS Release]',
+      index: 11,
       id: '9iHM6X6uUH8',
       shortUrl: 'https://www.youtube.com/watch?v=9iHM6X6uUH8',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=9iHM6X6uUH8&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=11',
       thumbnails: [
         {
@@ -414,8 +480,14 @@
     },
     {
       title: 'Phantom Sage - Our Lives Past (feat. Emily Stiles) [NCS Release]',
+      index: 12,
       id: '5-vMcPR7Bws',
       shortUrl: 'https://www.youtube.com/watch?v=5-vMcPR7Bws',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=5-vMcPR7Bws&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=12',
       thumbnails: [
         {
@@ -451,8 +523,14 @@
     },
     {
       title: 'Phantom Sage - Kingdom (feat. Miss Lina) [NCS Release]',
+      index: 13,
       id: 'ldDCHrBeOlg',
       shortUrl: 'https://www.youtube.com/watch?v=ldDCHrBeOlg',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=ldDCHrBeOlg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=13',
       thumbnails: [
         {
@@ -488,8 +566,14 @@
     },
     {
       title: 'Jim Yosef & Anna Yvette - Linked [NCS Release]',
+      index: 14,
       id: 'yHLtE1wFeRQ',
       shortUrl: 'https://www.youtube.com/watch?v=yHLtE1wFeRQ',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=yHLtE1wFeRQ&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=14',
       thumbnails: [
         {
@@ -525,8 +609,14 @@
     },
     {
       title: 'Cadmium - Be With You (feat. Grant Dawson) [Official Lyric Video]',
+      index: 15,
       id: '4nbLR9mCOXA',
       shortUrl: 'https://www.youtube.com/watch?v=4nbLR9mCOXA',
+      author: {
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
+        name: 'NoCopyrightSounds'
+      },
       url: 'https://www.youtube.com/watch?v=4nbLR9mCOXA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=15',
       thumbnails: [
         {
