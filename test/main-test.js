@@ -64,4 +64,12 @@ describe('YTPL.getPlaylistID()', () => {
       /The linkOrId has to be a string/,
     );
   });
+
+  it('errors for Mixes', async() => {
+    const ref = 'https://www.youtube.com/watch?v=J2X5mJ3HDYE&list=RDQMN70qZKnl_M8&start_radio=1';
+    await ASSERT.rejects(
+      YTPL.getPlaylistID(ref),
+      /Mixes not supported/,
+    );
+  });
 });
