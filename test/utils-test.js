@@ -1,9 +1,10 @@
-/* global describe, it */
+/* global describe, it, before, after */
 const ASSERT = require('assert-diff');
 ASSERT.options.strict = true;
 const UTILS = require('../lib/utils.js');
 const FS = require('fs');
 const PATH = require('path');
+const NOCK = require('nock');
 
 describe('utils.parseBody()', () => {
   const data_dir = 'test/pages/';
@@ -295,5 +296,36 @@ describe('utils.cutAfterJSON()', () => {
     ASSERT.throws(() => {
       UTILS._hidden.cutAfterJSON('{"a": 1,{ "b": 1}');
     }, /Can't cut unsupported JSON \(no matching closing bracket found\)/);
+  });
+});
+
+describe('utils.doPost()', () => {
+  before(() => {
+    NOCK.disableNetConnect();
+  });
+
+  after(() => {
+    NOCK.enableNetConnect();
+  });
+
+  it('uses default parameters', async() => {
+    const receive = { success: true };
+    const scope = NOCK('https://test.com')
+      .post('/api')
+      .reply(200, receive);
+    const resp = await UTILS.doPost('https://test.com/api');
+    ASSERT.deepEqual(resp, receive);
+    scope.done();
+  });
+
+  it('uses method post & passes payloads', async() => {
+    const send = { test: true };
+    const receive = { success: true };
+    const scope = NOCK('https://test.com')
+      .post('/api', JSON.stringify(send))
+      .reply(200, receive);
+    const resp = await UTILS.doPost('https://test.com/api', send);
+    ASSERT.deepEqual(resp, receive);
+    scope.done();
   });
 });
