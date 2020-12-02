@@ -121,6 +121,29 @@ describe('YTPL.getPlaylistID()', () => {
     );
   });
 
+  it('instantly resolves playlists, albums and channels', async() => {
+    // Channel:
+    ASSERT.equal(
+      await YTPL.getPlaylistID('UCqwGaUvq_l0RKszeHhZ5leA'),
+      'UUqwGaUvq_l0RKszeHhZ5leA',
+    );
+    // Album:
+    ASSERT.equal(
+      await YTPL.getPlaylistID('RDqwGaUvq_l0RKszeHhZ5leA'),
+      'RDqwGaUvq_l0RKszeHhZ5leA',
+    );
+    // Playlist:
+    ASSERT.equal(
+      await YTPL.getPlaylistID('PLqwGaUvq_l0RKszeHhZ5leA'),
+      'PLqwGaUvq_l0RKszeHhZ5leA',
+    );
+    // Channel-Uploads-Playlist:
+    ASSERT.equal(
+      await YTPL.getPlaylistID('UUqwGaUvq_l0RKszeHhZ5leA'),
+      'UUqwGaUvq_l0RKszeHhZ5leA',
+    );
+  });
+
   it('resolves user to channel', async() => {
     const scope = NOCK(YT_HOST)
       .get('/user/ASDF')
@@ -151,15 +174,21 @@ describe('YTPL.getPlaylistID()', () => {
       .replyWithFile(200, 'test/pages/userPage.html');
 
     const ref = 'https://www.youtube.com/c/ASDF';
-    const channel = await YTPL.getPlaylistID(ref);
-    ASSERT.equal(channel, 'UUqwGaUvq_l0RKszeHhZ5leA');
+    const uploads = await YTPL.getPlaylistID(ref);
+    ASSERT.equal(uploads, 'UUqwGaUvq_l0RKszeHhZ5leA');
     scope.done();
   });
 
   it('resolves channel to uploads-list', async() => {
     const ref = 'https://www.youtube.com/channel/UCqwGaUvq_l0RKszeHhZ5leA';
-    const channel = await YTPL.getPlaylistID(ref);
-    ASSERT.equal(channel, 'UUqwGaUvq_l0RKszeHhZ5leA');
+    const uploads = await YTPL.getPlaylistID(ref);
+    ASSERT.equal(uploads, 'UUqwGaUvq_l0RKszeHhZ5leA');
+  });
+
+  it('resolves playlist from video', async() => {
+    const ref = 'https://www.youtube.com/watch?v=ASDF&list=UUqwGaUvq_l0RKszeHhZ5leA';
+    const uploads = await YTPL.getPlaylistID(ref);
+    ASSERT.equal(uploads, 'UUqwGaUvq_l0RKszeHhZ5leA');
   });
 });
 
@@ -206,18 +235,34 @@ describe('YTPL.validateID()', () => {
     ASSERT.equal(YTPL.validateID(ref), false);
   });
 
+  it('true for raw playlist, album and channel ids', () => {
+    // Channel:
+    ASSERT.ok(YTPL.validateID('UCqwGaUvq_l0RKszeHhZ5leA'));
+    // Album:
+    ASSERT.ok(YTPL.validateID('RDqwGaUvq_l0RKszeHhZ5leA'));
+    // Playlist:
+    ASSERT.ok(YTPL.validateID('PLqwGaUvq_l0RKszeHhZ5leA'));
+    // Channel-Uploads-Playlist:
+    ASSERT.ok(YTPL.validateID('UUqwGaUvq_l0RKszeHhZ5leA'));
+  });
+
   it('true for users', () => {
     const ref = 'https://www.youtube.com/user/ASDF';
-    ASSERT.equal(YTPL.validateID(ref), true);
+    ASSERT.ok(YTPL.validateID(ref));
   });
 
   it('true for short-channels', () => {
     const ref = 'https://www.youtube.com/c/ASDF';
-    ASSERT.equal(YTPL.validateID(ref), true);
+    ASSERT.ok(YTPL.validateID(ref));
   });
 
   it('true for regular channels', () => {
     const ref = 'https://www.youtube.com/channel/UCqwGaUvq_l0RKszeHhZ5leA';
-    ASSERT.equal(YTPL.validateID(ref), true);
+    ASSERT.ok(YTPL.validateID(ref));
+  });
+
+  it('true for video inside playlist', () => {
+    const ref = 'https://www.youtube.com/watch?v=ASDF&list=UUqwGaUvq_l0RKszeHhZ5leA';
+    ASSERT.ok(YTPL.validateID(ref));
   });
 });
