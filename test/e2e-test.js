@@ -36,4 +36,10 @@ describe('e2e', function e2e() {
       /API-Error: The playlist does not exist\./,
     );
   });
+
+  it('resolves user to channel', async() => {
+    const ref = 'https://www.youtube.com/user/PietSmittie';
+    const uploads = await YTPL.getPlaylistID(ref);
+    ASSERT.equal(uploads, 'UUqwGaUvq_l0RKszeHhZ5leA');
+  });
 });
