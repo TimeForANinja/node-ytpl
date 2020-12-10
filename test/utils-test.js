@@ -299,25 +299,6 @@ describe('utils.cutAfterJSON()', () => {
   });
 });
 
-// Property of https://github.com/fent/node-m3u8stream/blob/master/test/parse-time-test.ts
-describe('parse-time', () => {
-  it('Time format 00:00:00.000', () => {
-    ASSERT.equal(UTILS.humanTime('25.000'), 25000);
-    ASSERT.equal(UTILS.humanTime('05:30'), (60000 * 5) + 30000);
-    ASSERT.equal(UTILS.humanTime('01:05:30'), (60000 * 60) + (60000 * 5) + 30000);
-    ASSERT.equal(UTILS.humanTime('1:30.123'), 60000 + 30000 + 123);
-  });
-
-  it('Defaults to NaN', () => {
-    ASSERT.equal(UTILS.humanTime('asdf'), NaN);
-  });
-
-  it('No format', () => {
-    ASSERT.equal(UTILS.humanTime('1000'), 1000);
-    ASSERT.equal(UTILS.humanTime(200), 200);
-  });
-});
-
 describe('utils.doPost()', () => {
   before(() => {
     NOCK.disableNetConnect();
