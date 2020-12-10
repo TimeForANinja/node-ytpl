@@ -6,6 +6,7 @@ const NOCK = require('nock');
 
 const YT_HOST = 'https://www.youtube.com';
 const PLAYLIST_PATH = '/playlist';
+const API_PATH = '/youtubei/v1/browse';
 
 describe('YTPL()', () => {
   before(() => {
@@ -40,6 +41,139 @@ describe('YTPL()', () => {
       /API-Error: This playlist is private\./,
     );
     scope.done();
+  });
+
+  it('parse first page', async() => {
+    const scope = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+      .replyWithFile(200, 'test/pages/firstpage_01.html');
+
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { limit: 40 });
+    ASSERT.equal(resp.items.length, 40);
+    ASSERT.equal(resp.continuation[0], '<apikey>');
+    ASSERT.equal(resp.continuation[1], '<firstContinuationToken>');
+    ASSERT.equal(resp.continuation[2].client.clientVersion, '<client_version>');
+    scope.done();
+  });
+
+  it('continues with second page', async() => {
+    const scope1 = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+      .replyWithFile(200, 'test/pages/firstpage_01.html');
+
+    const scope2 = NOCK(YT_HOST)
+      .post(API_PATH, () => true)
+      .query({ key: '<apikey>' })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { limit: 110 });
+    ASSERT.equal(resp.items.length, 110);
+    ASSERT.equal(resp.continuation[0], '<apikey>');
+    ASSERT.equal(resp.continuation[1], '<secondContinuationToken>');
+    ASSERT.equal(resp.continuation[2].client.clientVersion, '<client_version>');
+    scope1.done();
+    scope2.done();
+  });
+});
+
+describe('YTPL.continue()', () => {
+  before(() => {
+    NOCK.disableNetConnect();
+  });
+
+  after(() => {
+    NOCK.enableNetConnect();
+  });
+
+  it('Errors if param is no array of length 4', async() => {
+    await ASSERT.rejects(
+      YTPL.continue(null),
+      /invalid continuation array/,
+    );
+  });
+
+  it('Errors if param is not of length 4', async() => {
+    await ASSERT.rejects(
+      YTPL.continue([1, 2, 3]),
+      /invalid continuation array/,
+    );
+  });
+
+  it('Errors for invalid apiKey', async() => {
+    await ASSERT.rejects(
+      YTPL.continue([1, null, null, null]),
+      /invalid apiKey/,
+    );
+  });
+
+  it('Errors for invalid token', async() => {
+    await ASSERT.rejects(
+      YTPL.continue(['null', 2, null, null]),
+      /invalid token/,
+    );
+  });
+
+  it('Errors for invalid context', async() => {
+    await ASSERT.rejects(
+      YTPL.continue(['null', 'null', 3, null]),
+      /invalid context/,
+    );
+  });
+
+  it('Errors for invalid opts', async() => {
+    await ASSERT.rejects(
+      YTPL.continue(['null', 'null', {}, 4]),
+      /invalid opts/,
+    );
+  });
+
+  it('does an api request using the provided information', async() => {
+    const opts = [
+      'apiKey',
+      'token',
+      { context: 'context' },
+      { requestOptions: { headers: { test: 'test' } }, limit: 10 },
+    ];
+    const body = { context: opts[2], continuation: opts[1] };
+    const scope = NOCK(YT_HOST, { reqheaders: opts[3].headers })
+      .post(API_PATH, JSON.stringify(body))
+      .query({ key: opts[0] })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const { items, continuation } = await YTPL.continue(opts);
+    ASSERT.equal(items.length, 10);
+    ASSERT.ok(Array.isArray(continuation));
+    ASSERT.equal(continuation[1], '<secondContinuationToken>');
+    scope.done();
+  });
+
+  it('does an api request and fetches the next page', async() => {
+    const opts = [
+      'apiKey',
+      'token',
+      { context: 'context' },
+      { requestOptions: { headers: { test: 'test' } }, limit: 110 },
+    ];
+
+    const body1 = { context: opts[2], continuation: opts[1] };
+    const scope1 = NOCK(YT_HOST, { reqheaders: opts[3].headers })
+      .post(API_PATH, JSON.stringify(body1))
+      .query({ key: opts[0] })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const body2 = { context: opts[2], continuation: '<secondContinuationToken>' };
+    const scope2 = NOCK(YT_HOST, { reqheaders: opts[3].requestOptions.headers })
+      .post(API_PATH, JSON.stringify(body2))
+      .query({ key: opts[0] })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const { items } = await YTPL.continue(opts);
+    ASSERT.equal(items.length, 110);
+    ASSERT.deepEqual(items.slice(0, 10), items.slice(100));
+    scope1.done();
+    scope2.done();
   });
 });
 

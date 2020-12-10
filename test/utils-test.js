@@ -9,7 +9,7 @@ const NOCK = require('nock');
 describe('utils.parseBody()', () => {
   const data_dir = 'test/pages/';
   const data = FS.readdirSync(data_dir)
-    .filter(a => a.startsWith('firstpage'))
+    .filter(a => a.startsWith('findJSON'))
     .map(a => PATH.resolve(data_dir, a))
     .map(x => FS.readFileSync(x, 'utf8'));
 
