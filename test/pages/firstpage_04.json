@@ -1,0 +1,66 @@
+{
+  "id": "PL0123456789ABCDEFGHIJKLMNOPQRSTUV",
+  "url": "https://www.youtube.com/playlist?PL0123456789ABCDEFGHIJKLMNOPQRSTUV",
+  "title": "電視劇《錦繡未央》主題曲 (The Princess Weiyoung Theme Song)",
+  "estimated_items": 4,
+  "views": 4413,
+  "thumbnails": [
+    {
+      "url": "https://i.ytimg.com/vi/HvJ21S5qEjQ/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLASTVBzqWw5U10WUuVluN0RuyFTQA",
+      "width": 336,
+      "height": 188
+    },
+    {
+      "url": "https://i.ytimg.com/vi/HvJ21S5qEjQ/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC6XfZczTVDXOD-b68ulqjhTH-4_w",
+      "width": 246,
+      "height": 138
+    },
+    {
+      "url": "https://i.ytimg.com/vi/HvJ21S5qEjQ/hqdefault.jpg?sqp=-oaymwEWCMQBEG5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLAPhkej_OMVau3w5ezy8ayrTECiAA",
+      "width": 196,
+      "height": 110
+    },
+    {
+      "url": "https://i.ytimg.com/vi/HvJ21S5qEjQ/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLCAGygEJztiYrVyasdFYtRzm3AaCg",
+      "width": 168,
+      "height": 94
+    }
+  ],
+  "bestThumbnail": {
+    "url": "https://i.ytimg.com/vi/HvJ21S5qEjQ/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLASTVBzqWw5U10WUuVluN0RuyFTQA",
+    "width": 336,
+    "height": 188
+  },
+  "lastUpdated": "Last updated on Nov 16, 2020",
+  "description": null,
+  "visibility": "everyone",
+  "author": {
+    "name": "BELLA PING MUSIC CHANNEL",
+    "url": "https://www.youtube.com/c/BELLAPING",
+    "avatars": [
+      {
+        "url": "https://yt3.ggpht.com/ytc/AAUvwnjT5006ntjcDeWIbN4OXrwHDlJlMJAlqkZ7W0gS2Q=s176-c-k-c0x00ffffff-no-rj",
+        "width": 176,
+        "height": 176
+      },
+      {
+        "url": "https://yt3.ggpht.com/ytc/AAUvwnjT5006ntjcDeWIbN4OXrwHDlJlMJAlqkZ7W0gS2Q=s88-c-k-c0x00ffffff-no-rj",
+        "width": 88,
+        "height": 88
+      },
+      {
+        "url": "https://yt3.ggpht.com/ytc/AAUvwnjT5006ntjcDeWIbN4OXrwHDlJlMJAlqkZ7W0gS2Q=s48-c-k-c0x00ffffff-no-rj",
+        "width": 48,
+        "height": 48
+      }
+    ],
+    "bestAvatar": {
+      "url": "https://yt3.ggpht.com/ytc/AAUvwnjT5006ntjcDeWIbN4OXrwHDlJlMJAlqkZ7W0gS2Q=s176-c-k-c0x00ffffff-no-rj",
+      "width": 176,
+      "height": 176
+    },
+    "channelID": "UCc0vR4YlrUprAX_AMylgOvg"
+  },
+  "items": 4,
+  "continuation": null
+}
