@@ -75,7 +75,7 @@ describe('YTPL()', () => {
     scope2.done();
   });
 
-  it('returns no contination with limit', async() => {
+  it('returns no continuation with limit', async() => {
     const scope = NOCK(YT_HOST)
       .get(PLAYLIST_PATH)
       .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
@@ -135,7 +135,7 @@ describe('YTPL()', () => {
       .replyWithFile(200, 'test/pages/firstpage_01.html');
 
     const scope2 = NOCK(YT_HOST)
-      .post(API_PATH, () => true)
+      .post(API_PATH, body => body.continuation === '<firstContinuationToken>')
       .query({ key: '<apikey>' })
       .replyWithFile(200, 'test/pages/secondpage_01.html');
 
