@@ -5,8 +5,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/timeforaninja/node-ytpl/badge.svg)](https://snyk.io/test/github/timeforaninja/node-ytpl)
 [![Discord](https://img.shields.io/discord/484464227067887645.svg)](https://discord.gg/V3vSCs7)
 
-[![NPM info](https://nodei.co/npm/ytpl.png?downloads=true&stars=true)](https://nodei.co/npm/ytpl/)
-
 Simple js only module to resolve YouTube playlist ids
 Doesn't need any login or GoogleAPI key
 
@@ -36,10 +34,10 @@ Attempts to resolve the given playlist id
 * `options`
     * object with options
     * possible settings:
-    * limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
-    * pages[Number] -> limits the pulled pages, pages contain 100 items, set to Infinity to get the whole playlist - numbers <1 result in the default limit being used - overwrites limit
     * gl[String] -> 2-Digit Code of a Country, defaults to `US` - Allows for localisation of the request
     * hl[String] -> 2-Digit Code for a Language, defaults to `en` - Allows for localisation of the request
+    * limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
+    * pages[Number] -> limits the pulled pages, pages contain 100 items, set to Infinity to get the whole playlist - numbers <1 result in the default limit being used - overwrites limit
     * requestOptions[Object] -> Additional parameters to passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
 
 * returns a Promise
