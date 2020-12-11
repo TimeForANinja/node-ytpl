@@ -36,8 +36,8 @@ declare module 'ytpl' {
       title: string;
       estimated_items: number;
       views: number;
-      thumbnails: image[],
-      bestThumbnail: image,
+      thumbnails: image[];
+      bestThumbnail: image;
       lastUpdated: string;
       description: string | null;
       visibility: 'unlisted' | 'everyone';
@@ -52,8 +52,8 @@ declare module 'ytpl' {
       continuation: [string, string, object, object] | null;
     }
     interface continueResult {
-      continuation: [string, string, object, object] | null,
-      items: item[],
+      continuation: [string, string, object, object] | null;
+      items: item[];
     }
 
     /**
