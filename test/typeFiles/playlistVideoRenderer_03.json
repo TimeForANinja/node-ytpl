@@ -4,19 +4,14 @@
   "parsed": {
     "title": "شمة حمدان -  دامك معي (حصرياً) | 2020",
     "index": -1,
-    "id": "2HhAz5rWzsI",
+    "id": "nKqyhUD_aTo",
     "url": "https://www.youtube.com/watch?v=nKqyhUD_aTo&list=RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs",
     "shortUrl": "https://www.youtube.com/watch?v=nKqyhUD_aTo",
     "thumbnails": [
       {
-        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB1Whx-gxnooyhWeywx5eC0yBUcFg",
-        "width": 168,
-        "height": 94
-      },
-      {
-        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAjmdzdyENC55CG-qjRuyYwxw_ruw",
-        "width": 196,
-        "height": 110
+        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCuRFgymKezGr0VqTzLgunTCo5etw",
+        "width": 336,
+        "height": 188
       },
       {
         "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDVoy5ie3n7jKlMphL8a8Aa03-8cQ",
@@ -24,9 +19,14 @@
         "height": 138
       },
       {
-        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCuRFgymKezGr0VqTzLgunTCo5etw",
-        "width": 336,
-        "height": 188
+        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAjmdzdyENC55CG-qjRuyYwxw_ruw",
+        "width": 196,
+        "height": 110
+      },
+      {
+        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB1Whx-gxnooyhWeywx5eC0yBUcFg",
+        "width": 168,
+        "height": 94
       }
     ],
     "bestThumbnail": {
@@ -34,9 +34,9 @@
       "width": 336,
       "height": 188
     },
-    "thumbnail": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCuRFgymKezGr0VqTzLgunTCo5etw",
     "isLive": false,
     "duration": "3:40",
+    "durationSec": 220,
     "isPlayable": true,
     "author": {
       "ref": "https://www.youtube.com/channel/UCxXUZhoUGRAQkZfysG646KA",

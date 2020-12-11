@@ -197,6 +197,13 @@ describe('utils.checkArgs()', () => {
     UTILS.checkArgs('searchString', opts);
     ASSERT.deepEqual(opts.requestOptions, { test: 'test' });
   });
+
+  it('removes limit if pages are provided', () => {
+    const opts = { hl: 'hl', gl: 'gl', limit: 123, pages: 2, requestOptions: { test: 'test' } };
+    const r = UTILS.checkArgs('searchString', opts);
+    ASSERT.equal(r.limit, Infinity);
+    ASSERT.equal(r.pages, 2);
+  });
 });
 
 describe('utils.jsonAfter()', () => {

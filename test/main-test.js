@@ -3,6 +3,8 @@ const ASSERT = require('assert-diff');
 ASSERT.options.strict = true;
 const YTPL = require('../');
 const NOCK = require('nock');
+const PATH = require('path');
+const FS = require('fs');
 
 const YT_HOST = 'https://www.youtube.com';
 const PLAYLIST_PATH = '/playlist';
@@ -43,7 +45,7 @@ describe('YTPL()', () => {
     scope.done();
   });
 
-  it('parse first page', async() => {
+  it('parses first page using limit', async() => {
     const scope = NOCK(YT_HOST)
       .get(PLAYLIST_PATH)
       .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
@@ -51,6 +53,75 @@ describe('YTPL()', () => {
 
     const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { limit: 40 });
     ASSERT.equal(resp.items.length, 40);
+    ASSERT.equal(resp.continuation, null);
+    scope.done();
+  });
+
+  it('parses multiple pages using limit', async() => {
+    const scope1 = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+      .replyWithFile(200, 'test/pages/firstpage_01.html');
+
+    const scope2 = NOCK(YT_HOST)
+      .post(API_PATH, () => true)
+      .query({ key: '<apikey>' })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { limit: 110 });
+    ASSERT.equal(resp.items.length, 110);
+    ASSERT.equal(resp.continuation, null);
+    scope1.done();
+    scope2.done();
+  });
+
+  it('returns no contination with limit', async() => {
+    const scope = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+      .replyWithFile(200, 'test/pages/firstpage_01.html');
+
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { limit: 40 });
+    ASSERT.equal(resp.items.length, 40);
+    ASSERT.equal(resp.continuation, null);
+    scope.done();
+  });
+
+  it('compare first page', async() => {
+    const data_dir = 'test/pages/';
+    const data = Array.from(
+      new Set(FS.readdirSync('./')
+        .filter(a => a.startsWith('firstpage'))
+        .map(a => a.substr(0, a.length - PATH.extname(a).length))))
+      .map(a => PATH.resolve(data_dir, a))
+      .map(a => ({ in: `${a}.html`, out: `${a}.json` }));
+
+    for (let i = 0; i < data.length; i++) {
+      const scope = NOCK(YT_HOST)
+        .get(PLAYLIST_PATH)
+        .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+        .replyWithFile(200, data[i].in);
+      const parsed = JSON.parse(FS.readFileSync(data[i].out, 'utf8'));
+
+      const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { limit: 40 });
+      resp.items = resp.items.length;
+      ASSERT.deepEqual(
+        resp,
+        parsed,
+        `failed to parse page variation ${(i + 1).toString().padStart(2, '0')}`,
+      );
+      scope.done();
+    }
+  });
+
+  it('parse first page', async() => {
+    const scope = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+      .replyWithFile(200, 'test/pages/firstpage_01.html');
+
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { pages: 1 });
+    ASSERT.equal(resp.items.length, 100);
     ASSERT.equal(resp.continuation[0], '<apikey>');
     ASSERT.equal(resp.continuation[1], '<firstContinuationToken>');
     ASSERT.equal(resp.continuation[2].client.clientVersion, '<client_version>');
@@ -68,13 +139,36 @@ describe('YTPL()', () => {
       .query({ key: '<apikey>' })
       .replyWithFile(200, 'test/pages/secondpage_01.html');
 
-    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { limit: 110 });
-    ASSERT.equal(resp.items.length, 110);
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { pages: 2 });
+    ASSERT.equal(resp.items.length, 200);
     ASSERT.equal(resp.continuation[0], '<apikey>');
     ASSERT.equal(resp.continuation[1], '<secondContinuationToken>');
     ASSERT.equal(resp.continuation[2].client.clientVersion, '<client_version>');
     scope1.done();
     scope2.done();
+  });
+
+  it('continues with second page recursively', async() => {
+    const scope1 = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+      .replyWithFile(200, 'test/pages/firstpage_01.html');
+
+    const scope2 = NOCK(YT_HOST)
+      .post(API_PATH, body => body.continuation === '<firstContinuationToken>')
+      .query({ key: '<apikey>' })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const scope3 = NOCK(YT_HOST)
+      .post(API_PATH, body => body.continuation === '<secondContinuationToken>')
+      .query({ key: '<apikey>' })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { pages: 3 });
+    ASSERT.equal(resp.items.length, 300);
+    scope1.done();
+    scope2.done();
+    scope3.done();
   });
 });
 
@@ -89,43 +183,50 @@ describe('YTPL.continue()', () => {
 
   it('Errors if param is no array of length 4', async() => {
     await ASSERT.rejects(
-      YTPL.continue(null),
+      YTPL.continueReq(null),
       /invalid continuation array/,
     );
   });
 
   it('Errors if param is not of length 4', async() => {
     await ASSERT.rejects(
-      YTPL.continue([1, 2, 3]),
+      YTPL.continueReq([1, 2, 3]),
       /invalid continuation array/,
     );
   });
 
   it('Errors for invalid apiKey', async() => {
     await ASSERT.rejects(
-      YTPL.continue([1, null, null, null]),
+      YTPL.continueReq([1, null, null, null]),
       /invalid apiKey/,
     );
   });
 
   it('Errors for invalid token', async() => {
     await ASSERT.rejects(
-      YTPL.continue(['null', 2, null, null]),
+      YTPL.continueReq(['null', 2, null, null]),
       /invalid token/,
     );
   });
 
   it('Errors for invalid context', async() => {
     await ASSERT.rejects(
-      YTPL.continue(['null', 'null', 3, null]),
+      YTPL.continueReq(['null', 'null', 3, null]),
       /invalid context/,
     );
   });
 
   it('Errors for invalid opts', async() => {
     await ASSERT.rejects(
-      YTPL.continue(['null', 'null', {}, 4]),
+      YTPL.continueReq(['null', 'null', {}, 4]),
       /invalid opts/,
+    );
+  });
+
+  it('Errors for non-paged requests', async() => {
+    await ASSERT.rejects(
+      YTPL.continueReq(['null', 'null', {}, { limit: 3 }]),
+      /continueReq only allowed for paged requests/,
     );
   });
 
@@ -134,7 +235,7 @@ describe('YTPL.continue()', () => {
       'apiKey',
       'token',
       { context: 'context' },
-      { requestOptions: { headers: { test: 'test' } }, limit: 10 },
+      { requestOptions: { headers: { test: 'test' } } },
     ];
     const body = { context: opts[2], continuation: opts[1] };
     const scope = NOCK(YT_HOST, { reqheaders: opts[3].headers })
@@ -142,38 +243,11 @@ describe('YTPL.continue()', () => {
       .query({ key: opts[0] })
       .replyWithFile(200, 'test/pages/secondpage_01.html');
 
-    const { items, continuation } = await YTPL.continue(opts);
-    ASSERT.equal(items.length, 10);
+    const { items, continuation } = await YTPL.continueReq(opts);
+    ASSERT.equal(items.length, 100);
     ASSERT.ok(Array.isArray(continuation));
     ASSERT.equal(continuation[1], '<secondContinuationToken>');
     scope.done();
-  });
-
-  it('does an api request and fetches the next page', async() => {
-    const opts = [
-      'apiKey',
-      'token',
-      { context: 'context' },
-      { requestOptions: { headers: { test: 'test' } }, limit: 110 },
-    ];
-
-    const body1 = { context: opts[2], continuation: opts[1] };
-    const scope1 = NOCK(YT_HOST, { reqheaders: opts[3].headers })
-      .post(API_PATH, JSON.stringify(body1))
-      .query({ key: opts[0] })
-      .replyWithFile(200, 'test/pages/secondpage_01.html');
-
-    const body2 = { context: opts[2], continuation: '<secondContinuationToken>' };
-    const scope2 = NOCK(YT_HOST, { reqheaders: opts[3].requestOptions.headers })
-      .post(API_PATH, JSON.stringify(body2))
-      .query({ key: opts[0] })
-      .replyWithFile(200, 'test/pages/secondpage_01.html');
-
-    const { items } = await YTPL.continue(opts);
-    ASSERT.equal(items.length, 110);
-    ASSERT.deepEqual(items.slice(0, 10), items.slice(100));
-    scope1.done();
-    scope2.done();
   });
 });
 

@@ -1,0 +1,35 @@
+{
+  "id": "PL0123456789ABCDEFGHIJKLMNOPQRSTUV",
+  "url": "https://www.youtube.com/playlist?PL0123456789ABCDEFGHIJKLMNOPQRSTUV",
+  "title": "Khaleeji Hotlist",
+  "estimated_items": 73,
+  "views": 0,
+  "thumbnails": [
+    {
+      "url": "https://i9.ytimg.com/s_p/RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs/maxresdefault.jpg?sqp=CJiXy_4Fir7X7AMGCL3wyf4F&rs=AOn4CLDvLklMOGueL59dfjCCZxtIMyBJLQ&v=1607628861",
+      "width": 1200,
+      "height": 1200
+    },
+    {
+      "url": "https://i9.ytimg.com/s_p/RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs/sddefault.jpg?sqp=CJiXy_4Fir7X7AMGCL3wyf4F&rs=AOn4CLC4Airlm_8PQxRqEU9LzGRJzZVqLQ&v=1607628861",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "url": "https://i9.ytimg.com/s_p/RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs/mqdefault.jpg?sqp=CJiXy_4Fir7X7AMGCL3wyf4F&rs=AOn4CLBSHu3OgyppXmn64V5IqN3g9zvdpg&v=1607628861",
+      "width": 180,
+      "height": 180
+    }
+  ],
+  "bestThumbnail": {
+    "url": "https://i9.ytimg.com/s_p/RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs/maxresdefault.jpg?sqp=CJiXy_4Fir7X7AMGCL3wyf4F&rs=AOn4CLDvLklMOGueL59dfjCCZxtIMyBJLQ&v=1607628861",
+    "width": 1200,
+    "height": 1200
+  },
+  "lastUpdated": "Updated today",
+  "description": "The latest and greatest Khaleeji songs to hit your eardrums. Cover: Majid Al Mohandis",
+  "visibility": "everyone",
+  "author": null,
+  "continuation": null,
+  "items": 30
+}
