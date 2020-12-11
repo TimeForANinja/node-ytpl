@@ -18,11 +18,8 @@ You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
 ```js
 var ytpl = require('ytpl');
 
-ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg').then(playlist => {
-  dosth(playlist);
-}).catch(err => {
-  console.error(err);
-});
+const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg')
+dosth(playlist);
 ```
 
 
@@ -34,16 +31,35 @@ Attempts to resolve the given playlist id
 * `id`
     * id of the yt-playlist
     * or playlist link
-    * or user link (resolves uploaded playlist)
-    * or channel link (resolves uploaded playlist)
+    * or user link (resolves to uploaded playlist)
+    * or channel link (resolves to uploaded playlist)
 * `options`
     * object with options
     * possible settings:
     * limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
-    * All additional parameters will get passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
+    * pages[Number] -> limits the pulled pages, pages contain 100 items, set to Infinity to get the whole playlist - numbers <1 result in the default limit being used - overwrites limit
+    * gl[String] -> 2-Digit Code of a Country, defaults to `US` - Allows for localisation of the request
+    * hl[String] -> 2-Digit Code for a Language, defaults to `en` - Allows for localisation of the request
+    * requestOptions[Object] -> Additional parameters to passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
 
 * returns a Promise
 * [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output)
+
+### ytpl.continueReq(continuationData)
+Continues a previous request by pulling yet another page.  
+The previous request had to be done using `pages` limitation.
+
+#### Usage
+```js
+var ytpl = require('ytpl');
+
+const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg')
+display(playlist.items);
+const r2 = ytpl.continueReq(playlist.continuation);
+display(r2.items);
+const r3 = ytpl.continueReq(r2.continuation);
+display(r3.items);
+```
 
 ### ytpl.validateID(string)
 
@@ -65,7 +81,6 @@ Returns a promise.
 # Install
 
     npm install --save ytpl
-
 
 
 # License
