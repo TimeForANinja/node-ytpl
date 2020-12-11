@@ -5,6 +5,9 @@ declare module 'ytpl' {
       limit?: number;
       /** Limits the pulled pages - overwrites limit. */
       pages?: number;
+      /** Location setting */
+      gl?: string;
+      hl?: string;
       /** Request Options for Miniget */
       requestOptions?: { headers?: { [key: string]: string; }};
     }
