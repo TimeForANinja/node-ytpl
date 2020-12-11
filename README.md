@@ -18,7 +18,7 @@ You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
 ```js
 var ytpl = require('ytpl');
 
-const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg')
+const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg');
 dosth(playlist);
 ```
 
@@ -43,7 +43,7 @@ Attempts to resolve the given playlist id
     * requestOptions[Object] -> Additional parameters to passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
 
 * returns a Promise
-* [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output)
+* [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output.txt)
 
 ### ytpl.continueReq(continuationData)
 Continues a previous request by pulling yet another page.  
@@ -53,7 +53,7 @@ The previous request had to be done using `pages` limitation.
 ```js
 var ytpl = require('ytpl');
 
-const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg')
+const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', { pages: 1 });
 display(playlist.items);
 const r2 = ytpl.continueReq(playlist.continuation);
 display(r2.items);
