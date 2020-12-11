@@ -2,7 +2,7 @@
   id: 'PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
   url: 'https://www.youtube.com/playlist?PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
   title: '💥 NCS: Indie Dance',
-  estimated_items: 23,
+  estimatedItemCount: 23,
   views: 3695132,
   thumbnails: [
     {
@@ -31,12 +31,12 @@
     width: 336,
     height: 188
   },
-  lastUpdated: 'Updated today',
-  description: 'All Indie Dance releases on NCS.',
+  lastUpdated: 'Updated yesterday',
+  description: null,
   visibility: 'everyone',
   author: {
     name: 'NoCopyrightSounds',
-    ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+    url: 'https://www.youtube.com/c/NoCopyrightSounds',
     avatars: [
       {
         url: 'https://yt3.ggpht.com/ytc/AAUvwngbenDpBxHNZlecDGyccHeVyQB22dPZnPuhbW8LHw=s176-c-k-c0x00ffffff-no-rj',
@@ -61,7 +61,6 @@
     },
     channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg'
   },
-  continuation: null,
   items: [
     {
       title: 'Itro & Kontinuum - Alive [NCS Release]',
@@ -70,7 +69,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=-xKKo7t72Tg',
       url: 'https://www.youtube.com/watch?v=-xKKo7t72Tg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=1',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -113,7 +112,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=mO79Ll9NIZY',
       url: 'https://www.youtube.com/watch?v=mO79Ll9NIZY&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=2',
       author: {
-        ref: 'https://www.youtube.com/user/NoCopyrightSounds',
+        url: 'https://www.youtube.com/user/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -156,7 +155,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=SKI1P2gEK54',
       url: 'https://www.youtube.com/watch?v=SKI1P2gEK54&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=3',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -199,7 +198,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=BWdZjZV6bEk',
       url: 'https://www.youtube.com/watch?v=BWdZjZV6bEk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=4',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -242,7 +241,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=ulPvZFgoGYk',
       url: 'https://www.youtube.com/watch?v=ulPvZFgoGYk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=5',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -285,7 +284,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=6TFfIgMeYQ0',
       url: 'https://www.youtube.com/watch?v=6TFfIgMeYQ0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=6',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -328,7 +327,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=f2xGxd9xPYA',
       url: 'https://www.youtube.com/watch?v=f2xGxd9xPYA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=7',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -371,7 +370,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=r9OWmGwbRG0',
       url: 'https://www.youtube.com/watch?v=r9OWmGwbRG0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=8',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -414,7 +413,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=exV_Sf_Afso',
       url: 'https://www.youtube.com/watch?v=exV_Sf_Afso&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=9',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -457,7 +456,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=j51Bixo4ZBE',
       url: 'https://www.youtube.com/watch?v=j51Bixo4ZBE&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=10',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -500,7 +499,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=9iHM6X6uUH8',
       url: 'https://www.youtube.com/watch?v=9iHM6X6uUH8&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=11',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -543,7 +542,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=5-vMcPR7Bws',
       url: 'https://www.youtube.com/watch?v=5-vMcPR7Bws&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=12',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -586,7 +585,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=ldDCHrBeOlg',
       url: 'https://www.youtube.com/watch?v=ldDCHrBeOlg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=13',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -629,7 +628,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=yHLtE1wFeRQ',
       url: 'https://www.youtube.com/watch?v=yHLtE1wFeRQ&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=14',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -672,7 +671,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=4nbLR9mCOXA',
       url: 'https://www.youtube.com/watch?v=4nbLR9mCOXA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=15',
       author: {
-        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
@@ -708,5 +707,6 @@
       durationSec: 193,
       isPlayable: true
     }
-  ]
+  ],
+  continuation: null
 }
