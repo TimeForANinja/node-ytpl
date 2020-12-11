@@ -249,6 +249,48 @@ describe('YTPL.continue()', () => {
     ASSERT.equal(continuation[1], '<secondContinuationToken>');
     scope.done();
   });
+
+  it('does not crash with limit=Infinity', async() => {
+    const opts = [
+      'apiKey',
+      'token',
+      { context: 'context' },
+      { requestOptions: { headers: { test: 'test' } }, limit: Infinity },
+    ];
+    const body = { context: opts[2], continuation: opts[1] };
+    const scope = NOCK(YT_HOST, { reqheaders: opts[3].headers })
+      .post(API_PATH, JSON.stringify(body))
+      .query({ key: opts[0] })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const { items, continuation } = await YTPL.continueReq(opts);
+    ASSERT.equal(items.length, 100);
+    ASSERT.ok(Array.isArray(continuation));
+    ASSERT.equal(continuation[1], '<secondContinuationToken>');
+    scope.done();
+  });
+
+  it('does not crash when passing continuation from ytpl()', async() => {
+    const scope1 = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL0123456789ABCDEFGHIJKLMNOPQRSTUV' })
+      .replyWithFile(200, 'test/pages/firstpage_01.html');
+
+    const resp = await YTPL('PL0123456789ABCDEFGHIJKLMNOPQRSTUV', { pages: 1 });
+
+    const body = { context: resp.continuation[2], continuation: resp.continuation[1] };
+    const scope2 = NOCK(YT_HOST, { reqheaders: resp.continuation[3].headers })
+      .post(API_PATH, JSON.stringify(body))
+      .query({ key: resp.continuation[0] })
+      .replyWithFile(200, 'test/pages/secondpage_01.html');
+
+    const { items, continuation } = await YTPL.continueReq(resp.continuation);
+    ASSERT.equal(items.length, 100);
+    ASSERT.ok(Array.isArray(continuation));
+    ASSERT.equal(continuation[1], '<secondContinuationToken>');
+    scope1.done();
+    scope2.done();
+  });
 });
 
 describe('YTPL.getPlaylistID()', () => {
