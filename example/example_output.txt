@@ -3,19 +3,77 @@
   url: 'https://www.youtube.com/playlist?PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
   title: '💥 NCS: Indie Dance',
   estimated_items: 23,
-  views: 3690241,
+  views: 3695132,
+  thumbnails: [
+    {
+      url: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDBj-FPE23x31spdunEkwlgR2OaWA',
+      width: 336,
+      height: 188
+    },
+    {
+      url: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCR7fms8CL_2tWrScnFPr-oH--THg',
+      width: 246,
+      height: 138
+    },
+    {
+      url: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEWCMQBEG5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLDZTP0WtytxfkNuzoh3gKNVtn9f4Q',
+      width: 196,
+      height: 110
+    },
+    {
+      url: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLDMAyEGhAaO72papreke9X77dzLHw',
+      width: 168,
+      height: 94
+    }
+  ],
+  bestThumbnail: {
+    url: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDBj-FPE23x31spdunEkwlgR2OaWA',
+    width: 336,
+    height: 188
+  },
+  lastUpdated: 'Updated today',
+  description: 'All Indie Dance releases on NCS.',
+  visibility: 'everyone',
+  author: {
+    name: 'NoCopyrightSounds',
+    ref: 'https://www.youtube.com/c/NoCopyrightSounds',
+    avatars: [
+      {
+        url: 'https://yt3.ggpht.com/ytc/AAUvwngbenDpBxHNZlecDGyccHeVyQB22dPZnPuhbW8LHw=s176-c-k-c0x00ffffff-no-rj',
+        width: 176,
+        height: 176
+      },
+      {
+        url: 'https://yt3.ggpht.com/ytc/AAUvwngbenDpBxHNZlecDGyccHeVyQB22dPZnPuhbW8LHw=s88-c-k-c0x00ffffff-no-rj',
+        width: 88,
+        height: 88
+      },
+      {
+        url: 'https://yt3.ggpht.com/ytc/AAUvwngbenDpBxHNZlecDGyccHeVyQB22dPZnPuhbW8LHw=s48-c-k-c0x00ffffff-no-rj',
+        width: 48,
+        height: 48
+      }
+    ],
+    bestAvatar: {
+      url: 'https://yt3.ggpht.com/ytc/AAUvwngbenDpBxHNZlecDGyccHeVyQB22dPZnPuhbW8LHw=s176-c-k-c0x00ffffff-no-rj',
+      width: 176,
+      height: 176
+    },
+    channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg'
+  },
+  continuation: null,
   items: [
     {
       title: 'Itro & Kontinuum - Alive [NCS Release]',
       index: 1,
       id: '-xKKo7t72Tg',
       shortUrl: 'https://www.youtube.com/watch?v=-xKKo7t72Tg',
+      url: 'https://www.youtube.com/watch?v=-xKKo7t72Tg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=1',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=-xKKo7t72Tg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=1',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCqheIVTu8XzNtrYSBwDa5nfvGosA',
@@ -43,9 +101,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCqheIVTu8XzNtrYSBwDa5nfvGosA',
       isLive: false,
       duration: '4:08',
+      durationSec: 248,
       isPlayable: true
     },
     {
@@ -53,12 +111,12 @@
       index: 2,
       id: 'mO79Ll9NIZY',
       shortUrl: 'https://www.youtube.com/watch?v=mO79Ll9NIZY',
+      url: 'https://www.youtube.com/watch?v=mO79Ll9NIZY&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=2',
       author: {
         ref: 'https://www.youtube.com/user/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=mO79Ll9NIZY&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=2',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/mO79Ll9NIZY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCgrhNCKgq5PkwrV-CYOKs2Mkf2wA',
@@ -86,9 +144,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/mO79Ll9NIZY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCgrhNCKgq5PkwrV-CYOKs2Mkf2wA',
       isLive: false,
       duration: '4:15',
+      durationSec: 255,
       isPlayable: true
     },
     {
@@ -96,12 +154,12 @@
       index: 3,
       id: 'SKI1P2gEK54',
       shortUrl: 'https://www.youtube.com/watch?v=SKI1P2gEK54',
+      url: 'https://www.youtube.com/watch?v=SKI1P2gEK54&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=3',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=SKI1P2gEK54&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=3',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/SKI1P2gEK54/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBo9-KAehUWGpiND0sXue5PjyICzg',
@@ -129,9 +187,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/SKI1P2gEK54/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBo9-KAehUWGpiND0sXue5PjyICzg',
       isLive: false,
       duration: '4:03',
+      durationSec: 243,
       isPlayable: true
     },
     {
@@ -139,12 +197,12 @@
       index: 4,
       id: 'BWdZjZV6bEk',
       shortUrl: 'https://www.youtube.com/watch?v=BWdZjZV6bEk',
+      url: 'https://www.youtube.com/watch?v=BWdZjZV6bEk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=4',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=BWdZjZV6bEk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=4',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/BWdZjZV6bEk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCEahORukovP_j0PiB4MWcBXYFcWw',
@@ -172,9 +230,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/BWdZjZV6bEk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCEahORukovP_j0PiB4MWcBXYFcWw',
       isLive: false,
       duration: '4:32',
+      durationSec: 272,
       isPlayable: true
     },
     {
@@ -182,12 +240,12 @@
       index: 5,
       id: 'ulPvZFgoGYk',
       shortUrl: 'https://www.youtube.com/watch?v=ulPvZFgoGYk',
+      url: 'https://www.youtube.com/watch?v=ulPvZFgoGYk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=5',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=ulPvZFgoGYk&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=5',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/ulPvZFgoGYk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDycPy1lTk0kiXou2gK4jPgg-5FYQ',
@@ -215,9 +273,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/ulPvZFgoGYk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDycPy1lTk0kiXou2gK4jPgg-5FYQ',
       isLive: false,
       duration: '3:24',
+      durationSec: 204,
       isPlayable: true
     },
     {
@@ -225,12 +283,12 @@
       index: 6,
       id: '6TFfIgMeYQ0',
       shortUrl: 'https://www.youtube.com/watch?v=6TFfIgMeYQ0',
+      url: 'https://www.youtube.com/watch?v=6TFfIgMeYQ0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=6',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=6TFfIgMeYQ0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=6',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/6TFfIgMeYQ0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDEqgLcdmQ4vT-p24Q2OxTnBPSSYg',
@@ -258,9 +316,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/6TFfIgMeYQ0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDEqgLcdmQ4vT-p24Q2OxTnBPSSYg',
       isLive: false,
       duration: '4:03',
+      durationSec: 243,
       isPlayable: true
     },
     {
@@ -268,12 +326,12 @@
       index: 7,
       id: 'f2xGxd9xPYA',
       shortUrl: 'https://www.youtube.com/watch?v=f2xGxd9xPYA',
+      url: 'https://www.youtube.com/watch?v=f2xGxd9xPYA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=7',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=f2xGxd9xPYA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=7',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/f2xGxd9xPYA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAUdBSf0Ke_XLNlohWQgZ8CJxqmVQ',
@@ -301,9 +359,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/f2xGxd9xPYA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAUdBSf0Ke_XLNlohWQgZ8CJxqmVQ',
       isLive: false,
       duration: '4:40',
+      durationSec: 280,
       isPlayable: true
     },
     {
@@ -311,12 +369,12 @@
       index: 8,
       id: 'r9OWmGwbRG0',
       shortUrl: 'https://www.youtube.com/watch?v=r9OWmGwbRG0',
+      url: 'https://www.youtube.com/watch?v=r9OWmGwbRG0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=8',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=r9OWmGwbRG0&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=8',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/r9OWmGwbRG0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBcabbD_eyiAZPzKN_JZR8oa6ZV0w',
@@ -344,9 +402,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/r9OWmGwbRG0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBcabbD_eyiAZPzKN_JZR8oa6ZV0w',
       isLive: false,
       duration: '4:21',
+      durationSec: 261,
       isPlayable: true
     },
     {
@@ -354,12 +412,12 @@
       index: 9,
       id: 'exV_Sf_Afso',
       shortUrl: 'https://www.youtube.com/watch?v=exV_Sf_Afso',
+      url: 'https://www.youtube.com/watch?v=exV_Sf_Afso&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=9',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=exV_Sf_Afso&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=9',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/exV_Sf_Afso/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBYZuAbrxvQ62NYvDYQm3B62eH0zA',
@@ -387,9 +445,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/exV_Sf_Afso/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBYZuAbrxvQ62NYvDYQm3B62eH0zA',
       isLive: false,
       duration: '4:12',
+      durationSec: 252,
       isPlayable: true
     },
     {
@@ -397,12 +455,12 @@
       index: 10,
       id: 'j51Bixo4ZBE',
       shortUrl: 'https://www.youtube.com/watch?v=j51Bixo4ZBE',
+      url: 'https://www.youtube.com/watch?v=j51Bixo4ZBE&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=10',
       author: {
-        ref: 'https://www.youtube.com/user/NoCopyrightSounds',
+        ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=j51Bixo4ZBE&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=10',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/j51Bixo4ZBE/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAIK_V4TvnsdwOZ-jC55y8JRwFDcw',
@@ -430,9 +488,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/j51Bixo4ZBE/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAIK_V4TvnsdwOZ-jC55y8JRwFDcw',
       isLive: false,
       duration: '4:06',
+      durationSec: 246,
       isPlayable: true
     },
     {
@@ -440,12 +498,12 @@
       index: 11,
       id: '9iHM6X6uUH8',
       shortUrl: 'https://www.youtube.com/watch?v=9iHM6X6uUH8',
+      url: 'https://www.youtube.com/watch?v=9iHM6X6uUH8&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=11',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=9iHM6X6uUH8&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=11',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/9iHM6X6uUH8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBaxb_Xyhr_Z6iovO5VCFIvIN-NOA',
@@ -473,9 +531,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/9iHM6X6uUH8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBaxb_Xyhr_Z6iovO5VCFIvIN-NOA',
       isLive: false,
       duration: '3:45',
+      durationSec: 225,
       isPlayable: true
     },
     {
@@ -483,12 +541,12 @@
       index: 12,
       id: '5-vMcPR7Bws',
       shortUrl: 'https://www.youtube.com/watch?v=5-vMcPR7Bws',
+      url: 'https://www.youtube.com/watch?v=5-vMcPR7Bws&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=12',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=5-vMcPR7Bws&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=12',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/5-vMcPR7Bws/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDbpObAQJlpx1VqoKQmWxv95j7-5A',
@@ -516,9 +574,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/5-vMcPR7Bws/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDbpObAQJlpx1VqoKQmWxv95j7-5A',
       isLive: false,
       duration: '4:55',
+      durationSec: 295,
       isPlayable: true
     },
     {
@@ -526,12 +584,12 @@
       index: 13,
       id: 'ldDCHrBeOlg',
       shortUrl: 'https://www.youtube.com/watch?v=ldDCHrBeOlg',
+      url: 'https://www.youtube.com/watch?v=ldDCHrBeOlg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=13',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=ldDCHrBeOlg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=13',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/ldDCHrBeOlg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBB0B2f0D7RuCc420npQdZpYGb7QQ',
@@ -559,9 +617,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/ldDCHrBeOlg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBB0B2f0D7RuCc420npQdZpYGb7QQ',
       isLive: false,
       duration: '4:39',
+      durationSec: 279,
       isPlayable: true
     },
     {
@@ -569,12 +627,12 @@
       index: 14,
       id: 'yHLtE1wFeRQ',
       shortUrl: 'https://www.youtube.com/watch?v=yHLtE1wFeRQ',
+      url: 'https://www.youtube.com/watch?v=yHLtE1wFeRQ&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=14',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=yHLtE1wFeRQ&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=14',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/yHLtE1wFeRQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBmEGZN_SGd8Sgiz13jSs_D-PzFog',
@@ -602,9 +660,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/yHLtE1wFeRQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBmEGZN_SGd8Sgiz13jSs_D-PzFog',
       isLive: false,
       duration: '3:43',
+      durationSec: 223,
       isPlayable: true
     },
     {
@@ -612,12 +670,12 @@
       index: 15,
       id: '4nbLR9mCOXA',
       shortUrl: 'https://www.youtube.com/watch?v=4nbLR9mCOXA',
+      url: 'https://www.youtube.com/watch?v=4nbLR9mCOXA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=15',
       author: {
         ref: 'https://www.youtube.com/c/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },
-      url: 'https://www.youtube.com/watch?v=4nbLR9mCOXA&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=15',
       thumbnails: [
         {
           url: 'https://i.ytimg.com/vi/4nbLR9mCOXA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLB6k7DF1ajYomXA53AyC--JFkoW8w',
@@ -645,9 +703,9 @@
         width: 336,
         height: 188
       },
-      thumbnail: 'https://i.ytimg.com/vi/4nbLR9mCOXA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLB6k7DF1ajYomXA53AyC--JFkoW8w',
       isLive: false,
       duration: '3:13',
+      durationSec: 193,
       isPlayable: true
     }
   ]
