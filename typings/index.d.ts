@@ -21,7 +21,7 @@ declare module 'ytpl' {
       url: string;
       author: {
         name: string;
-        ref: string;
+        url: string;
         channelID: string;
       };
       thumbnails: image[];
@@ -43,7 +43,7 @@ declare module 'ytpl' {
       visibility: 'unlisted' | 'everyone';
       author: {
         name: string;
-        ref: string;
+        url: string;
         avatars: image[];
         bestAvatar: image;
         channelID: string;

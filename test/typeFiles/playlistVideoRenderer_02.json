@@ -38,7 +38,7 @@
     "durationSec": null,
     "isPlayable": true,
     "author": {
-      "ref": "https://www.youtube.com/c/NBCNews",
+      "url": "https://www.youtube.com/c/NBCNews",
       "channelID": "UCeY0bbntWzzVIaj2z3QigXg",
       "name": "NBC News"
     }
