@@ -1,6 +1,6 @@
 declare module 'ytpl' {
   namespace ytpl {
-    interface options {
+    interface Options {
       /** Limits the pulled items. */
       limit?: number;
       /** Limits the pulled pages - overwrites limit. */
@@ -11,12 +11,21 @@ declare module 'ytpl' {
       /** Request Options for Miniget */
       requestOptions?: { headers?: { [key: string]: string; }};
     }
-    interface image {
+
+    interface ContinueResult {
+      continuation: Continuation | null;
+      items: Item[];
+    }
+
+    interface Continuation {}
+
+    interface Image {
       url: string;
       width: number;
       height: number;
     }
-    interface item {
+
+    interface Item {
       title: string;
       index: number;
       id: string;
@@ -27,36 +36,33 @@ declare module 'ytpl' {
         url: string;
         channelID: string;
       };
-      thumbnails: image[];
-      bestThumbnail: image;
+      thumbnails: Image[];
+      bestThumbnail: Image;
       isLive: boolean;
       duration: string | null;
       durationSec: number | null;
     }
-    interface result {
+
+    interface Result {
       id: string;
       url: string;
       title: string;
-      estimated_items: number;
+      estimatedItemCount: number;
       views: number;
-      thumbnails: image[];
-      bestThumbnail: image;
+      thumbnails: Image[];
+      bestThumbnail: Image;
       lastUpdated: string;
       description: string | null;
       visibility: 'unlisted' | 'everyone';
       author: {
         name: string;
         url: string;
-        avatars: image[];
-        bestAvatar: image;
+        avatars: Image[];
+        bestAvatar: Image;
         channelID: string;
       };
-      items: item[];
-      continuation: [string, string, object, object] | null;
-    }
-    interface continueResult {
-      continuation: [string, string, object, object] | null;
-      items: item[];
+      items: Item[];
+      continuation: Continuation | null;
     }
 
     /**
@@ -75,7 +81,7 @@ declare module 'ytpl' {
      * @param continuationData Data provided from a previous request
      * @description fetches one additional page & parses its items - only supported when using pages
      */
-    function continueReq(continuationData: [string, string, object, object]): Promise<continueResult>;
+    function continueReq(continuationData: Continuation): Promise<ContinueResult>;
   }
 
   /**
@@ -84,7 +90,7 @@ declare module 'ytpl' {
    * @param [options] Object with options.
    * @returns Promise that resolves to playlist data;
    */
-  function ytpl(id: string, options?: ytpl.options): Promise<ytpl.result>;
+  function ytpl(id: string, options?: ytpl.Options): Promise<ytpl.Result>;
 
   export = ytpl;
 }
