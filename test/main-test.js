@@ -435,6 +435,12 @@ describe('YTPL.getPlaylistID()', () => {
     ASSERT.equal(uploads, 'UUqwGaUvq_l0RKszeHhZ5leA');
   });
 
+  it('resolved favorites playlist', async() => {
+    const ref = 'https://www.youtube.com/playlist?list=FLqwGaUvq_l0RKszeHhZ5leA';
+    const favs = await YTPL.getPlaylistID(ref);
+    ASSERT.equal(favs, 'FLqwGaUvq_l0RKszeHhZ5leA');
+  });
+
   it('resolves playlist from video', async() => {
     const ref = 'https://www.youtube.com/watch?v=ASDF&list=UUqwGaUvq_l0RKszeHhZ5leA';
     const uploads = await YTPL.getPlaylistID(ref);
@@ -508,6 +514,11 @@ describe('YTPL.validateID()', () => {
 
   it('true for regular channels', () => {
     const ref = 'https://www.youtube.com/channel/UCqwGaUvq_l0RKszeHhZ5leA';
+    ASSERT.ok(YTPL.validateID(ref));
+  });
+
+  it('true for favorites playlist', () => {
+    const ref = 'https://www.youtube.com/playlist?list=FLqwGaUvq_l0RKszeHhZ5leA';
     ASSERT.ok(YTPL.validateID(ref));
   });
 
