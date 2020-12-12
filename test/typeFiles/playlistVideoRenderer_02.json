@@ -8,26 +8,27 @@
     "url": "https://www.youtube.com/watch?v=69MMACN6omo&list=playlist_id&index=1",
     "shortUrl": "https://www.youtube.com/watch?v=69MMACN6omo",
     "thumbnails": [
-    {
-      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
-      "width": 336,
-      "height": 188
-    },
-    {
-      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD97q91GRaRrLbCWsLK-MdZRbxVCQ",
-      "width": 246,
-      "height": 138
-    },
-    {
-      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLASyPa5JFSGZIi74x68Q3ZdXoQGbw",
-      "width": 196,
-      "height": 110
-    },
-    {
-      "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB2v6EarpXWRp4mmKufRgu1UvVfAw",
-      "width": 168,
-      "height": 94
-    }],
+      {
+        "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
+        "width": 336,
+        "height": 188
+      },
+      {
+        "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD97q91GRaRrLbCWsLK-MdZRbxVCQ",
+        "width": 246,
+        "height": 138
+      },
+      {
+        "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLASyPa5JFSGZIi74x68Q3ZdXoQGbw",
+        "width": 196,
+        "height": 110
+      },
+      {
+        "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB2v6EarpXWRp4mmKufRgu1UvVfAw",
+        "width": 168,
+        "height": 94
+      }
+    ],
     "bestThumbnail": {
       "url": "https://i.ytimg.com/vi/69MMACN6omo/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAAVQrBRJ49Xet3S7IToPDEimsCiw",
       "width": 336,
