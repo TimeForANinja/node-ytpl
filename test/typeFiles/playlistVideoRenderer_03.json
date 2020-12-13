@@ -1,0 +1,228 @@
+{
+  "specialities": "Album (item) without index",
+  "type": "playlistVideoRenderer",
+  "parsed": {
+    "title": "شمة حمدان -  دامك معي (حصرياً) | 2020",
+    "index": -1,
+    "id": "nKqyhUD_aTo",
+    "url": "https://www.youtube.com/watch?v=nKqyhUD_aTo&list=RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs",
+    "shortUrl": "https://www.youtube.com/watch?v=nKqyhUD_aTo",
+    "thumbnails": [
+      {
+        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCuRFgymKezGr0VqTzLgunTCo5etw",
+        "width": 336,
+        "height": 188
+      },
+      {
+        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDVoy5ie3n7jKlMphL8a8Aa03-8cQ",
+        "width": 246,
+        "height": 138
+      },
+      {
+        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAjmdzdyENC55CG-qjRuyYwxw_ruw",
+        "width": 196,
+        "height": 110
+      },
+      {
+        "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB1Whx-gxnooyhWeywx5eC0yBUcFg",
+        "width": 168,
+        "height": 94
+      }
+    ],
+    "bestThumbnail": {
+      "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCuRFgymKezGr0VqTzLgunTCo5etw",
+      "width": 336,
+      "height": 188
+    },
+    "isLive": false,
+    "duration": "3:40",
+    "durationSec": 220,
+    "isPlayable": true,
+    "author": {
+      "url": "https://www.youtube.com/channel/UCxXUZhoUGRAQkZfysG646KA",
+      "channelID": "UCxXUZhoUGRAQkZfysG646KA",
+      "name": "Shamma Hamdan | شمه حمدان"
+    }
+  },
+  "raw": {
+    "playlistVideoRenderer": {
+      "videoId": "nKqyhUD_aTo",
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB1Whx-gxnooyhWeywx5eC0yBUcFg",
+            "width": 168,
+            "height": 94
+          },
+          {
+            "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAjmdzdyENC55CG-qjRuyYwxw_ruw",
+            "width": 196,
+            "height": 110
+          },
+          {
+            "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDVoy5ie3n7jKlMphL8a8Aa03-8cQ",
+            "width": 246,
+            "height": 138
+          },
+          {
+            "url": "https://i.ytimg.com/vi/nKqyhUD_aTo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCuRFgymKezGr0VqTzLgunTCo5etw",
+            "width": 336,
+            "height": 188
+          }
+        ]
+      },
+      "title": {
+        "runs": [
+          {
+            "text": "شمة حمدان -  دامك معي (حصرياً) | 2020"
+          }
+        ],
+        "accessibility": {
+          "accessibilityData": {
+            "label": "شمة حمدان -  دامك معي (حصرياً) | 2020 by Shamma Hamdan | شمه حمدان 2 weeks ago 3 minutes, 40 seconds"
+          }
+        }
+      },
+      "shortBylineText": {
+        "runs": [
+          {
+            "text": "Shamma Hamdan | شمه حمدان",
+            "navigationEndpoint": {
+              "clickTrackingParams": "CLEBEMY0GAAiEwjwxIz56KztAhWQAhYKHfqkBEw=",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/channel/UCxXUZhoUGRAQkZfysG646KA",
+                  "webPageType": "WEB_PAGE_TYPE_CHANNEL",
+                  "rootVe": 3611
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "UCxXUZhoUGRAQkZfysG646KA",
+                "canonicalBaseUrl": "/channel/UCxXUZhoUGRAQkZfysG646KA"
+              }
+            }
+          }
+        ]
+      },
+      "lengthText": {
+        "accessibility": {
+          "accessibilityData": {
+            "label": "3 minutes, 40 seconds"
+          }
+        },
+        "simpleText": "3:40"
+      },
+      "navigationEndpoint": {
+        "clickTrackingParams": "CLEBEMY0GAAiEwjwxIz56KztAhWQAhYKHfqkBEwyCnBscHBfdmlkZW9aLVZMUkRDTEFLNXV5X21mVEY1RENIWkwwemYwNFdRZFhBZDgtMWNRdXZKWlh6c5oBAxD6LA==",
+        "commandMetadata": {
+          "webCommandMetadata": {
+            "url": "/watch?v=nKqyhUD_aTo&list=RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs",
+            "webPageType": "WEB_PAGE_TYPE_WATCH",
+            "rootVe": 3832
+          }
+        },
+        "watchEndpoint": {
+          "videoId": "nKqyhUD_aTo",
+          "playlistId": "RDCLAK5uy_mfTF5DCHZL0zf04WQdXAd8-1cQuvJZXzs",
+          "params": "OAI%3D"
+        }
+      },
+      "lengthSeconds": "220",
+      "trackingParams": "CLEBEMY0GAAiEwjwxIz56KztAhWQAhYKHfqkBEw=",
+      "isPlayable": true,
+      "menu": {
+        "menuRenderer": {
+          "items": [
+            {
+              "menuServiceItemRenderer": {
+                "text": {
+                  "runs": [
+                    {
+                      "text": "Add to queue"
+                    }
+                  ]
+                },
+                "icon": {
+                  "iconType": "ADD_TO_QUEUE_TAIL"
+                },
+                "serviceEndpoint": {
+                  "clickTrackingParams": "CLIBEP6YBBgCIhMI8MSM-eis7QIVkAIWCh36pARM",
+                  "commandMetadata": {
+                    "webCommandMetadata": {
+                      "url": "/service_ajax",
+                      "sendPost": true
+                    }
+                  },
+                  "signalServiceEndpoint": {
+                    "signal": "CLIENT_SIGNAL",
+                    "actions": [
+                      {
+                        "addToPlaylistCommand": {
+                          "openMiniplayer": true,
+                          "videoId": "nKqyhUD_aTo",
+                          "listType": "PLAYLIST_EDIT_LIST_TYPE_QUEUE",
+                          "onCreateListCommand": {
+                            "clickTrackingParams": "CLIBEP6YBBgCIhMI8MSM-eis7QIVkAIWCh36pARM",
+                            "commandMetadata": {
+                              "webCommandMetadata": {
+                                "url": "/service_ajax",
+                                "sendPost": true,
+                                "apiUrl": "/youtubei/v1/playlist/create"
+                              }
+                            },
+                            "createPlaylistServiceEndpoint": {
+                              "videoIds": [
+                                "nKqyhUD_aTo"
+                              ],
+                              "params": "CAQ%3D"
+                            }
+                          },
+                          "videoIds": [
+                            "nKqyhUD_aTo"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "trackingParams": "CLIBEP6YBBgCIhMI8MSM-eis7QIVkAIWCh36pARM"
+              }
+            }
+          ],
+          "trackingParams": "CLEBEMY0GAAiEwjwxIz56KztAhWQAhYKHfqkBEw=",
+          "accessibility": {
+            "accessibilityData": {
+              "label": "Action menu"
+            }
+          }
+        }
+      },
+      "thumbnailOverlays": [
+        {
+          "thumbnailOverlayTimeStatusRenderer": {
+            "text": {
+              "accessibility": {
+                "accessibilityData": {
+                  "label": "3 minutes, 40 seconds"
+                }
+              },
+              "simpleText": "3:40"
+            },
+            "style": "DEFAULT"
+          }
+        },
+        {
+          "thumbnailOverlayNowPlayingRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Now playing"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

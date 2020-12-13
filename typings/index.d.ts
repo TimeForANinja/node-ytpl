@@ -1,39 +1,68 @@
 declare module 'ytpl' {
   namespace ytpl {
-    interface options {
+    interface Options {
       /** Limits the pulled items. */
       limit?: number;
-      headers?: { [key: string]: string; };
+      /** Limits the pulled pages - overwrites limit. */
+      pages?: number;
+      /** Location setting */
+      gl?: string;
+      hl?: string;
+      /** Request Options for Miniget */
+      requestOptions?: { headers?: { [key: string]: string; }};
     }
-    interface result {
+
+    interface ContinueResult {
+      continuation: Continuation | null;
+      items: Item[];
+    }
+
+    interface Continuation {}
+
+    interface Image {
+      url: string;
+      width: number;
+      height: number;
+    }
+
+    interface Item {
+      title: string;
+      index: number;
+      id: string;
+      shortUrl: string;
+      url: string;
+      author: {
+        name: string;
+        url: string;
+        channelID: string;
+      };
+      thumbnails: Image[];
+      bestThumbnail: Image;
+      isLive: boolean;
+      duration: string | null;
+      durationSec: number | null;
+    }
+
+    interface Result {
       id: string;
       url: string;
       title: string;
-      visibility: 'link only' | 'everyone';
+      estimatedItemCount: number;
+      views: number;
+      thumbnails: Image[];
+      bestThumbnail: Image;
+      lastUpdated: string;
       description: string | null;
-      total_items: number;
-      views: string;
-      last_updated: string;
-      author: null | {
-        id: string;
+      visibility: 'unlisted' | 'everyone';
+      author: {
         name: string;
-        avatar: string;
-        user: string | null;
-        channel_url: string;
-        user_url: string | null;
-      };
-      items: {
-        id: string;
         url: string;
-        url_simple: string;
-        title: string;
-        thumbnail: string;
-        duration: string | null;
-        author: null | {
-          name: string;
-          ref: string;
-        };
-      }[];
+        avatars: Image[];
+        bestAvatar: Image;
+        channelID: string;
+      };
+      items: Item[];
+      continuation: Continuation | null;
     }
 
     /**
@@ -47,15 +76,21 @@ declare module 'ytpl' {
      * @description Returns a promise that resovles to the playlist ID from a YouTube URL. Can be called with the playlist ID directly, in which case it returns it.
      */
     function getPlaylistID(link: string): Promise<string>;
+
+    /**
+     * @param continuationData Data provided from a previous request
+     * @description fetches one additional page & parses its items - only supported when using pages
+     */
+    function continueReq(continuationData: Continuation): Promise<ContinueResult>;
   }
 
   /**
    * @description Attempts to resolve the given playlist id
    * @param id Can be the id of the YT playlist or playlist link or user link (resolves uploaded playlist) or channel link (resolves uploaded playlist)
-   * @param [options] Object with options. limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist
+   * @param [options] Object with options.
    * @returns Promise that resolves to playlist data;
    */
-  function ytpl(id: string, options?: ytpl.options): Promise<ytpl.result>;
+  function ytpl(id: string, options?: ytpl.Options): Promise<ytpl.Result>;
 
   export = ytpl;
 }
