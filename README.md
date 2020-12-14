@@ -28,9 +28,9 @@ Attempts to resolve the given playlist id
 
 * `id`
     * id of the yt-playlist
-    * or playlist link
-    * or user link (resolves to uploaded playlist)
-    * or channel link (resolves to uploaded playlist)
+    * or a playlist url
+    * or a user url (resolves to uploaded playlist)
+    * or a channel url (resolves to uploaded playlist)
 * `options`
     * object with options
     * possible settings:
@@ -59,15 +59,17 @@ const r3 = ytpl.continueReq(r2.continuation);
 display(r3.items);
 ```
 
+* returns a Promise resolving into `{ continuation, items }`
+
 ### ytpl.validateID(string)
 
 Returns true if able to parse out a (formally) valid playlist ID.
 
 ### ytpl.getPlaylistID(string)
 
-Returns a playlist ID from a YouTube URL. Can be called with the playlist ID directly, in which case it resolves.
+Returns a playlist ID from a YouTube URL. Can be called with the playlist ID directly, in which case it just resolves.
 
-Returns a promise.
+* returns a promise resolving into a string containing the id
 
 
 # Related / Works well with
