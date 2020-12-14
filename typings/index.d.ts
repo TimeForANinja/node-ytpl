@@ -20,7 +20,7 @@ declare module 'ytpl' {
     interface Continuation {}
 
     interface Image {
-      url: string;
+      url: string | null;
       width: number;
       height: number;
     }

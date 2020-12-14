@@ -1,9 +1,9 @@
 {
   id: 'PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
-  url: 'https://www.youtube.com/playlist?PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
+  url: 'https://www.youtube.com/playlist?list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
   title: '💥 NCS: Indie Dance',
   estimatedItemCount: 23,
-  views: 3695132,
+  views: 3696602,
   thumbnails: [
     {
       url: 'https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDBj-FPE23x31spdunEkwlgR2OaWA',
@@ -31,7 +31,7 @@
     width: 336,
     height: 188
   },
-  lastUpdated: 'Updated yesterday',
+  lastUpdated: 'Updated 3 days ago',
   description: null,
   visibility: 'everyone',
   author: {
@@ -585,7 +585,7 @@
       shortUrl: 'https://www.youtube.com/watch?v=ldDCHrBeOlg',
       url: 'https://www.youtube.com/watch?v=ldDCHrBeOlg&list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn&index=13',
       author: {
-        url: 'https://www.youtube.com/c/NoCopyrightSounds',
+        url: 'https://www.youtube.com/user/NoCopyrightSounds',
         channelID: 'UC_aEa8K-EOJ3D6gOs7HcyNg',
         name: 'NoCopyrightSounds'
       },

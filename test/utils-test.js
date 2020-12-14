@@ -206,6 +206,32 @@ describe('utils.checkArgs()', () => {
   });
 });
 
+describe('utils.prepImg()', () => {
+  it('sorts in descending order', () => {
+    const images = [{ width: 10 }, { width: 20 }, { width: 30 }];
+    const preped = UTILS.prepImg(images);
+    ASSERT.deepEqual(preped.map(x => x.width), [30, 20, 10]);
+  });
+
+  it('does not crash for empty arrays', () => {
+    const images = [];
+    const preped = UTILS.prepImg(images);
+    ASSERT.deepEqual(preped, []);
+  });
+
+  it('defaults urls to null', () => {
+    const images = [{}];
+    const preped = UTILS.prepImg(images);
+    ASSERT.deepEqual(preped[0].url, null);
+  });
+
+  it('normalizes links', () => {
+    const images = [{ url: '//test.com' }];
+    const preped = UTILS.prepImg(images);
+    ASSERT.equal(preped[0].url, 'https://test.com/');
+  });
+});
+
 describe('utils.jsonAfter()', () => {
   it('`left` positioned at the start', () => {
     ASSERT.deepEqual(UTILS._hidden.jsonAfter('{"a": 1, "b": 1}asdf', ''), { a: 1, b: 1 });
