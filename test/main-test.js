@@ -394,6 +394,14 @@ describe('YTPL.getPlaylistID()', () => {
     );
   });
 
+  it('instantly resolves music.youtube.com links', async() => {
+    const url = 'https://music.youtube.com/playlist?list=PLnkLprrb5GwjsSGB8SPmS8Wny9Druyy42';
+    ASSERT.equal(
+      await YTPL.getPlaylistID(url),
+      'PLnkLprrb5GwjsSGB8SPmS8Wny9Druyy42',
+    );
+  });
+
   it('resolves user to channel', async() => {
     const scope = NOCK(YT_HOST)
       .get('/user/ASDF')
