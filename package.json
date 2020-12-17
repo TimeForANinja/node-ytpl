@@ -4,8 +4,17 @@
   "description": "Anonymous YouTube playlist resolver.",
   "keywords": [
     "youtube",
-    "playlist"
+    "yt",
+    "video",
+    "videos",
+    "api",
+    "playlist",
+    "pl",
+    "scrape",
+    "pagination",
+    "promise"
   ],
+  "homepage": "https://github.com/TimeForANinja/node-ytpl#readme",
   "bugs": {
     "url": "https://github.com/TimeForANinja/node-ytpl/issues"
   },
@@ -27,10 +36,10 @@
     "lint:typings": "tslint typings/index.d.ts",
     "lint:typings:fix": "tslint --fix typings/index.d.ts",
     "mocha": "mocha -- -t 16000 test/*-test.js",
-    "nyc": "nyc --reporter=lcov npm run-script mocha",
-    "test": "npm run-script nyc",
     "mocha:coverage": "mocha -- -t 16000 test/*-test.js --exclude test/e2e-test.js",
+    "nyc": "nyc --reporter=lcov npm run-script mocha",
     "nyc:coverage": "nyc --reporter=lcov npm run-script mocha:coverage",
+    "test": "npm run-script nyc",
     "test:coverage": "npm run-script nyc:coverage && codecov"
   },
   "dependencies": {
