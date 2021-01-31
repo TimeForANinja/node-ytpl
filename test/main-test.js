@@ -331,6 +331,14 @@ describe('YTPL.getPlaylistID()', () => {
     );
   });
 
+  it('errors for video links with an embedded mix-playlist', async() => {
+    const ref = 'https://www.youtube.com/watch?v=XgxMCUJwV7o&list=RDCMUCFmuxtfNr8z4q4dPlLNozzA&index=1';
+    await ASSERT.rejects(
+      YTPL.getPlaylistID(ref),
+      /Mixes not supported/,
+    );
+  });
+
   it('errors for unknown list query', async() => {
     const ref = 'https://www.youtube.com/watch?v=J2X5mJ3HDYE&list=ASDF';
     await ASSERT.rejects(
@@ -379,8 +387,8 @@ describe('YTPL.getPlaylistID()', () => {
     );
     // Album:
     ASSERT.equal(
-      await YTPL.getPlaylistID('RDqwGaUvq_l0RKszeHhZ5leA'),
-      'RDqwGaUvq_l0RKszeHhZ5leA',
+      await YTPL.getPlaylistID('OLAK5uy_qwGaUvq_l0RKszeHhZ5leA12345asdf12'),
+      'OLAK5uy_qwGaUvq_l0RKszeHhZ5leA12345asdf12',
     );
     // Playlist:
     ASSERT.equal(
@@ -474,6 +482,11 @@ describe('YTPL.validateID()', () => {
     ASSERT.equal(YTPL.validateID(ref), false);
   });
 
+  it('false for video links with an embedded mix-playlist', () => {
+    const ref = 'https://www.youtube.com/watch?v=XgxMCUJwV7o&list=RDCMUCFmuxtfNr8z4q4dPlLNozzA&index=1';
+    ASSERT.equal(YTPL.validateID(ref), false);
+  });
+
   it('false for unknown list query', () => {
     const ref = 'https://www.youtube.com/watch?v=J2X5mJ3HDYE&list=ASDF';
     ASSERT.equal(YTPL.validateID(ref), false);
@@ -503,7 +516,7 @@ describe('YTPL.validateID()', () => {
     // Channel:
     ASSERT.ok(YTPL.validateID('UCqwGaUvq_l0RKszeHhZ5leA'));
     // Album:
-    ASSERT.ok(YTPL.validateID('RDqwGaUvq_l0RKszeHhZ5leA'));
+    ASSERT.ok(YTPL.validateID('OLAK5uy_qwGaUvq_l0RKszeHhZ5leA12345asdf12'));
     // Playlist:
     ASSERT.ok(YTPL.validateID('PLqwGaUvq_l0RKszeHhZ5leA'));
     // Channel-Uploads-Playlist:

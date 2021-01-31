@@ -1,14 +1,14 @@
 {
   "name": "ytpl",
   "version": "2.0.4",
-  "description": "Anonymous YouTube playlist resolver.",
+  "description": "Simple package to resolve YouTube playlists - no strings attached.",
   "keywords": [
     "youtube",
+    "playlist",
     "yt",
     "video",
     "videos",
     "api",
-    "playlist",
     "pl",
     "scrape",
     "pagination",
