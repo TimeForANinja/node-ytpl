@@ -5,8 +5,8 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/timeforaninja/node-ytpl/badge.svg)](https://snyk.io/test/github/timeforaninja/node-ytpl)
 [![Discord](https://img.shields.io/discord/484464227067887645.svg)](https://discord.gg/V3vSCs7)
 
-Simple js only module to resolve YouTube playlist ids
-Doesn't need any login or GoogleAPI key
+Simple js only package to resolve YouTube Playlists.
+Does not require any login or Google-API-Key.
 
 # Support
 You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
