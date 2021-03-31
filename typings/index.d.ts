@@ -9,7 +9,7 @@ declare module 'ytpl' {
       gl?: string;
       hl?: string;
       /** Request Options for Miniget */
-      requestOptions?: { headers?: { [key: string]: string; }};
+      requestOptions?: { [key: string]: object; } & { headers?: { [key: string]: string; } };
     }
 
     interface ContinueResult {
