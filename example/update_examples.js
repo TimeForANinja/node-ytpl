@@ -11,3 +11,10 @@ const main = async() => {
   FS.writeFileSync('./example_output.txt', saveString);
 };
 main();
+
+
+const main2 = async () => {
+  const cn = 'https://www.youtube.com/c/NoCopyrightSounds'
+  console.log(await YTPL.channelPlaylists(cn))
+}
+// main2();

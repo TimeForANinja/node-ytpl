@@ -71,6 +71,11 @@ Returns a playlist ID from a YouTube URL. Can be called with the playlist ID dir
 
 * returns a promise resolving into a string containing the id
 
+### ytpl.channelPlaylists(channelID)
+
+Returns the playlists created by a specific user or channel. Watch out: many returned fields are set to `null` as they are 
+not provided by Youtube. You will have to fetch those manually after this call if you need to.
+
 
 # Related / Works well with
 

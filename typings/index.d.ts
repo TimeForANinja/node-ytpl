@@ -83,6 +83,12 @@ declare module 'ytpl' {
      */
     function continueReq(continuationData: Continuation): Promise<ContinueResult>;
 
+    /**
+     * @param id Can be the id of the YT channel or user
+     * @description fetches all the playlist IDs & thumbnails created by that user or channel
+     */
+    function channelPlaylists(id: string, options?: ytpl.Options): Promise<ytpl.Result[]>;
+
     const version: string;
   }
 
