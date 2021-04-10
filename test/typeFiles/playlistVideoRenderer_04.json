@@ -1,0 +1,227 @@
+{
+  "specialities": "video without title",
+  "type": "playlistVideoRenderer",
+  "parsed": {
+    "title": "",
+    "index": 250,
+    "id": "nc1kN8ZSfGQ",
+    "url": "https://www.youtube.com/watch?v=nc1kN8ZSfGQ&list=PLZ4DbyIWUwCq4V8bIEa8jm2ozHZVuREJP&index=250",
+    "shortUrl": "https://www.youtube.com/watch?v=nc1kN8ZSfGQ",
+    "thumbnails": [
+      {
+        "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBJqXGOsFHqvUUu0iqWMaCTMZxHrw",
+        "width": 336,
+        "height": 188
+      },
+      {
+        "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCQlJ7Vp-MxI2GYkuP6QpqHuWWc5A",
+        "width": 246,
+        "height": 138
+      },
+      {
+        "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLARElecVBBwpl9Nl13x8gIWcOuiiw",
+        "width": 196,
+        "height": 110
+      },
+      {
+        "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAuTSTl_O1iyg3INugshHLk1G-lWQ",
+        "width": 168,
+        "height": 94
+      }
+    ],
+    "bestThumbnail": {
+      "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBJqXGOsFHqvUUu0iqWMaCTMZxHrw",
+      "width": 336,
+      "height": 188
+    },
+    "isLive": false,
+    "duration": "0:39",
+    "durationSec": 39,
+    "isPlayable": true,
+    "author": {
+      "url": "https://www.youtube.com/c/HyperMetal101",
+      "channelID": "UCSezUnbvCLYBXuUlPcXU_QQ",
+      "name": "hyper"
+    }
+  },
+  "raw": {
+    "playlistVideoRenderer": {
+      "videoId": "nc1kN8ZSfGQ",
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAuTSTl_O1iyg3INugshHLk1G-lWQ",
+            "width": 168,
+            "height": 94
+          },
+          {
+            "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEiCMQBEG5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLARElecVBBwpl9Nl13x8gIWcOuiiw",
+            "width": 196,
+            "height": 110
+          },
+          {
+            "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCQlJ7Vp-MxI2GYkuP6QpqHuWWc5A",
+            "width": 246,
+            "height": 138
+          },
+          {
+            "url": "https://i.ytimg.com/vi/nc1kN8ZSfGQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBJqXGOsFHqvUUu0iqWMaCTMZxHrw",
+            "width": 336,
+            "height": 188
+          }
+        ]
+      },
+      "title": {
+        "accessibility": {
+          "accessibilityData": {
+            "label": "­ by hyper 3 years ago 39 seconds"
+          }
+        }
+      },
+      "index": {
+        "simpleText": "250"
+      },
+      "shortBylineText": {
+        "runs": [
+          {
+            "text": "hyper",
+            "navigationEndpoint": {
+              "clickTrackingParams": "CHIQxjQYMSITCMbt0Nr83-8CFWHXcwEdzOkOTg==",
+              "commandMetadata": {
+                "webCommandMetadata": {
+                  "url": "/c/HyperMetal101",
+                  "webPageType": "WEB_PAGE_TYPE_CHANNEL",
+                  "rootVe": 3611,
+                  "apiUrl": "/youtubei/v1/browse"
+                }
+              },
+              "browseEndpoint": {
+                "browseId": "UCSezUnbvCLYBXuUlPcXU_QQ",
+                "canonicalBaseUrl": "/c/HyperMetal101"
+              }
+            }
+          }
+        ]
+      },
+      "lengthText": {
+        "accessibility": {
+          "accessibilityData": {
+            "label": "39 seconds"
+          }
+        },
+        "simpleText": "0:39"
+      },
+      "navigationEndpoint": {
+        "clickTrackingParams": "CHIQxjQYMSITCMbt0Nr83-8CFWHXcwEdzOkOTjIKcGxwcF92aWRlb1okVkxQTFo0RGJ5SVdVd0NxNFY4YklFYThqbTJvekhaVnVSRUpQmgEDEPos",
+        "commandMetadata": {
+          "webCommandMetadata": {
+            "url": "/watch?v=nc1kN8ZSfGQ&list=PLZ4DbyIWUwCq4V8bIEa8jm2ozHZVuREJP&index=250",
+            "webPageType": "WEB_PAGE_TYPE_WATCH",
+            "rootVe": 3832
+          }
+        },
+        "watchEndpoint": {
+          "videoId": "nc1kN8ZSfGQ",
+          "playlistId": "PLZ4DbyIWUwCq4V8bIEa8jm2ozHZVuREJP",
+          "index": 249,
+          "params": "OAI%3D"
+        }
+      },
+      "lengthSeconds": "39",
+      "trackingParams": "CHIQxjQYMSITCMbt0Nr83-8CFWHXcwEdzOkOTg==",
+      "isPlayable": true,
+      "menu": {
+        "menuRenderer": {
+          "items": [
+            {
+              "menuServiceItemRenderer": {
+                "text": {
+                  "runs": [
+                    {
+                      "text": "Add to queue"
+                    }
+                  ]
+                },
+                "icon": {
+                  "iconType": "ADD_TO_QUEUE_TAIL"
+                },
+                "serviceEndpoint": {
+                  "clickTrackingParams": "CHMQ_pgEGAIiEwjG7dDa_N_vAhVh13MBHczpDk4=",
+                  "commandMetadata": {
+                    "webCommandMetadata": {
+                      "sendPost": true
+                    }
+                  },
+                  "signalServiceEndpoint": {
+                    "signal": "CLIENT_SIGNAL",
+                    "actions": [
+                      {
+                        "clickTrackingParams": "CHMQ_pgEGAIiEwjG7dDa_N_vAhVh13MBHczpDk4=",
+                        "addToPlaylistCommand": {
+                          "openMiniplayer": true,
+                          "videoId": "nc1kN8ZSfGQ",
+                          "listType": "PLAYLIST_EDIT_LIST_TYPE_QUEUE",
+                          "onCreateListCommand": {
+                            "clickTrackingParams": "CHMQ_pgEGAIiEwjG7dDa_N_vAhVh13MBHczpDk4=",
+                            "commandMetadata": {
+                              "webCommandMetadata": {
+                                "sendPost": true,
+                                "apiUrl": "/youtubei/v1/playlist/create"
+                              }
+                            },
+                            "createPlaylistServiceEndpoint": {
+                              "videoIds": [
+                                "nc1kN8ZSfGQ"
+                              ],
+                              "params": "CAQ%3D"
+                            }
+                          },
+                          "videoIds": [
+                            "nc1kN8ZSfGQ"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "trackingParams": "CHMQ_pgEGAIiEwjG7dDa_N_vAhVh13MBHczpDk4="
+              }
+            }
+          ],
+          "trackingParams": "CHIQxjQYMSITCMbt0Nr83-8CFWHXcwEdzOkOTg==",
+          "accessibility": {
+            "accessibilityData": {
+              "label": "Action menu"
+            }
+          }
+        }
+      },
+      "thumbnailOverlays": [
+        {
+          "thumbnailOverlayTimeStatusRenderer": {
+            "text": {
+              "accessibility": {
+                "accessibilityData": {
+                  "label": "39 seconds"
+                }
+              },
+              "simpleText": "0:39"
+            },
+            "style": "DEFAULT"
+          }
+        },
+        {
+          "thumbnailOverlayNowPlayingRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Now playing"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
