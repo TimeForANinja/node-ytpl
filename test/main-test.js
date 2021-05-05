@@ -87,6 +87,18 @@ describe('YTPL()', () => {
     scope.done();
   });
 
+  it('parses & compare meta data from a regular playlist', async() => {
+    const dataDir = 'test/pages/';
+    const targetData = FS.readFileSync(`${dataDir}withDescription.json`);
+    const scope = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PLRBp0Fe2GpgmsW46rJyudVFlY6IYjFBIK' })
+      .replyWithFile(200, `${dataDir}withDescription.html`);
+    const resp = await YTPL('PLRBp0Fe2GpgmsW46rJyudVFlY6IYjFBIK', { limit: 100 });
+    ASSERT.deepEqual(resp, JSON.parse(targetData));
+    scope.done();
+  });
+
   it('compare first page', async() => {
     const data_dir = 'test/pages/';
     const data = Array.from(
