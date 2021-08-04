@@ -1,6 +1,6 @@
 {
   "name": "ytpl",
-  "version": "2.2.1",
+  "version": "0.0.0-development",
   "description": "Simple package to resolve YouTube playlists - no strings attached.",
   "keywords": [
     "youtube",
