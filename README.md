@@ -14,10 +14,9 @@ You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
 # Usage
 
 ```js
-var ytpl = require('ytpl');
+const ytpl = require('ytpl');
 
 const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg');
-dosth(playlist);
 ```
 
 
@@ -49,14 +48,16 @@ The previous request had to be done using `pages` limitation.
 
 #### Usage
 ```js
-var ytpl = require('ytpl');
+const ytpl = require('ytpl');
 
-const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', { pages: 1 });
-display(playlist.items);
-const r2 = ytpl.continueReq(playlist.continuation);
-display(r2.items);
-const r3 = ytpl.continueReq(r2.continuation);
-display(r3.items);
+const firstResultBatch = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', { pages: 1 });
+const secondResultBatch = ytpl.continueReq(firstResultBatch.continuation);
+const thirdResultBatch = ytpl.continueReq(secondResultBatch.continuation);
+
+// You can now use the .items property of all result batches e.g.:
+console.log(firstResultBatch.items);
+console.log(secondResultBatch.items);
+console.log(thirdResultBatch.items);
 ```
 
 * returns a Promise resolving into `{ continuation, items }`
