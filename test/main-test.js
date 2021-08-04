@@ -32,6 +32,19 @@ describe('YTPL()', () => {
     scope.done();
   });
 
+  it('Errors for unknown Playlists - variant 2', async() => {
+    const scope = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'UU2-i3KuYoODXsM99Z3' })
+      .replyWithFile(200, 'test/pages/landingPage.html');
+
+    await ASSERT.rejects(
+      YTPL('UU2-i3KuYoODXsM99Z3'),
+      /Unknown Playlist/,
+    );
+    scope.done();
+  });
+
   it('Errors for private Playlists', async() => {
     const scope = NOCK(YT_HOST)
       .get(PLAYLIST_PATH)
