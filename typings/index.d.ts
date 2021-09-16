@@ -66,10 +66,22 @@ declare module 'ytpl' {
     }
 
     /**
-     * @param link Link to validate
+     * @param id ID to validate
      * @description Returns true if able to parse out a (formally) valid playlist ID. Does no requests to the youtube webservers.
      */
-    function validateID(link: string): boolean;
+    function validateID(id: string): boolean;
+
+    /**
+     * @param link Link to validate
+     * @description Returns true if able to parse out a (formally) valid playlist link. Does no requests to the youtube webservers.
+     */
+    function validateURL(link: string): boolean;
+
+    /**
+     * @param linkOrId Link or ID to validate
+     * @description Returns true if able to parse out a (formally) valid playlist ID or link. Does no requests to the youtube webservers.
+     */
+    function validate(linkOrId: string): boolean;
 
     /**
      * @param link YouTube URL
