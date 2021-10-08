@@ -396,11 +396,11 @@ describe('YTPL.getPlaylistID()', () => {
     );
   });
 
-  it('errors for youtu.be links', async() => {
+  it('errors for invalid youtu.be links', async() => {
     const ref = 'https://youtu.be/channel/whatever';
     await ASSERT.rejects(
       YTPL.getPlaylistID(ref),
-      /not a known youtube link/,
+      /Unable to find a id in ./,
     );
   });
 
@@ -487,6 +487,12 @@ describe('YTPL.getPlaylistID()', () => {
     const uploads = await YTPL.getPlaylistID(ref);
     ASSERT.equal(uploads, 'UUqwGaUvq_l0RKszeHhZ5leA');
   });
+
+  it('resolves playlist from youtu.be share link', async() => {
+    const ref = 'https://youtu.be/hIaYzwf0A8A?list=PL37UZ2QfPUvyeqqNi4m_byAjAbSHBIosW';
+    const playlist = await YTPL.getPlaylistID(ref);
+    ASSERT.equal(playlist, 'PL37UZ2QfPUvyeqqNi4m_byAjAbSHBIosW');
+  })
 });
 
 describe('YTPL.validateID()', () => {
