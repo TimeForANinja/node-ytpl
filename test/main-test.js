@@ -492,7 +492,7 @@ describe('YTPL.getPlaylistID()', () => {
     const ref = 'https://youtu.be/hIaYzwf0A8A?list=PL37UZ2QfPUvyeqqNi4m_byAjAbSHBIosW';
     const playlist = await YTPL.getPlaylistID(ref);
     ASSERT.equal(playlist, 'PL37UZ2QfPUvyeqqNi4m_byAjAbSHBIosW');
-  })
+  });
 });
 
 describe('YTPL.validateID()', () => {
