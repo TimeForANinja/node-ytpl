@@ -578,4 +578,9 @@ describe('YTPL.validateID()', () => {
     const ref = 'https://www.youtube.com/watch?v=ASDF&list=UUqwGaUvq_l0RKszeHhZ5leA';
     ASSERT.ok(YTPL.validateID(ref));
   });
+
+  it('true for youtu.be share link', async() => {
+    const ref = 'https://youtu.be/hIaYzwf0A8A?list=PL37UZ2QfPUvyeqqNi4m_byAjAbSHBIosW';
+    ASSERT.ok(YTPL.validateID(ref));
+  });
 });
