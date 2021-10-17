@@ -579,7 +579,7 @@ describe('YTPL.validateID()', () => {
     ASSERT.ok(YTPL.validateID(ref));
   });
 
-  it('true for youtu.be share link', async() => {
+  it('true for youtu.be share link', () => {
     const ref = 'https://youtu.be/hIaYzwf0A8A?list=PL37UZ2QfPUvyeqqNi4m_byAjAbSHBIosW';
     ASSERT.ok(YTPL.validateID(ref));
   });
