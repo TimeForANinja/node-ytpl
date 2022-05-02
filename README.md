@@ -66,6 +66,14 @@ console.log(thirdResultBatch.items);
 
 Returns true if able to parse out a (formally) valid playlist ID.
 
+### ytpl.validateURL(string)
+
+Returns true if able to parse out a (formally) valid playlist link.
+
+### ytpl.validate(string)
+
+Returns true if able to parse out a (formally) valid playlist ID or link.
+
 ### ytpl.getPlaylistID(string)
 
 Returns a playlist ID from a YouTube URL. Can be called with the playlist ID directly, in which case it just resolves.
