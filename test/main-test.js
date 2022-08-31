@@ -58,6 +58,18 @@ describe('YTPL()', () => {
     scope.done();
   });
 
+  it('parses page with playlistShowMetadataRenderer in contents', async() => {
+    const scope = NOCK(YT_HOST)
+      .get(PLAYLIST_PATH)
+      .query({ gl: 'US', hl: 'en', list: 'PL2aBZuCeDwlQN4aWkYJlwjjNRr8N5Qtt1' })
+      .replyWithFile(200, 'test/pages/metadataAttributeResponse.html');
+
+    const resp = await YTPL('PL2aBZuCeDwlQN4aWkYJlwjjNRr8N5Qtt1', { limit: 5 });
+    ASSERT.equal(resp.items.length, 5);
+    ASSERT.equal(resp.continuation, null);
+    scope.done();
+  });
+
   it('parses first page using limit', async() => {
     const scope = NOCK(YT_HOST)
       .get(PLAYLIST_PATH)
