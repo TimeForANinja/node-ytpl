@@ -37,6 +37,7 @@
     "isLive": true,
     "duration": null,
     "durationSec": null,
+    "views": null,
     "isPlayable": true,
     "author": {
       "url": "https://www.youtube.com/c/NBCNews",

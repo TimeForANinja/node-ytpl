@@ -41,6 +41,7 @@ declare module 'ytpl' {
       isLive: boolean;
       duration: string | null;
       durationSec: number | null;
+      views: number | null;
     }
 
     interface Result {
