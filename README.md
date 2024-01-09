@@ -1,3 +1,7 @@
+# DEPRECATED <node-ytpl>
+
+This repo is no longer supported, please consider using the official api instead.
+
 # node-ytpl
 [![NPM version](https://img.shields.io/npm/v/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
 [![NPM downloads](https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
